@@ -1,6 +1,6 @@
 {
 
-  	description = "Test flake";
+  	description = "First flake";
 
 	inputs = {
 		nixpkgs.url = "nixpkgs/nixos-24.05";
