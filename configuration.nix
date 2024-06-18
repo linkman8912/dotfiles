@@ -111,6 +111,7 @@
   pkgs.gimp-with-plugins
   pkgs.python3
   pkgs.playonlinux
+  terminator
   pkgs.wine
   pkgs.moonlight-qt
   pkgs.sunshine
