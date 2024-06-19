@@ -85,6 +85,12 @@
 		vimAlias = true;
 		defaultEditor = true;
 	};
+	
+	programs.git = {
+		enable = true;
+		userName = "Sam";
+		userEmail = "linkman8912@proton.me";
+	};
 
 	# Let Home Manager install and manage itself.
 	programs.home-manager.enable = true;
