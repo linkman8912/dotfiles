@@ -89,8 +89,10 @@
 
   	# Configure keymap in X11
   	services.xserver = {
-  	  	layout = "us";
-  	  	xkbVariant = "dvorak";
+  	  	xkb = {
+			layout = "us";
+  	  		variant = "dvorak";
+		};
   	};
 	
   	# Configure console keymap
@@ -133,6 +135,11 @@
   	# Allow unfree packages
   	nixpkgs.config.allowUnfree = true;
 
+	fonts.packages = with pkgs; [
+		nerdfonts
+		meslo-lgs-nf
+	];
+
   	# List packages installed in system profile. To search, run:
   	# $ nix search wget
   	environment.systemPackages = with pkgs; [
@@ -142,6 +149,9 @@
   		pkgs.xautoclick
   		# pkgs.minecraft
   		pkgs.spotify
+		kitty
+		gcc
+		rofi-wayland
   		pkgs.gamemode
   		pkgs.unityhub
   		pkgs.winetricks
@@ -158,6 +168,7 @@
   		pkgs.xrdp
   		pkgs.lutris
   		pkgs.protontricks
+
   		pkgs.qbittorrent
   		pkgs.p7zip
   		(pkgs.discord.override {
