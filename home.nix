@@ -70,27 +70,51 @@
   	home.sessionVariables = {
     		# EDITOR = "emacs";
   	};
+	programs = {
+		bash = {
+			enable = true;
+			shellAliases = {
+				ls = "ls -A";
+				".." = "cd ..";
+			};
+		};
 
-	programs.bash = {
-		enable = true;
-		shellAliases = {
-			ls = "ls -A";
-			".." = "cd ..";
+		neovim = {
+			enable = true;
+			vimAlias = true;
+			defaultEditor = true;
+		};
 
+		git = {
+			enable = true;
+			userName  = "linkman";
+			userEmail = "linkman8912@proton.me";
 		};
 	};
 
-	programs.neovim = {
-		enable = true;
-		vimAlias = true;
-		defaultEditor = true;
-	};
 	
-	programs.git = {
-		enable = true;
-		userName = "Sam";
-		userEmail = "linkman8912@proton.me";
-	};
+	# programs.bash = {
+	#	enable = true;
+	#	shellAliases = {
+	#		ls = "ls -A";
+	#		".." = "cd ..";
+
+	#	};
+	# };
+
+	# programs.neovim = {
+	#	enable = true;
+	#	vimAlias = true;
+	#	defaultEditor = true;
+	# };
+	
+	# programs.git = {
+	#	enable = true;
+	#	userName = "Sam";
+	#	userEmail = "linkman8912@proton.me";
+	# };
+
+
 
 	# Let Home Manager install and manage itself.
 	programs.home-manager.enable = true;
