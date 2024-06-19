@@ -20,16 +20,17 @@
 	hardware.nvidia = {
 		# Modesetting is required
 		modesetting.enable = true;
-
-		# Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-		# Enable this if you have graphical corruption issues or application crashes after waking
-		# up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
-		# of just the bare essentials
-		powerManagement.enable = false;
-
-		# Fine-grained power management. Turns off GPU when not in use.
-		# Experimental and only works on modern Nvidia GPUs (Turing or newer).
-		powerManagement.finegrained = false;
+		powerManagement = {
+			# Nvidia power management. Experimental, and can cause sleep/suspend to fail.
+			# Enable this if you have graphical corruption issues or application crashes after waking
+			# up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
+			# of just the bare essentials
+			enable = false;
+	
+			# Fine-grained power management. Turns off GPU when not in use.
+			# Experimental and only works on modern Nvidia GPUs (Turing or newer).
+			finegrained = false;
+		};
 
 		# Use the Nvidia open source kernel module (not to be confused with the
 		# independent third-party "nouveau" open source driver).
@@ -46,6 +47,10 @@
 
 		# Optionally, you may need to select the appropriate driver version for your specific GPU.
 		package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+		prime = {
+			offload.enable = true;
+		};
 	};
 
   	# Bootloader.
@@ -162,9 +167,11 @@
 		xwayland
   		terminator
   		pkgs.wine
+		hyprland
   		pkgs.moonlight-qt
   		pkgs.sunshine
 		waybar
+		fastfetch
   		pkgs.xrdp
   		pkgs.lutris
   		pkgs.protontricks
@@ -176,8 +183,8 @@
   		})
   		pkgs.appimage-run
   		pkgs.firefox-devedition
-  		neofetch
   		git
+		wofi
   	];
 
   	programs.neovim = {
