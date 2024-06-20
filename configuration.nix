@@ -150,21 +150,22 @@
   	environment.systemPackages = with pkgs; [
 		vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
 		wget
-  		pkgs.vesktop
-  		pkgs.xautoclick
+  		vesktop
+  		xautoclick
   		# pkgs.minecraft
   		pkgs.spotify
 		kitty
 		gcc
 		rofi-wayland
-  		pkgs.gamemode
-  		pkgs.unityhub
-  		pkgs.winetricks
-  		pkgs.input-remapper
-  		pkgs.gimp-with-plugins
-  		pkgs.python3
-  		pkgs.playonlinux
+  		gamemode
+  		unityhub
+  		winetricks
+  		input-remapper
+  		gimp-with-plugins
+  		python3
+  		playonlinux
 		xwayland
+		hyprpaper
   		terminator
   		pkgs.wine
 		hyprland
@@ -172,17 +173,17 @@
   		pkgs.sunshine
 		waybar
 		fastfetch
-  		pkgs.xrdp
-  		pkgs.lutris
-  		pkgs.protontricks
+  		xrdp
+  		lutris
+  		protontricks
 
-  		pkgs.qbittorrent
-  		pkgs.p7zip
+  		qbittorrent
+  		p7zip
   		(pkgs.discord.override {
   			withVencord = true;
   		})
-  		pkgs.appimage-run
-  		pkgs.firefox-devedition
+  		appimage-run
+  		firefox-devedition
   		git
 		wofi
   	];
