@@ -77,6 +77,11 @@
 				ls = "ls -A";
 				".." = "cd ..";
 			};
+			
+			initExtra = 
+			''
+				fastfetch
+			'';
 		};
 
 		neovim = {
@@ -92,28 +97,6 @@
 		};
 	};
 
-	
-	# programs.bash = {
-	#	enable = true;
-	#	shellAliases = {
-	#		ls = "ls -A";
-	#		".." = "cd ..";
-
-	#	};
-	# };
-
-	# programs.neovim = {
-	#	enable = true;
-	#	vimAlias = true;
-	#	defaultEditor = true;
-	# };
-	
-	# programs.git = {
-	#	enable = true;
-	#	userName = "Sam";
-	#	userEmail = "linkman8912@proton.me";
-	# };
-	
 	imports = [
 		./config/hyprland.nix
 	];
