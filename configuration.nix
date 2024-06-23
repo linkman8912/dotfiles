@@ -159,6 +159,8 @@
 		rofi-wayland
   		gamemode
   		unityhub
+		superTux
+		superTuxKart
   		winetricks
   		input-remapper
   		gimp-with-plugins

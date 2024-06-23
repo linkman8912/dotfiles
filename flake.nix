@@ -1,6 +1,6 @@
 {
 
-  	description = " flake";
+  	description = "flake";
 
 	inputs = {
 		nixpkgs.url = "nixpkgs/nixos-24.05";
