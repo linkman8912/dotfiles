@@ -113,8 +113,10 @@
 	#	userName = "Sam";
 	#	userEmail = "linkman8912@proton.me";
 	# };
-
-
+	
+	imports = [
+		./config/hyprland.nix
+	];
 
 	# Let Home Manager install and manage itself.
 	programs.home-manager.enable = true;
