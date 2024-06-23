@@ -48,7 +48,7 @@
 			# exec-once = $terminal
 			# exec-once = nm-applet &
 			exec-once = waybar & hyprpaper & firefox
-			exec-once = nmcli device wifi connect ***REMOVED*** password ***REMOVED***!
+			exec-once = nmcli device wifi connect ***REMOVED*** password $WIFI_PASSWORD
 
 			#############################
 			### ENVIRONMENT VARIABLES ###
@@ -68,8 +68,8 @@
 
 			# https://wiki.hyprland.org/Configuring/Variables/#general
 			general { 
-			    	gaps_in = 5
-			    	gaps_out = 10
+			    	gaps_in = 7
+			    	gaps_out = 14
 
 			    	border_size = 2
 
@@ -88,11 +88,11 @@
 
 			# https://wiki.hyprland.org/Configuring/Variables/#decoration
 			decoration {
-			    	rounding = 10
+			    	rounding = 15
 
 			    	# Change transparency of focused and unfocused windows
 			    	active_opacity = 1
-			    	inactive_opacity = 0.8
+			    	inactive_opacity = 0.75
 
 			    	drop_shadow = true
 			    	shadow_range = 4
