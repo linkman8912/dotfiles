@@ -48,7 +48,7 @@
 			# exec-once = $terminal
 			# exec-once = nm-applet &
 			exec-once = waybar & hyprpaper & firefox
-			exec-once = nmcli device wifi connect ***REMOVED*** password $WIFI_PASSWORD
+			exec-once = nmcli device wifi connect ***REMOVED*** password ***REMOVED***!
 
 			#############################
 			### ENVIRONMENT VARIABLES ###
