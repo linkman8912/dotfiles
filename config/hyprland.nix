@@ -178,8 +178,14 @@
 			}
 
 			device {
-				name = compx-2.4g-reciever-mouse
+				name = compx-2.4g-receiver-mouse
 				sensitivity = -0.6
+			}
+
+			device {
+				name = sypnaptics-tm3257-001
+				sensitivity = 0.9
+				accel_profile = "adaptive"
 			}
 
 
