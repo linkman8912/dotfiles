@@ -101,10 +101,10 @@
 		enable = true;
 		settings = {
 			preload = 
-				[ "~/Documents/purpleWallpaper.jpg" ];
+				[ "./config/hyprpaper/purpleWallpaper.jpg" ];
 
 			wallpaper = 
-			[ "~/Documents/purpleWallpaper.jpg" ];
+			[ "./config/hyprpaper/purpleWallpaper.jpg" ];
 		};
 	};
 

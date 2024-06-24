@@ -49,6 +49,7 @@
 			# exec-once = nm-applet &
 			exec-once = waybar & hyprpaper & firefox
 			exec-once = nmcli device wifi connect ***REMOVED*** password ***REMOVED***!
+			exec-once = /usr/lib/polkit-kde-authentication-agent-1
 
 			#############################
 			### ENVIRONMENT VARIABLES ###
