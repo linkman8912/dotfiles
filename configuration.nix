@@ -177,7 +177,7 @@
   		xrdp
   		lutris
   		protontricks
-
+		kdePackages.polkit-kde-agent-1
   		qbittorrent
   		p7zip
   		(pkgs.discord.override {
@@ -189,26 +189,28 @@
 		wofi
   	];
 
-  	programs.neovim = {
-		enable = true;
-		defaultEditor = true;
-  	};
-	
-  	programs.steam = {
-		enable = true;
-		remotePlay.openFirewall = true;
-		dedicatedServer.openFirewall = true;
+	programs = {
+		neovim = {
+			enable = true;
+			defaultEditor = true;
+  		};
+		
+		steam = {
+			enable = true;
+			remotePlay.openFirewall = true;
+			dedicatedServer.openFirewall = true;
+		};
+
+		hyprland = {
+			enable = true;
+			xwayland.enable = true;
+			package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+		};
 	};
 
-	programs.hyprland = {
-		enable = true;
-		xwayland.enable = true;
-		package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-	};
-
-	environment.sessionVariables = {
-		NIXOS_OZONE_WL = "1";
-	};
+	# environment.sessionVariables = {
+	#	NIXOS_OZONE_WL = "1";
+	# };
 
   	# Some programs need SUID wrappers, can be configured further or are
   	# started in user sessions.

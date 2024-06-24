@@ -97,6 +97,17 @@
 		};
 	};
 
+	services.hyprpaper = {
+		enable = true;
+		settings = {
+			preload = 
+				[ "~/Documents/purpleWallpaper.jpg" ];
+
+			wallpaper = 
+			[ "~/Documents/purpleWallpaper.jpg" ];
+		};
+	};
+
 	imports = [
 		./config/hyprland.nix
 	];
