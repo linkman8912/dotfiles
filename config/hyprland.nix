@@ -92,7 +92,7 @@
 			    	rounding = 15
 
 			    	# Change transparency of focused and unfocused windows
-			    	active_opacity = 1
+			    	active_opacity = 0.9
 			    	inactive_opacity = 0.75
 
 			    	drop_shadow = true
@@ -140,7 +140,7 @@
 			# https://wiki.hyprland.org/Configuring/Variables/#misc
 			misc { 
 			    	force_default_wallpaper = 1 # Set to 0 or 1 to disable the anime mascot wallpapers
-			    	disable_hyprland_logo = false # If true disables the random hyprland logo / anime girl background. :(
+			    	disable_hyprland_logo = true # If true disables the random hyprland logo / anime girl background. :(
 			}
 
 
