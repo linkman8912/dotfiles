@@ -152,9 +152,8 @@
 
 			# https://wiki.hyprland.org/Configuring/Variables/#input
 			input {
-			    	kb_layout = us
-			    	kb_variant = dvorak
-			    	kb_model =
+			    	kb_layout = us,us
+			    	kb_variant = dvorak,
 			    	kb_options =
 			    	kb_rules =
 
@@ -250,6 +249,8 @@
 			# Move/resize windows with mainMod + LMB/RMB and dragging
 			bindm = $mainMod, mouse:272, movewindow
 			bindm = $mainMod, mouse:273, resizewindow
+
+			bind = $mainMod, Space, exec, hyprctl switchxkblayout evision-rgb-keyboard next
 
 
 			##############################
