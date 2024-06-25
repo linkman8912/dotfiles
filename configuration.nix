@@ -174,6 +174,7 @@
   		pkgs.sunshine
 		waybar
 		fastfetch
+		virtualbox
   		xrdp
   		lutris
   		protontricks
