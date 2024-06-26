@@ -174,6 +174,7 @@
   		pkgs.sunshine
 		waybar
 		fastfetch
+		flatpak
 		virtualbox
   		xrdp
   		lutris

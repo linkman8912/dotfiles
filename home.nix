@@ -21,6 +21,8 @@
   	# # Adds the 'hello' command to your environment. It prints a friendly
 	# # "Hello, world!" when run.
     		pkgs.hello
+		pkgs.cowsay 
+		pkgs.fortune
 
     	# # It is sometimes useful to fine-tune packages, for example, by applying
     	# # overrides. You can do that directly here, just don't forget the
@@ -44,7 +46,7 @@
     		# # symlink to the Nix store copy.
     		# ".screenrc".source = dotfiles/screenrc;
 
-		"~/.config/waybar".source = ./config/waybar;
+		# "~/.config/waybar".source = ./config/waybar;
 
     		# # You can also set the file content immediately.
     		# ".gradle/gradle.properties".text = ''
@@ -76,7 +78,7 @@
 		bash = {
 			enable = true;
 			shellAliases = {
-				ls = "ls -A";
+				"ls" = "ls -A";
 				".." = "cd ..";
 			};
 			
