@@ -114,6 +114,7 @@
 
 	imports = [
 		./config/hyprland.nix
+		./config/stylix.nix
 	];
 
 	# Let Home Manager install and manage itself.

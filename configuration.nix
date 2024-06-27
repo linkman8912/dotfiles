@@ -5,8 +5,10 @@
 { config, pkgs, inputs, ... }:
 
 {
-  	imports =
-    	[ ];
+  	imports = 
+	[ 
+	./config/stylix.nix 
+	];
 
 	# Enable OpenGL
 	hardware.opengl = {
