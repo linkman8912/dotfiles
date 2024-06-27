@@ -6,6 +6,13 @@
   	home.username = "linkman";
   	home.homeDirectory = "/home/linkman";
 
+	# home.pointerCursor = {
+	#	gtk.enable = true;
+	#	package = pkgs.bibata-cursors;
+	#	name = "Bibata-Modern-Ice";
+	#	size = 22;
+	# };
+
   	# This value determines the Home Manager release that your configuration is
   	# compatible with. This helps avoid breakage when a new Home Manager release
   	# introduces backwards incompatible changes.
@@ -46,7 +53,9 @@
     		# # symlink to the Nix store copy.
     		# ".screenrc".source = dotfiles/screenrc;
 
-		# "~/.config/waybar".source = ./config/waybar;
+		"~/.config/waybar/style.css".source = ./config/waybar/style.css;
+		"~/.config/waybar/config.jsonc".source = ./config/waybar/config.jsonc;
+
 
     		# # You can also set the file content immediately.
     		# ".gradle/gradle.properties".text = ''

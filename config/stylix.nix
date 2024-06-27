@@ -3,7 +3,10 @@
 {
 	stylix = {
 		enable = true;
-		image = ./config/hyprpaper/purpleWallpaper.jpg;
+		image = ./hyprpaper/purpleWallpaper.jpg;
 		polarity = "dark";
-	}
+		cursor = {
+			size = 22;
+		};
+	};
 }

@@ -182,6 +182,7 @@
   		lutris
 		dotnetCorePackages.sdk_8_0_2xx
   		protontricks
+		bibata-cursors
 		kdePackages.polkit-kde-agent-1
   		qbittorrent
   		p7zip
