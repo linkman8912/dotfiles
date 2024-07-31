@@ -13,8 +13,8 @@
 	# Enable OpenGL
 	hardware.opengl = {
 		enable = true;
-		driSupport = true;
-		driSupport32Bit = true;
+		# driSupport = true;
+		# driSupport32Bit = true;
 	};
 	
 	hardware.nvidia = {
@@ -152,7 +152,7 @@
 		wget
   		vesktop
   		xautoclick
-  		# pkgs.minecraft
+		prismlauncher
   		pkgs.spotify
 		kitty
 		gcc
@@ -164,6 +164,8 @@
   		winetricks
   		input-remapper
   		gimp-with-plugins
+		kdePackages.kdenlive
+		obs-studio
   		python3
 		killall
   		playonlinux
