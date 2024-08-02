@@ -17,27 +17,15 @@
 			pkgs = nixpkgs.legacyPackages.${system};
 	in {
 		nixosConfigurations = {
-			desktop = lib.nixosSystem {
+			nixos = lib.nixosSystem {
 				specialArgs = { inherit inputs; };
 				inherit system;
 				modules = [ 
 				./configuration.nix
-				./desktop-hardware-configuration.nix
+				/etc/nixos/hardware-configuration.nix
 				inputs.stylix.nixosModules.stylix
 				];
 			};
-
-			laptop = lib.nixosSystem {
-				specialArgs = { inherit inputs; };
-				inherit system;
-				modules = [ 
-				./configuration.nix
-				./laptop-hardware-configuration.nix
-				inputs.stylix.nixosModules.stylix
-				];
-
-			};
-
 		};
 		homeConfigurations = {
 			linkman = home-manager.lib.homeManagerConfiguration {
