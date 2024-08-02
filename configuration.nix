@@ -107,7 +107,6 @@
   	services.printing.enable = true;
 
   	# Enable sound with pipewire.
-  	sound.enable = true;
   	hardware.pulseaudio.enable = false;
   	security.rtkit.enable = true;
   	services.pipewire = {
@@ -182,7 +181,7 @@
 		virtualbox
   		xrdp
   		lutris
-		dotnetCorePackages.sdk_8_0_2xx
+		dotnetCorePackages.sdk_8_0_3xx
   		protontricks
 		bibata-cursors
 		kdePackages.polkit-kde-agent-1

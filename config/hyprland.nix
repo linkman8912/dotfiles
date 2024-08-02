@@ -134,10 +134,6 @@
 			    	preserve_split = true # You probably want this
 			}
 
-			# See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-			master {
-			    	new_is_master = true
-			}
 
 			# https://wiki.hyprland.org/Configuring/Variables/#misc
 			misc { 
