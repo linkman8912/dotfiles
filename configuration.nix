@@ -173,6 +173,7 @@
 		killall
   		playonlinux
 		xwayland
+		blueman
 		hyprpaper
   		terminator
   		pkgs.wine
