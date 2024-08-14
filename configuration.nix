@@ -152,6 +152,7 @@
 		handbrake
   		vesktop
   		xautoclick
+		pamixer
 		vlc
 		prismlauncher
   		pkgs.spotify
@@ -166,6 +167,7 @@
   		input-remapper
   		gimp-with-plugins
 		kdePackages.kdenlive
+		floorp
 		obs-studio
   		python3
 		killall
