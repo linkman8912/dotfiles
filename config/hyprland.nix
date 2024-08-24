@@ -24,7 +24,7 @@
 			# See https://wiki.hyprland.org/Configuring/Monitors/
 			monitor=,preferred,auto,1
 			monitor=HDMI-A-2,1920x1080@74,1920x-50,1
-			# monitor=DP-4,1920x1080@60,0x0,1
+			monitor=DP-4,1920x1080@60,0x0,1
 
 			###################
 			### MY PROGRAMS ###
