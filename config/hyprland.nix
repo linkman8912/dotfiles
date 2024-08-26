@@ -246,7 +246,7 @@
 			bindm = $mainMod, mouse:272, movewindow
 			bindm = $mainMod, mouse:273, resizewindow
 
-			bind = $mainMod, Space, exec, hyprctl switchxkblayout evision-rgb-keyboard next
+			bind = $mainMod, Space, exec, hyprctl switchxkblayout by-tech-usb-gaming-keboard next
 
 
 			##############################

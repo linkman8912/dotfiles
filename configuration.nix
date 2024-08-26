@@ -155,6 +155,7 @@
   		xautoclick
 		pamixer
 		vlc
+		hexchat
 		prismlauncher
   		pkgs.spotify
 		kitty
