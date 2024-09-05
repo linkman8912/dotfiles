@@ -137,7 +137,14 @@
   	};
 
   	# Allow unfree packages
-  	nixpkgs.config.allowUnfree = true;
+  	nixpkgs = {
+		config = {
+			allowUnfree = true;
+			permittedInsecurePackages = [
+				"adobe-reader-9.5.5"
+			];
+		};
+	};
 
 	fonts.packages = with pkgs; [
 		nerdfonts
@@ -179,10 +186,11 @@
 		blueman
 		hyprpaper
   		terminator
-  		pkgs.wine
+  		wine
+		adobe-reader
 		hyprland
-  		pkgs.moonlight-qt
-  		pkgs.sunshine
+  		moonlight-qt
+  		sunshine
 		waybar
 		fastfetch
 		flatpak
