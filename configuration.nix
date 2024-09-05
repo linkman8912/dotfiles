@@ -158,6 +158,7 @@
 		hexchat
 		prismlauncher
   		pkgs.spotify
+		meteor
 		kitty
 		gcc
 		rofi-wayland
