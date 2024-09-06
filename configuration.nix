@@ -140,9 +140,6 @@
   	nixpkgs = {
 		config = {
 			allowUnfree = true;
-			permittedInsecurePackages = [
-				"adobe-reader-9.5.5"
-			];
 		};
 	};
 
@@ -187,7 +184,6 @@
 		hyprpaper
   		terminator
   		wine
-		adobe-reader
 		hyprland
   		moonlight-qt
   		sunshine
