@@ -162,6 +162,7 @@
 		hexchat
 		prismlauncher
   		pkgs.spotify
+		browsh
 		meteor
 		kitty
 		gcc
