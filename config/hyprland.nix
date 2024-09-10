@@ -47,7 +47,7 @@
 
 			# exec-once = $terminal
 			# exec-once = nm-applet &
-			exec-once = waybar & hyprpaper & firefox
+			exec-once = waybar & hyprpaper
 			exec-once = nmcli device wifi connect ***REMOVED*** password ***REMOVED***!
 			exec-once = /usr/lib/polkit-kde-authentication-agent-1
 
@@ -201,6 +201,7 @@
 			bind = $mainMod, E, exec, $fileManager
 			bind = $mainMod, V, togglefloating,
 			bind = $mainMod, R, exec, $menu
+			bind = $mainMod, O, exec, hyprshot
 			bind = $mainMod, P, pseudo, # dwindle
 			bind = $mainMod, J, togglesplit, # dwindle
 
