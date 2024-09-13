@@ -155,6 +155,7 @@
 		wget
 		handbrake
 		kdePackages.kolourpaint
+		hyprpicker
 		hyprshot
 		plover.dev
   		vesktop
