@@ -155,7 +155,7 @@
 
 			    	follow_mouse = 1
 
-			    	sensitivity = -0.6 # -1.0 - 1.0, 0 means no modification.
+			    	sensitivity = 0.2 # -1.0 - 1.0, 0 means no modification.
 			    	accel_profile = "flat"
 
 				touchpad {
@@ -184,6 +184,12 @@
 				name = sypnaptics-tm3257-001
 				sensitivity = 0.9
 				accel_profile = "adaptive"
+			}
+
+			device {
+				name = dell-dell-universal-receiver-mouse
+				sensitivity = 0
+				accel_profile = "flat"
 			}
 
 
