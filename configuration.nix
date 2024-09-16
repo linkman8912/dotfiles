@@ -201,12 +201,10 @@
 		dotnetCorePackages.sdk_8_0_3xx
   		protontricks
 		bibata-cursors
+		inkscape
 		kdePackages.polkit-kde-agent-1
   		qbittorrent
   		p7zip
-  		(pkgs.discord.override {
-  			withVencord = true;
-  		})
   		appimage-run
   		firefox-devedition
   		git
