@@ -169,6 +169,7 @@
   	# $ nix search wget
   	environment.systemPackages = with pkgs; [
 		vim 
+		libreoffice-qt6-still
 		hyprlock
 		wget
 		handbrake
