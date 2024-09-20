@@ -188,7 +188,7 @@
 
 			device {
 				name = dell-dell-universal-receiver-mouse
-				sensitivity = 0
+				sensitivity = -0.5
 				accel_profile = "flat"
 			}
 

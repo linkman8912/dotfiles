@@ -85,12 +85,29 @@
     		LC_TIME = "en_US.UTF-8";
   	};
 
+	services = {
+		xserver = {
+			enable = true;
+			displayManager = {
+				gdm.enable = true;
+			};
+			desktopManager = {
+				gnome.enable = true;
+			};
+		};
+		desktopManager = {
+			plasma6.enable = true;
+		};
+	};
+	programs.ssh.askPassword = "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
+
+
   	# Enable the X11 windowing system.
-  	services.xserver.enable = true;
+  	# services.xserver.enable = true;
 
   	# Enable the GNOME Desktop Environment.
-  	services.xserver.displayManager.gdm.enable = true;
-  	services.xserver.desktopManager.gnome.enable = true;
+  	# services.xserver.displayManager.gdm.enable = true;
+  	# services.xserver.desktopManager.gnome.enable = true;
 
   	# Configure keymap in X11
   	services.xserver = {
@@ -151,7 +168,9 @@
   	# List packages installed in system profile. To search, run:
   	# $ nix search wget
   	environment.systemPackages = with pkgs; [
-		vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+		vim 
+		libreoffice-qt6-still
+		hyprlock
 		wget
 		via
 		handbrake
@@ -201,12 +220,10 @@
 		dotnetCorePackages.sdk_8_0_3xx
   		protontricks
 		bibata-cursors
+		inkscape
 		kdePackages.polkit-kde-agent-1
   		qbittorrent
   		p7zip
-  		(pkgs.discord.override {
-  			withVencord = true;
-  		})
   		appimage-run
   		firefox-devedition
   		git
