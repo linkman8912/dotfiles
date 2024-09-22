@@ -7,7 +7,8 @@
 {
   	imports = 
 	[ 
-	./config/stylix.nix 
+	./config/stylix.nix
+	# ./config/udev/udev.nix
 	];
 
 	# Enable OpenGL
