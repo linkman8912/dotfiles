@@ -94,6 +94,7 @@
 			initExtra = 
 			''
 				fastfetch
+				eval "$(zoxide init bash)"
 			'';
 		};
 

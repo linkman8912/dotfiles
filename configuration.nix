@@ -170,6 +170,7 @@
   	# $ nix search wget
   	environment.systemPackages = with pkgs; [
 		vim 
+		zoxide
 		darktable
 		libreoffice-qt6-still
 		hyprlock
@@ -185,6 +186,7 @@
 		pamixer
 		vlc
 		hexchat
+		pkgs.python311Packages.pip
 		prismlauncher
   		pkgs.spotify
 		browsh
