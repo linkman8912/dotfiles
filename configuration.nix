@@ -184,6 +184,7 @@
   		vesktop
   		xautoclick
 		pamixer
+		pkgs.python311Packages.matplotlib
 		vlc
 		hexchat
 		pkgs.python311Packages.pip
