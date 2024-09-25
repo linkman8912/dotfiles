@@ -170,6 +170,7 @@
   	# $ nix search wget
   	environment.systemPackages = with pkgs; [
 		vim 
+		darktable
 		libreoffice-qt6-still
 		hyprlock
 		wget
