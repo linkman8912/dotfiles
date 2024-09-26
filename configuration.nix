@@ -170,6 +170,7 @@
   	# $ nix search wget
   	environment.systemPackages = with pkgs; [
 		vim 
+		fzf
 		zoxide
 		darktable
 		libreoffice-qt6-still
@@ -184,6 +185,7 @@
   		vesktop
   		xautoclick
 		pamixer
+		pkgs.python312Packages.matplotlib
 		pkgs.python311Packages.matplotlib
 		vlc
 		hexchat
