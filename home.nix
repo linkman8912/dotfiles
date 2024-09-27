@@ -88,7 +88,7 @@
 			enable = true;
 			shellAliases = {
 				"ls" = "ls -A";
-				".." = "cd ..";
+				".." = "z ..";
 			};
 			
 			initExtra = 
