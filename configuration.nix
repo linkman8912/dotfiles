@@ -193,6 +193,12 @@
 		prismlauncher
   		pkgs.spotify
 		browsh
+		bastet
+		ninvaders
+		nsnake
+		bsdgames
+		moon-buggy
+		nudoku
 		meteor
 		kitty
 		gcc
