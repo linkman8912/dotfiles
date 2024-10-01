@@ -94,7 +94,7 @@
 			    	rounding = 15
 
 			    	# Change transparency of focused and unfocused windows
-			    	active_opacity = 0.94
+			    	active_opacity = 1
 			    	inactive_opacity = 0.75
 
 			    	drop_shadow = true
@@ -165,7 +165,7 @@
 
 			# https://wiki.hyprland.org/Configuring/Variables/#gestures
 			gestures {
-			    workspace_swipe = false
+			    workspace_swipe = true
 			}
 
 			# Example per-device config
@@ -254,6 +254,7 @@
 			bindm = $mainMod, mouse:273, resizewindow
 
 			bind = $mainMod, Space, exec, hyprctl switchxkblayout by-tech-usb-gaming-keboard next; hyprctl switchxkblayout at-translated-set-2-keyboard
+			bind = $mainMod, T, exec, hyprctl dispatch toggleopaque
 
 
 			##############################
