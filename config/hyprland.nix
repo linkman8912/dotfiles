@@ -159,7 +159,9 @@
 			    	accel_profile = "flat"
 
 				touchpad {
-					natural_scroll = false
+					natural_scroll = true
+					disable_while_typing = true
+					scroll_factor = 0.2
 			    	}
 			}
 
