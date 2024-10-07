@@ -37,11 +37,11 @@
     "base16-foot": {
       "flake": false,
       "locked": {
-        "lastModified": 1696725948,
-        "narHash": "sha256-65bz2bUL/yzZ1c8/GQASnoiGwaF8DczlxJtzik1c0AU=",
+        "lastModified": 1727574105,
+        "narHash": "sha256-ByMVgH0rZ1by2YIVJ47gE8/ZHWcG8yqsErQ4tKLbm7Q=",
         "owner": "tinted-theming",
         "repo": "base16-foot",
-        "rev": "eedbcfa30de0a4baa03e99f5e3ceb5535c2755ce",
+        "rev": "e558fe47e187093313f19fa6a9eea61940ffbd6b",
         "type": "github"
       },
       "original": {
@@ -69,11 +69,11 @@
     "base16-kitty": {
       "flake": false,
       "locked": {
-        "lastModified": 1665001328,
-        "narHash": "sha256-aRaizTYPpuWEcvoYE9U+YRX+Wsc8+iG0guQJbvxEdJY=",
+        "lastModified": 1721117198,
+        "narHash": "sha256-+vEXvEsar7w7wPVRmKx+rJKUTD5DBgLR7jfl0k7VhnE=",
         "owner": "kdrag0n",
         "repo": "base16-kitty",
-        "rev": "06bb401fa9a0ffb84365905ffbb959ae5bf40805",
+        "rev": "0898f2677f3a583cc6a89bde29b2b05ac2041e0b",
         "type": "github"
       },
       "original": {
@@ -85,11 +85,11 @@
     "base16-tmux": {
       "flake": false,
       "locked": {
-        "lastModified": 1696725902,
-        "narHash": "sha256-wDPg5elZPcQpu7Df0lI5O8Jv4A3T6jUQIVg63KDU+3Q=",
+        "lastModified": 1727571738,
+        "narHash": "sha256-AOITVZMhqELOzL5Jw54NIX7R8gFbTJqrHEDuPwgGYDQ=",
         "owner": "tinted-theming",
         "repo": "base16-tmux",
-        "rev": "c02050bebb60dbb20cb433cd4d8ce668ecc11ba7",
+        "rev": "44fbe9034653c83a8ae68941aaeeeeb7503cd1ae",
         "type": "github"
       },
       "original": {
@@ -384,16 +384,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1727802920,
-        "narHash": "sha256-HP89HZOT0ReIbI7IJZJQoJgxvB2Tn28V6XS3MNKnfLs=",
+        "lastModified": 1727907660,
+        "narHash": "sha256-QftbyPoieM5M50WKUMzQmWtBWib/ZJbHo7mhj5riQec=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "27e30d177e57d912d614c88c622dcfdb2e6e6515",
+        "rev": "5966581aa04be7eff830b9e1457d56dc70a0b798",
         "type": "github"
       },
       "original": {
         "id": "nixpkgs",
-        "ref": "nixos-unstable",
+        "ref": "nixos-24.05",
         "type": "indirect"
       }
     },
