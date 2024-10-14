@@ -45,10 +45,9 @@
 			# Autostart necessary processes (like notifications daemons, status bars, etc.)
 			# Or execute your favorite apps at launch like this:
 
-			# exec-once = $terminal
-			# exec-once = nm-applet &
+			exec-once = floorp & steam
 			exec-once = waybar & hyprpaper
-			exec-once = nmcli device wifi connect ***REMOVED*** password ***REMOVED***!
+			exec-once = nmcli device wifi connect ***REMOVED***
 			exec-once = /usr/lib/polkit-kde-authentication-agent-1
 
 			#############################
@@ -261,7 +260,7 @@
 			
 			bindel =, XF86AudioRaiseVolume, exec, pamixer --increase 2 --allow-boost
 			bindel =, XF86AudioLowerVolume, exec, pamixer --decrease 2 --allow-boost
-			bindl =, XF86AudioMute, exec, pamixer --mute
+			bindl =, XF86AudioMute, exec, pamixer --toggle-mute
 
 
 			##############################
@@ -272,7 +271,10 @@
 			# See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
 
 			# Example windowrule v1
-			# windowrule = float, ^(kitty)$
+
+			windowrule = workspace 1, title:^(Floorp)(.*)$
+			windowrule = workspace 10, title:^(Steam)$
+
 
 			# Example windowrule v2
 			# windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
