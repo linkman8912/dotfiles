@@ -169,42 +169,39 @@
   	# List packages installed in system profile. To search, run:
   	# $ nix search wget
   	environment.systemPackages = with pkgs; [
-		vim 
+		vim
+		wl-clipboard
 		fzf
 		zoxide
 		darktable
 		libreoffice-qt6-still
 		hyprlock
 		wget
-		via
+		mpv
 		handbrake
+		unityhub
 		kdePackages.kolourpaint
 		hyprpicker
 		hyprshot
-		plover.dev
   		vesktop
   		xautoclick
 		pamixer
-		pkgs.python312Packages.matplotlib
-		pkgs.python311Packages.matplotlib
 		vlc
 		hexchat
-		pkgs.python311Packages.pip
 		prismlauncher
-  		pkgs.spotify
+  		spotify
 		browsh
 		bastet
 		ninvaders
 		nsnake
 		bsdgames
 		moon-buggy
-		nudoku
 		meteor
 		kitty
 		gcc
 		rofi-wayland
   		gamemode
-  		unityhub
+		python311Packages.jedi-language-server
 		superTux
 		superTuxKart
   		winetricks
@@ -219,16 +216,12 @@
 		xwayland
 		blueman
 		hyprpaper
-  		terminator
   		wine
 		hyprland
-  		moonlight-qt
-  		sunshine
 		waybar
 		fastfetch
 		flatpak
 		virtualbox
-  		xrdp
   		lutris
 		dotnetCorePackages.sdk_8_0_3xx
   		protontricks
@@ -238,7 +231,6 @@
   		qbittorrent
   		p7zip
   		appimage-run
-  		firefox-devedition
   		git
 		wofi
   	];

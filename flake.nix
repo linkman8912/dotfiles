@@ -7,7 +7,7 @@
 		home-manager.url = "github:nix-community/home-manager/release-24.05";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 		hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-		stylix.url = "github:danth/stylix";
+		stylix.url = "github:danth/stylix/release-24.05";
   	};
 
   	outputs = { self, nixpkgs, home-manager, stylix, ... } @ inputs:
