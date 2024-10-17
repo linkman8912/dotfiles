@@ -257,6 +257,7 @@
 			bind = $mainMod, Space, exec, hyprctl switchxkblayout by-tech-usb-gaming-keboard next; hyprctl switchxkblayout at-translated-set-2-keyboard
 			bind = $mainMod, T, exec, hyprctl dispatch toggleopaque
 			bind = $mainMod, F, fullscreen
+			bind = $mainMod, O, exec, hyprshot -m region
 			
 			bindel =, XF86AudioRaiseVolume, exec, pamixer --increase 2 --allow-boost
 			bindel =, XF86AudioLowerVolume, exec, pamixer --decrease 2 --allow-boost
