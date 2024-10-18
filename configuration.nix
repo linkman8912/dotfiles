@@ -174,6 +174,7 @@
 		fzf
 		zoxide
 		darktable
+		cups
 		libreoffice-qt6-still
 		hyprlock
 		wget
