@@ -176,8 +176,10 @@
 		zoxide
 		darktable
 		cups
+		swaynotificationcenter
 		libreoffice-qt6-still
 		hyprlock
+		libnotify
 		wget
 		mpv
 		pkgs-unstable.hyprnotify
