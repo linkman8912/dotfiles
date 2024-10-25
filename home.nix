@@ -89,6 +89,7 @@
 			shellAliases = {
 				"ls" = "ls -A";
 				".." = "z ..";
+				"adder" = "python -q";
 			};
 			
 			initExtra = 

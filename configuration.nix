@@ -170,6 +170,7 @@
   	# $ nix search wget
   	environment.systemPackages = with pkgs; [
 		vim
+		openscad
 		wl-clipboard
 		fzf
 		zoxide
@@ -180,6 +181,7 @@
 		wget
 		mpv
 		pkgs-unstable.hyprnotify
+		libnotify
 		handbrake
 		unityhub
 		kdePackages.kolourpaint
@@ -187,6 +189,7 @@
 		hyprshot
   		vesktop
   		xautoclick
+		swaynotificationcenter
 		pamixer
 		vlc
 		hexchat
@@ -196,6 +199,7 @@
 		bastet
 		ninvaders
 		nsnake
+		openscad
 		bsdgames
 		moon-buggy
 		meteor
@@ -292,5 +296,7 @@
 	substituters = ["https://hyprland.cachix.org"];
 	trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
 	};
+
+	nix.optimise.automatic = true;
 
 }

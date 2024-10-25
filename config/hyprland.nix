@@ -46,7 +46,7 @@
 			# Or execute your favorite apps at launch like this:
 
 			exec-once = floorp & steam
-			exec-once = waybar & hyprpaper
+			exec-once = waybar & hyprpaper & swaync
 			exec-once = nmcli device wifi connect ***REMOVED***
 			exec-once = /usr/lib/polkit-kde-authentication-agent-1
 
