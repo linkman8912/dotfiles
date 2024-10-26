@@ -276,12 +276,16 @@
 
 			windowrule = workspace 1, title:^(Floorp)(.*)$
 			windowrule = workspace 10, title:^(Steam)$
+			windowrule = workspace 9, title:^(Spotify Premium)$
 
 
 			# Example windowrule v2
 			# windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
 
 			windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
+			
+			workspace = 1, monitor:DP-4, default:true, persistent:true
+			workspace = 2, monitor:HDMI-A-2, default:true, persistent:true
 		'';
 	};
 }

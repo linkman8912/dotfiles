@@ -172,12 +172,16 @@
 		vim
 		openscad
 		wl-clipboard
+		tor
+		tor-browser
 		fzf
+		brightnessctl
 		zoxide
 		darktable
 		cups
 		swaynotificationcenter
 		libreoffice-qt6-still
+		audacity
 		hyprlock
 		libnotify
 		wget
@@ -300,5 +304,10 @@
 	};
 
 	nix.optimise.automatic = true;
+
+	swapDevices = [ {
+		device = "/var/lib/swapfile";
+		size = 16*1024;
+	} ];
 
 }
