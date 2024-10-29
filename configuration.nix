@@ -173,14 +173,17 @@
 		openscad
 		wl-clipboard
 		tor
+		ngspice
 		tor-browser
 		fzf
 		brightnessctl
+		logisim
 		zoxide
 		darktable
 		cups
 		swaynotificationcenter
 		libreoffice-qt6-still
+		godot_4
 		audacity
 		hyprlock
 		libnotify
