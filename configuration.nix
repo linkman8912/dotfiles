@@ -177,9 +177,11 @@
 		tor-browser
 		fzf
 		brightnessctl
+		nwg-look
 		logisim
 		zoxide
 		darktable
+		espanso-wayland
 		cups
 		swaynotificationcenter
 		libreoffice-qt6-still

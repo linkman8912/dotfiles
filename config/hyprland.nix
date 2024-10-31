@@ -56,8 +56,10 @@
 
 			# See https://wiki.hyprland.org/Configuring/Environment-variables/
 
-			env = XCURSOR_SIZE,24
-			env = HYPRCURSOR_SIZE,24
+			env = XCURSOR_SIZE,30
+			env = HYPRCURSOR_SIZE,30
+			env = HYPRCURSOR_THEME,Banana-Tokyo-Night-Storm
+			env = XCURSOR_THEME,Banana-Tokyo-Night-Stor
 
 
 			#####################
@@ -168,6 +170,9 @@
 			# https://wiki.hyprland.org/Configuring/Variables/#gestures
 			gestures {
 			    workspace_swipe = true
+			    workspace_swipe_touch = true
+			    workspace_swipe_forever = true
+			    workspace_swipe_direction_lock = false
 			}
 
 			# Example per-device config

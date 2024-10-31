@@ -6,7 +6,8 @@
 		image = ./hyprpaper/purpleWallpaper.jpg;
 		polarity = "dark";
 		cursor = {
-			size = 22;
+			size = 30;
+			name = "Banana-Tokyo-Night-Storm";
 		};
 	};
 }
