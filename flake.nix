@@ -9,6 +9,7 @@
 		hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 		stylix.url = "github:danth/stylix/release-24.05";
 		nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+		zen-browser.url = "github:MarceColl/zen-browser-flake";
   	};
 
   	outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-unstable, ... } @ inputs:

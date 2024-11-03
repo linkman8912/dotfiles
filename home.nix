@@ -89,6 +89,7 @@
 			shellAliases = {
 				"ls" = "ls -A";
 				".." = "z ..";
+				"..." = "z ../..";
 				"calculator" = "python -q";
 			};
 			

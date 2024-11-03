@@ -45,7 +45,7 @@
 			# Autostart necessary processes (like notifications daemons, status bars, etc.)
 			# Or execute your favorite apps at launch like this:
 
-			exec-once = floorp & steam
+			exec-once = floorp & steam & spotify
 			exec-once = waybar & hyprpaper & swaync
 			exec-once = nmcli device wifi connect ***REMOVED***
 			exec-once = /usr/lib/polkit-kde-authentication-agent-1
@@ -152,7 +152,7 @@
 			input {
 			    	kb_layout = us,us
 			    	kb_variant = dvorak,
-			    	kb_options =
+			    	kb_options = grp:win_space_toggle, compose:pgup
 			    	kb_rules =
 
 			    	follow_mouse = 1
@@ -260,7 +260,7 @@
 			bindm = $mainMod, mouse:272, movewindow
 			bindm = $mainMod, mouse:273, resizewindow
 
-			bind = $mainMod, Space, exec, hyprctl switchxkblayout by-tech-usb-gaming-keboard next; hyprctl switchxkblayout at-translated-set-2-keyboard
+			# bind = $mainMod, Space, exec, hyprctl switchxkblayout by-tech-usb-gaming-keboard next; hyprctl switchxkblayout at-translated-set-2-keyboard
 			bind = $mainMod, T, exec, hyprctl dispatch toggleopaque
 			bind = $mainMod, F, fullscreen
 			bind = $mainMod, O, exec, hyprshot -m region
@@ -276,8 +276,6 @@
 
 			# See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 			# See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
-
-			# Example windowrule v1
 
 			windowrule = workspace 1, title:^(Floorp)(.*)$
 			windowrule = workspace 10, title:^(Steam)$

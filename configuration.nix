@@ -183,9 +183,11 @@
 		darktable
 		espanso-wayland
 		cups
+		inputs.zen-browser.packages."${system}".specific
 		swaynotificationcenter
+		xorg.xev
 		libreoffice-qt6-still
-		godot_4
+		pkgs-unstable.godot_4
 		audacity
 		hyprlock
 		libnotify
