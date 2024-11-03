@@ -186,6 +186,7 @@
 		inputs.zen-browser.packages."${system}".specific
 		swaynotificationcenter
 		xorg.xev
+		wev
 		libreoffice-qt6-still
 		pkgs-unstable.godot_4
 		audacity

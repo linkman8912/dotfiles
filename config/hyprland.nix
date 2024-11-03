@@ -152,7 +152,7 @@
 			input {
 			    	kb_layout = us,us
 			    	kb_variant = dvorak,
-			    	kb_options = grp:win_space_toggle, compose:pgup
+			    	kb_options = grp:win_space_toggle, compose:prsc
 			    	kb_rules =
 
 			    	follow_mouse = 1
