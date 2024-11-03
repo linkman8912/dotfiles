@@ -117,10 +117,14 @@
 		enable = true;
 		settings = {
 			preload = 
-				[ "~/.dotfiles/config/hyprpaper/purpleWallpaper.jpg" ];
+				[
+				"~/.dotfiles/config/hyprpaper/purpleWallpaper.jpg"
+				"~/.dotfiles/config/hyprpaper/bnwWallpaper.jpg"
+				];
 
 			wallpaper = 
-			[ ",~/.dotfiles/config/hyprpaper/purpleWallpaper.jpg" ];
+			[ ", ~/.dotfiles/config/hyprpaper/purpleWallpaper.jpg" ];
+			# [ ", ~/.dotfiles/config/hyprpaper/bnwWallpaper.jpg" ];
 		};
 	};
 
