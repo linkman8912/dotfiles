@@ -269,6 +269,9 @@
 			bindel =, XF86AudioLowerVolume, exec, pamixer --decrease 2 --allow-boost
 			bindl =, XF86AudioMute, exec, pamixer --toggle-mute
 
+			# unbinding alt + f4 because that fucking closes my window for some reason
+			bind = ALT, F4, exec, echo "alt f4" >> ~/.altF4s
+
 
 			##############################
 			### WINDOWS AND WORKSPACES ###
