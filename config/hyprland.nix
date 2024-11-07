@@ -58,8 +58,8 @@
 
 			env = XCURSOR_SIZE,30
 			env = HYPRCURSOR_SIZE,30
-			env = HYPRCURSOR_THEME,Banana-Tokyo-Night-Storm
-			env = XCURSOR_THEME,Banana-Tokyo-Night-Stor
+			env = HYPRCURSOR_THEME,Banana-Blue
+			env = XCURSOR_THEME,Banana-Blue
 
 
 			#####################
