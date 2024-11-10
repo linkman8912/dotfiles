@@ -179,10 +179,14 @@
 		brightnessctl
 		nwg-look
 		logisim
+		mpd
 		zoxide
 		darktable
 		espanso-wayland
 		cups
+		mopidy
+		mopidy-mpd
+		mopidy-mopify
 		inputs.zen-browser.packages."${system}".specific
 		swaynotificationcenter
 		xorg.xev
