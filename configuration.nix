@@ -178,6 +178,7 @@
 		fzf
 		brightnessctl
 		nwg-look
+		gamescope
 		logisim
 		mpd
 		zoxide
