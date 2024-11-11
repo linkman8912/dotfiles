@@ -75,7 +75,8 @@ button {
 }
 
 .modules-left {
-    color: rgba(165, 227, 240, 1)
+    /* color: rgba(165, 227, 240, 1) */
+    color: rgba(255, 0, 85, 1)
 }
 
 .modules-right {

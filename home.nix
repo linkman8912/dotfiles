@@ -52,9 +52,9 @@
     		# # symlink to the Nix store copy.
     		# ".screenrc".source = dotfiles/screenrc;
 
-		"~/.config/waybar/style.css".source = ./config/waybar/style.css;
-		"~/.config/waybar/config.jsonc".source = ./config/waybar/config.jsonc;
-		"~/.icons".source = ./config/hyprcursor;
+		".config/waybar/style.css".source = ./config/waybar/style.css;
+		".config/waybar/config.jsonc".source = ./config/waybar/config.jsonc;
+		# ".icons".source = ./config/hyprcursor;
 
 
     		# # You can also set the file content immediately.
