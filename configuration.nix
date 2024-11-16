@@ -178,9 +178,12 @@
 		fzf
 		brightnessctl
 		nwg-look
+		emacs
+		gamescope
 		logisim
 		mpd
 		zoxide
+		feh
 		darktable
 		espanso-wayland
 		cups

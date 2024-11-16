@@ -264,10 +264,13 @@
 			bind = $mainMod, T, exec, hyprctl dispatch toggleopaque
 			bind = $mainMod, F, fullscreen
 			bind = $mainMod, O, exec, hyprshot -m region
+			bind = $mainMod, L, exec, hyprlock
 			
 			bindel =, XF86AudioRaiseVolume, exec, pamixer --increase 2 --allow-boost
 			bindel =, XF86AudioLowerVolume, exec, pamixer --decrease 2 --allow-boost
 			bindl =, XF86AudioMute, exec, pamixer --toggle-mute
+			bindel = ,XF86MonBrightnessDown, exec, brightnessctl s 10%-
+			bindel = ,XF86MonBrightnessUp, exec, brightnessctl s +10%
 
 			# unbinding alt + f4 because that fucking closes my window for some reason
 			bind = ALT, F4, exec, echo "alt f4" >> ~/.altF4s
