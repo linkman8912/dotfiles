@@ -56,8 +56,9 @@
 		".config/waybar/config.jsonc".source = ./config/waybar/config.jsonc;
 		# ".icons".source = ./config/hypr/hyprcursor;
 		".config/hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
-
-
+		".config/hypr/mocha.conf".source = ./config/hypr/mocha.conf;
+		".config/hypr/hyprlock.conf".source = ./config/hypr/hyprlock.conf;
+		".config/background.png".source = ./config/hypr/background.png;
 
     		# # You can also set the file content immediately.
     		# ".gradle/gradle.properties".text = ''
