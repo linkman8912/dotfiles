@@ -54,10 +54,9 @@
 
 		".config/waybar/style.css".source = ./config/waybar/style.css;
 		".config/waybar/config.jsonc".source = ./config/waybar/config.jsonc;
-		# ".icons".source = ./config/hyprcursor;
-		"~/.config/waybar/style.css".source = ./config/waybar/style.css;
-		"~/.config/waybar/config.jsonc".source = ./config/waybar/config.jsonc;
-		# "~/.icons/*".source = ./config/hyprcursor/\*;
+		# ".icons".source = ./config/hypr/hyprcursor;
+		".config/hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
+
 
 
     		# # You can also set the file content immediately.
@@ -120,18 +119,18 @@
 		settings = {
 			preload = 
 				[
-				"~/.dotfiles/config/hyprpaper/purpleWallpaper.jpg"
-				"~/.dotfiles/config/hyprpaper/bnwWallpaper.jpg"
+				"~/.dotfiles/config/hypr/hyprpaper/purpleWallpaper.jpg"
+				"~/.dotfiles/config/hypr/hyprpaper/bnwWallpaper.jpg"
 				];
 
 			wallpaper = 
-			[ ", ~/.dotfiles/config/hyprpaper/purpleWallpaper.jpg" ];
-			# [ ", ~/.dotfiles/config/hyprpaper/bnwWallpaper.jpg" ];
+			[ ", ~/.dotfiles/config/hypr/hyprpaper/purpleWallpaper.jpg" ];
+			# [ ", ~/.dotfiles/config/hypr/hyprpaper/bnwWallpaper.jpg" ];
 		};
 	};
 
 	imports = [
-		./config/hyprland.nix
+		# ./config/hypr/hyprland.nix
 		./config/stylix.nix
 	];
 
