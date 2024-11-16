@@ -181,11 +181,14 @@
 		emacs
 		gamescope
 		logisim
+		catppuccin
 		mpd
 		zoxide
 		feh
+		vimPlugins.lazy-nvim
 		darktable
 		espanso-wayland
+		hypridle
 		cups
 		mopidy
 		mopidy-mpd
