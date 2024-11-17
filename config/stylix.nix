@@ -3,7 +3,7 @@
 {
 	stylix = {
 		enable = true;
-		image = ./hypr/hyprpaper/purpleWallpaper.jpg;
+		image = ./hypr/hyprpaper/pixel-car.png;
 		polarity = "dark";
 		cursor = {
 			size = 30;

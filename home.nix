@@ -54,6 +54,8 @@
 
 		".config/waybar/style.css".source = ./config/waybar/style.css;
 		".config/waybar/config.jsonc".source = ./config/waybar/config.jsonc;
+		".config/waybar/mocha.css".source = ./config/waybar/mocha.css;
+		".config/waybar/colors.css".source = ./config/waybar/colors.css;
 		# ".icons".source = ./config/hypr/hyprcursor;
 		".config/hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
 		".config/hypr/mocha.conf".source = ./config/hypr/mocha.conf;
@@ -127,7 +129,7 @@
 				];
 
 			wallpaper = 
-			[ ", ~/.dotfiles/config/hypr/hyprpaper/purpleWallpaper.jpg" ];
+			[ ", ~/.dotfiles/config/hypr/hyprpaper/pixel-car.png" ];
 		};
 	};
 

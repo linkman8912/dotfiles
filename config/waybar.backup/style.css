@@ -1,7 +1,7 @@
-@import url("./mocha.css");
+@import "mocha.css";
 
 * {
-  font-family: "FiraCode Nerd Font Mono";
+  font-family: FantasqueSansMono Nerd Font;
   font-size: 17px;
   min-height: 0;
 }
@@ -9,7 +9,15 @@
 #waybar {
   background: transparent;
   color: @text;
-  margin: 5px 5px;
+  margin: 5px;
+}
+
+.modules-right,
+.modules-left,
+.modules-center {
+	background-color: @surface0;
+	border-radius: 1rem;
+	margin: 5px;
 }
 
 #workspaces {
@@ -35,6 +43,16 @@
   border-radius: 1rem;
 }
 
+/* if workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* if workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
+}
+
 #custom-music,
 #tray,
 #backlight,
@@ -42,8 +60,6 @@
 #battery,
 #pulseaudio,
 #custom-lock,
-#window,
-#language,
 #custom-power {
   background-color: @surface0;
   padding: 0.5rem 1rem;
@@ -72,9 +88,8 @@
   color: @yellow;
 }
 
-#backlight,
-#battery {
-  border-radius: 0;
+#backlight, #battery {
+    border-radius: 0;
 }
 
 #pulseaudio {
@@ -83,38 +98,23 @@
   margin-left: 1rem;
 }
 
-#window {
-  color: @mauve;
-  border-radius: 1rem;
-}
-
 #custom-music {
   color: @mauve;
   border-radius: 1rem;
 }
 
-#language {
-  border-radius: 1rem 0px 0px 1rem;
-  color: @lavender;
-}
-
 #custom-lock {
-  margin-right: 1rem;
-  border-radius: 0px 1rem 1rem 0px;
-  color: @red;
+    border-radius: 1rem 0px 0px 1rem;
+    color: @lavender;
 }
 
 #custom-power {
-  margin-right: 1rem;
-  border-radius: 0px 1rem 1rem 0px;
-  color: @red;
+    margin-right: 1rem;
+    border-radius: 0px 1rem 1rem 0px;
+    color: @red;
 }
 
 #tray {
   margin-right: 1rem;
   border-radius: 1rem;
-}
-
-#workspaces button.urgent {
-  color: @red;
 }
