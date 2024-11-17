@@ -184,8 +184,10 @@
 		logisim
 		catppuccin
 		mpd
+		lutgen
 		zoxide
 		feh
+		swww
 		vimPlugins.lazy-nvim
 		darktable
 		ncspot
