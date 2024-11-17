@@ -6,11 +6,11 @@
   	home.username = "linkman";
   	home.homeDirectory = "/home/linkman";
 
-	 # home.pointerCursor = {
-	 #	gtk.enable = true;
-	 #	name = "Banana-Tokyo-Night-Storm";
-	 #	size = 30;
-	 #};
+	#home.pointerCursor = {
+	# 	gtk.enable = true;
+	# 	name = "Banana-Catppuccin-Mocha";
+	# 	size = 30;
+	#};
 
   	# This value determines the Home Manager release that your configuration is
   	# compatible with. This helps avoid breakage when a new Home Manager release
@@ -96,6 +96,7 @@
 				"ls" = "ls -A";
 				".." = "z ..";
 				"..." = "z ../..";
+				"...." = "z ../../..";
 				"calculator" = "python -q";
 			};
 			

@@ -26,9 +26,10 @@
 		"format-icons": {
 			"1": "󰈹",
 			"2": "",
-			"3": "",
-			"4": "󰎉",
-			"5": "󰛳",
+			"3": "",
+			"4": "",
+			"5": "󰎉",
+			"6": "󰛳",
 			"default": ""
 		}
 	},
@@ -46,7 +47,7 @@
 		"max-length": 50
 	},
 	"clock": {
-		"timezone": "Asia/Tehran",
+		"timezone": "America/New_York",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 		"format-alt": " {:%d/%m/%Y}",
 		"format": " {:%H:%M}"

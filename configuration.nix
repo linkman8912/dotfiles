@@ -177,6 +177,7 @@
 		tor-browser
 		fzf
 		brightnessctl
+		kmonad
 		nwg-look
 		emacs
 		gamescope
@@ -187,6 +188,7 @@
 		feh
 		vimPlugins.lazy-nvim
 		darktable
+		ncspot
 		espanso-wayland
 		hypridle
 		cups
