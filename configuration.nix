@@ -198,6 +198,7 @@
 		mopidy-mpd
 		mopidy-mopify
 		inputs.zen-browser.packages."${system}".specific
+		ffmpeg_7
 		swaynotificationcenter
 		xorg.xev
 		wev
