@@ -86,6 +86,16 @@
     		LC_TIME = "en_US.UTF-8";
   	};
 
+	virtualisation = {
+		virtualbox = {
+			host = {
+				enable = true;
+				enableExtensionPack = true;
+			};
+		};
+	};
+	users.extraGroups.vboxusers.members = [ "linkman" ];
+
 	services = {
 		xserver = {
 			enable = true;
@@ -305,7 +315,6 @@
 	
   	# Enable the OpenSSH daemon.
   	services.openssh.enable = true;
-  	services.flatpak.enable = true;
   	# Open ports in the firewall.
   	# networking.firewall.allowedTCPPorts = [ ... ];
   	# networking.firewall.allowedUDPPorts = [ ... ];

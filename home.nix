@@ -62,6 +62,7 @@
 		".config/hypr/hyprlock.conf".source = ./config/hypr/hyprlock.conf;
 		".config/background.png".source = ./config/hypr/background.png;
 		".face".source = ./config/hypr/hyprpaper/Biden.png;
+		".config/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
 
     		# # You can also set the file content immediately.
     		# ".gradle/gradle.properties".text = ''
