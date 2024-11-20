@@ -266,7 +266,6 @@
 		waybar
 		fastfetch
 		flatpak
-		virtualbox
   		lutris
 		dotnetCorePackages.sdk_8_0_3xx
   		protontricks
