@@ -186,6 +186,7 @@
 		ngspice
 		tor-browser
 		fzf
+		hugo
 		brightnessctl
 		kmonad
 		nwg-look
