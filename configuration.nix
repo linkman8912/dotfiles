@@ -94,7 +94,28 @@
 			};
 		};
 	};
-	users.extraGroups.vboxusers.members = [ "linkman" ];
+	users = {
+		extraGroups = {
+			vboxusers.members = [ "linkman" ];
+		};
+		users.linkman = {
+    			isNormalUser = true;
+    			description = "***REMOVED***";
+    			extraGroups = [ "networkmanager" "wheel" ];
+    			packages = with pkgs; [
+    				#  thunderbird
+    			];
+		};
+		groups = {
+			input = {
+				members = [ "linkman" ];
+			};
+			uinput = {
+				members = [ "linkman" ];
+			};
+		};
+
+	};
 
 	services = {
 		xserver = {
@@ -154,15 +175,15 @@
   	# services.xserver.libinput.enable = true;
 
   	# Define a user account. Don't forget to set a password with ‘passwd’.
-  	users.users.linkman = {
-    		isNormalUser = true;
-    		description = "***REMOVED***";
-    		extraGroups = [ "networkmanager" "wheel" ];
-    		packages = with pkgs; [
-      			firefox
-    			#  thunderbird
-    		];
-  	};
+  	# users.users.linkman = {
+    	#	isNormalUser = true;
+    	#	description = "***REMOVED***";
+    	#	extraGroups = [ "networkmanager" "wheel" ];
+    	#	packages = with pkgs; [
+      	#		firefox
+    	#		#  thunderbird
+    	#	];
+  	#};
 
   	# Allow unfree packages
   	nixpkgs = {
@@ -187,7 +208,7 @@
 		tor-browser
 		pkgs-unstable.playerctl
 		fzf
-		hugo
+		pkgs-unstable.hugo
 		brightnessctl
 		kmonad
 		mpvpaper
