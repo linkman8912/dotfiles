@@ -87,9 +87,9 @@
   	#
   	#  /etc/profiles/per-user/linkman/etc/profile.d/hm-session-vars.sh
   	#
-  	home.sessionVariables = {
+  	#home.sessionVariables = {
     		# EDITOR = "emacs";
-  	};
+  	#};
 	programs = {
 		bash = {
 			enable = true;
@@ -138,6 +138,7 @@
 	imports = [
 		# ./config/hypr/hyprland.nix
 		./config/stylix.nix
+		~/.envars.nix
 	];
 
 	# Let Home Manager install and manage itself.
