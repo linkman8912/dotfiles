@@ -119,5 +119,11 @@
 		"interval": 1,
 		"keyboard-name": "gaming-keyboard",
 		"on-click": "hyprctl switchxkblayout gaming-keyboard next"
+	},
+	"hyprland/window": {
+		"format": "{title}",
+		"max-length": 50,
+		"rewrite": {
+			"(.*) [—-–] Zen Browser": "󰈹 $1"
 	}
 }

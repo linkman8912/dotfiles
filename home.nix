@@ -119,6 +119,15 @@
 			userName  = "linkman";
 			userEmail = "linkman8912@proton.me";
 		};
+		
+		kitty = {
+			enable = true;
+			theme = "Catppuccin-Mocha";
+			extraConfig = ''
+				allow_remote_control yes
+				window_title_format {title}
+			'';
+		};
 	};
 	services.hyprpaper = {
 		enable = true;

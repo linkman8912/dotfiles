@@ -212,6 +212,7 @@
 		brightnessctl
 		kmonad
 		mpvpaper
+		openjdk17
 		nwg-look
 		emacs
 		gamescope
