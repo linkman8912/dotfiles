@@ -122,8 +122,9 @@
 	},
 	"hyprland/window": {
 		"format": "{title}",
-		"max-length": 50,
 		"rewrite": {
 			"(.*) [—-–] Zen Browser": "󰈹 $1"
+		},
+		"max-length": 50
 	}
 }
