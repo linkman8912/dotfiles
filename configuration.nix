@@ -185,10 +185,12 @@
 		tor
 		ngspice
 		tor-browser
+		pkgs-unstable.playerctl
 		fzf
 		hugo
 		brightnessctl
 		kmonad
+		mpvpaper
 		nwg-look
 		emacs
 		gamescope

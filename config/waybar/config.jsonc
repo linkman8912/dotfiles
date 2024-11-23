@@ -2,11 +2,12 @@
 	"layer": "top",
 	"position": "top",
 	"modules-left": [
-		"hyprland/workspaces"
+		"hyprland/workspaces",
+		"hyprland/window"
 	],
 	"modules-center": [
-		"custom/music",
-		"hyprland/window"
+		"custom/music"
+		// "hyprland/window"
 	],
 	"modules-right": [
 		"pulseaudio",
@@ -15,7 +16,7 @@
 		"clock",
 		"tray",
 		"hyprland/language",
-		"custom/lock",
+		"custom/lock"
 	],
 	"hyprland/workspaces": {
 		"on-click": "activate",
