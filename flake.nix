@@ -13,7 +13,7 @@
 		catppuccin.url = "github:catppuccin/nix";
   	};
 
-  	outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-unstable, ... } @ inputs:
+  	outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-unstable, catppuccin, ... } @ inputs:
 		let
 			system = "x86_64-linux";
 			lib = nixpkgs.lib;

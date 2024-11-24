@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, pkgs-unstable, ... }:
+{ config, pkgs, inputs, pkgs-unstable, home-manager, ... }:
 
 {
   	imports = 
@@ -308,7 +308,7 @@
 		neovim = {
 			enable = true;
 			defaultEditor = true;
-			plugins = with pkgs.vimPlugins; [
+			/*plugins = with pkgs.vimPlugins; [
 				lazy-nvim
 			];
 			extraLuaConfig = ''
@@ -328,7 +328,7 @@
         					missing = false,
      	 				},
     				})
-  			'';
+  			'';*/
   		};
 		
 		steam = {
