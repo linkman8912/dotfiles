@@ -132,6 +132,7 @@
 		};
 	};
 	programs.ssh.askPassword = "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
+	programs.fish.enable = true;
 
 
   	# Enable the X11 windowing system.

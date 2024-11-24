@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
 	# Home Manager needs a bit of information about you and the paths it should
@@ -103,6 +103,7 @@
 				fastfetch
 				eval "$(zoxide init bash)"
 			'';
+			
 		};
 
 		neovim = {
@@ -112,6 +113,7 @@
 			plugins = with pkgs.vimPlugins; [
     			lazy-nvim
   			];
+			catppuccin.enable = true;
 		};
 
 		git = {
@@ -120,14 +122,34 @@
 			userEmail = "linkman8912@proton.me";
 		};
 		
-		#kitty = {
-		#	enable = true;
-		#	theme = "Catppuccin-Mocha";
-		#	extraConfig = ''
-		#		allow_remote_control yes
-		#		window_title_format {title}
-		#	'';
-		#};
+		/*kitty = {
+			enable = true;
+			# theme = "Catppuccin-Mocha";
+			catppuccin.enable = true;
+			extraConfig = ''
+				allow_remote_control yes
+				window_title_format {title}
+			'';
+		};*/
+		mpv = {
+			enable = true;
+			catppuccin.enable = true;
+		};
+		fzf = {
+			enable = true;
+			catppuccin.enable = true;
+		};
+		obs-studio = {
+			enable = true;
+			catppuccin.enable = true;
+		};
+		spotify-player = {
+			enable = true;
+			catppuccin.enable = true;
+		};
+		fish = {
+			enable = true;
+		};
 	};
 	services.hyprpaper = {
 		enable = true;
@@ -142,6 +164,11 @@
 			wallpaper = 
 			[ ", ~/.dotfiles/config/hypr/hyprpaper/pixel-car.png" ];
 		};
+	};
+
+	catppuccin = {
+		enable = true;
+		flavor = "mocha";
 	};
 
 	imports = [
