@@ -11,9 +11,13 @@
 		nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 		zen-browser.url = "github:MarceColl/zen-browser-flake";
 		catppuccin.url = "github:catppuccin/nix";
+		spicetify-nix = {
+      			url = "github:Gerg-L/spicetify-nix";
+      			inputs.nixpkgs.follows = "nixpkgs";
+    		};
   	};
 
-  	outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-unstable, catppuccin, ... } @ inputs:
+  	outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-unstable, catppuccin, spicetify-nix, ... } @ inputs:
 		let
 			system = "x86_64-linux";
 			lib = nixpkgs.lib;
@@ -30,10 +34,10 @@
 				};
 				inherit system;
 				modules = [ 
-				./configuration.nix
-				/etc/nixos/hardware-configuration.nix
-				inputs.stylix.nixosModules.stylix
-				catppuccin.nixosModules.catppuccin
+					./configuration.nix
+					/etc/nixos/hardware-configuration.nix
+					inputs.stylix.nixosModules.stylix
+					catppuccin.nixosModules.catppuccin
 				];
 			};
 		};
@@ -41,10 +45,18 @@
 			linkman = home-manager.lib.homeManagerConfiguration {
 				inherit pkgs;
 				modules = [ 
-				./home.nix
-				stylix.homeManagerModules.stylix 
-				catppuccin.homeManagerModules.catppuccin
+					./home.nix
+					stylix.homeManagerModules.stylix 
+					catppuccin.homeManagerModules.catppuccin
 				];
+				extraSpecialArgs = {
+					inherit inputs;
+					pkgs-unstable = import nixpkgs-unstable {
+						inherit system;
+						config.allowUnfree = true;
+					};
+				};
+
 			};
 
 		};

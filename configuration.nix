@@ -2,13 +2,14 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, pkgs-unstable, home-manager, ... }:
+{ config, pkgs, inputs, pkgs-unstable, home-manager, spicetify-nix, ... }:
 
 {
   	imports = 
 	[ 
 	./config/stylix.nix
 	# ./config/udev/udev.nix
+	inputs.spicetify-nix.nixosModules.default
 	];
 
 	# Enable OpenGL
@@ -217,6 +218,7 @@
 		nwg-look
 		emacs
 		gamescope
+		hyfetch
 		logisim
 		catppuccin
 		mpd

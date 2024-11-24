@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
 	# Home Manager needs a bit of information about you and the paths it should
@@ -57,7 +57,7 @@
 		".config/background.png".source = ./config/hypr/background.png;
 		".face".source = ./config/hypr/hyprpaper/Biden.png;
 		".config/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
-		".config/kitty/kitty.conf".source = ./config/kitty.conf;
+		# ".config/kitty/kitty.conf".source = ./config/kitty.conf;
 
     		# # You can also set the file content immediately.
     		# ".gradle/gradle.properties".text = ''
@@ -100,8 +100,14 @@
 			
 			initExtra = 
 			''
-				fastfetch
-				eval "$(zoxide init bash)"
+				# fastfetch
+				# eval "$(zoxide init bash)"
+
+				if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+    				then
+      					shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+      					exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+    				fi
 			'';
 			
 		};
@@ -122,7 +128,7 @@
 			userEmail = "linkman8912@proton.me";
 		};
 		
-		/*kitty = {
+		/* kitty = {
 			enable = true;
 			# theme = "Catppuccin-Mocha";
 			catppuccin.enable = true;
@@ -130,7 +136,7 @@
 				allow_remote_control yes
 				window_title_format {title}
 			'';
-		};*/
+		}; */
 		mpv = {
 			enable = true;
 			catppuccin.enable = true;
@@ -147,8 +153,26 @@
 			enable = true;
 			catppuccin.enable = true;
 		};
+		spicetify = 
+			let
+				spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+			in
+			{
+				enable = true;
+				enabledExtensions = with spicePkgs.extensions; [
+					adblock
+					shuffle # shuffle+ (special characters are sanitized out of extension names)
+				];
+				theme = spicePkgs.themes.catppuccin;
+				colorScheme = "mocha";
+			};
 		fish = {
 			enable = true;
+			interactiveShellInit = ''
+      				set fish_greeting # Disable greeting
+				fastfetch
+				zoxide init fish | source
+    			'';
 		};
 	};
 	services.hyprpaper = {
@@ -166,6 +190,10 @@
 		};
 	};
 
+	nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+		"spotify"
+	];
+
 	catppuccin = {
 		enable = true;
 		flavor = "mocha";
@@ -175,6 +203,7 @@
 		# ./config/hypr/hyprland.nix
 		./config/stylix.nix
 		~/.envars.nix
+		inputs.spicetify-nix.homeManagerModules.default
 	];
 
 	# Let Home Manager install and manage itself.
