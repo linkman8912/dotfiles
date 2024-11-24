@@ -6,12 +6,6 @@
   	home.username = "linkman";
   	home.homeDirectory = "/home/linkman";
 
-	#home.pointerCursor = {
-	# 	gtk.enable = true;
-	# 	name = "Banana-Catppuccin-Mocha";
-	# 	size = 30;
-	#};
-
   	# This value determines the Home Manager release that your configuration is
   	# compatible with. This helps avoid breakage when a new Home Manager release
   	# introduces backwards incompatible changes.
@@ -63,6 +57,7 @@
 		".config/background.png".source = ./config/hypr/background.png;
 		".face".source = ./config/hypr/hyprpaper/Biden.png;
 		".config/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
+		".config/kitty/kitty.conf".source = ./config/kitty.conf;
 
     		# # You can also set the file content immediately.
     		# ".gradle/gradle.properties".text = ''
@@ -94,7 +89,9 @@
 		bash = {
 			enable = true;
 			shellAliases = {
-				"ls" = "ls -A";
+				"ls" = "ls -A --color=always";
+				"ll" = "ls -slak";
+				"l" = "ls -A --color=always";
 				".." = "z ..";
 				"..." = "z ../..";
 				"...." = "z ../../..";
@@ -112,6 +109,9 @@
 			enable = true;
 			vimAlias = true;
 			defaultEditor = true;
+			plugins = with pkgs.vimPlugins; [
+    			lazy-nvim
+  			];
 		};
 
 		git = {
@@ -120,14 +120,14 @@
 			userEmail = "linkman8912@proton.me";
 		};
 		
-		kitty = {
-			enable = true;
-			theme = "Catppuccin-Mocha";
-			extraConfig = ''
-				allow_remote_control yes
-				window_title_format {title}
-			'';
-		};
+		#kitty = {
+		#	enable = true;
+		#	theme = "Catppuccin-Mocha";
+		#	extraConfig = ''
+		#		allow_remote_control yes
+		#		window_title_format {title}
+		#	'';
+		#};
 	};
 	services.hyprpaper = {
 		enable = true;

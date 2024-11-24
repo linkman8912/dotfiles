@@ -10,6 +10,7 @@
 		stylix.url = "github:danth/stylix/release-24.05";
 		nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 		zen-browser.url = "github:MarceColl/zen-browser-flake";
+		catppuccin.url = "github:catppuccin/nix";
   	};
 
   	outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-unstable, ... } @ inputs:
@@ -32,13 +33,18 @@
 				./configuration.nix
 				/etc/nixos/hardware-configuration.nix
 				inputs.stylix.nixosModules.stylix
+				catppuccin.nixosModules.catppuccin
 				];
 			};
 		};
 		homeConfigurations = {
 			linkman = home-manager.lib.homeManagerConfiguration {
 				inherit pkgs;
-				modules = [ ./home.nix stylix.homeManagerModules.stylix ];
+				modules = [ 
+				./home.nix
+				stylix.homeManagerModules.stylix 
+				catppuccin.homeManagerModules.catppuccin
+				];
 			};
 
 		};
