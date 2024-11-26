@@ -1,4 +1,5 @@
 {
+	// this configuration (along with the rest of the files in waybar) is mainly taken from https://github.com/mhkarimi1383/waybar
 	"layer": "top",
 	"position": "top",
 	"modules-left": [
@@ -30,8 +31,8 @@
 			"3": "",
 			"4": "󰉋",
 			"5": "",
-			"6": "󰎉",
-			"7": "󰛳",
+			"9": "󰎉",
+			"10": "󰛳",
 			"default": ""
 		}
 	},
@@ -44,7 +45,7 @@
 		"escape": true,
 		"interval": 1,
 		"tooltip": false,
-		"exec": "playerctl metadata --format='{{ title }}'",
+		"exec": "playerctl metadata --format='{{ title }} - {{ artist }}'",
 		"on-click": "playerctl play-pause",
 		"max-length": 50
 	},
@@ -123,7 +124,7 @@
 	"hyprland/window": {
 		"format": "{title}",
 		"rewrite": {
-			"(.*) [——–-] Zen Browser": "󰈹 $1"
+			"(.*) — Zen Browser": "󰈹 $1" // [——–-] 
 		},
 		"max-length": 50
 	}

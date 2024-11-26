@@ -214,6 +214,9 @@
 		brightnessctl
 		kmonad
 		mpvpaper
+		bat
+		most
+		libwebp
 		openjdk17
 		nwg-look
 		emacs

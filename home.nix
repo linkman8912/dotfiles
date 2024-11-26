@@ -120,6 +120,9 @@
     			lazy-nvim
   			];
 			catppuccin.enable = true;
+			extraConfig = ''
+				set mouse=
+			'';
 		};
 
 		git = {
@@ -162,6 +165,18 @@
 				enabledExtensions = with spicePkgs.extensions; [
 					adblock
 					shuffle # shuffle+ (special characters are sanitized out of extension names)
+					bookmark
+					fullAppDisplay
+					lastfm
+					keyboardShortcut
+					loopyLoop
+					popupLyrics
+					fullAlbumDate
+				];
+				enabledCustomApps = with spicePkgs.apps; [
+					lyricsPlus
+					marketplace
+					localFiles
 				];
 				theme = spicePkgs.themes.catppuccin;
 				colorScheme = "mocha";
@@ -170,9 +185,18 @@
 			enable = true;
 			interactiveShellInit = ''
       				set fish_greeting # Disable greeting
-				fastfetch
+				hyfetch -b fastfetch
 				zoxide init fish | source
     			'';
+			shellAliases = {
+				"ls" = "ls -A --color=auto";
+				"ll" = "ls -slak";
+				"l" = "ls -A --color=auto";
+				".." = "z ..";
+				"..." = "z ../..";
+				"...." = "z ../../..";
+			};
+
 		};
 	};
 	services.hyprpaper = {
