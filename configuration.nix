@@ -225,9 +225,11 @@
 		logisim
 		catppuccin
 		mpd
+		libfaketime
 		lutgen
 		zoxide
 		feh
+		mpvpaper
 		swww
 		vimPlugins.lazy-nvim
 		darktable
