@@ -212,6 +212,7 @@
 		fzf
 		pkgs-unstable.hugo
 		brightnessctl
+		git-lfs
 		kmonad
 		mpvpaper
 		bat
