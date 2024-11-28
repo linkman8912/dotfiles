@@ -225,6 +225,7 @@
 		logisim
 		catppuccin
 		mpd
+		pkgs-unstable.fuzzel
 		libfaketime
 		lutgen
 		zoxide

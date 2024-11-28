@@ -140,22 +140,6 @@
 				window_title_format {title}
 			'';
 		}; */
-		mpv = {
-			enable = true;
-			catppuccin.enable = true;
-		};
-		fzf = {
-			enable = true;
-			catppuccin.enable = true;
-		};
-		obs-studio = {
-			enable = true;
-			catppuccin.enable = true;
-		};
-		spotify-player = {
-			enable = true;
-			catppuccin.enable = true;
-		};
 		spicetify = 
 			let
 				spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
@@ -197,6 +181,10 @@
 				"...." = "z ../../..";
 			};
 
+		};
+		fuzzel = {
+			enable = true;
+			catppuccin.enable = true;
 		};
 	};
 	services.hyprpaper = {
