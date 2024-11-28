@@ -217,6 +217,7 @@
 		mpvpaper
 		bat
 		most
+		bfg-repo-cleaner
 		libwebp
 		openjdk17
 		nwg-look
