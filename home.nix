@@ -59,7 +59,6 @@
 				".config/background.png".source = ./config/hypr/background.png;
 				".face".source = ./config/hypr/hyprpaper/Biden.png;
 				".config/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
-				# ".config/kitty/kitty.conf".source = ./config/kitty.conf;
 		
 		    		# # You can also set the file content immediately.
 		    		# ".gradle/gradle.properties".text = ''
@@ -119,15 +118,18 @@
 				userEmail = "linkman8912@proton.me";
 			};
 			
-			/* kitty = {
+			kitty = {
 				enable = true;
-				# theme = "Catppuccin-Mocha";
 				catppuccin.enable = true;
 				extraConfig = ''
 					allow_remote_control yes
-					window_title_format {title}
+					window_title_format {title} kitty
 				'';
-			}; */
+				font = {
+					name = lib.mkForce "SauceCodePro Nerd Font Mono";
+					size = 12;
+				};
+			};
 			spicetify = 
 				let
 					spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
