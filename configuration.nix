@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, pkgs-unstable, home-manager, spicetify-nix, ... }:
+{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, ... }:
 
 {
   	imports = 
@@ -13,7 +13,7 @@
 	];
 
 	# Enable OpenGL
-	hardware.opengl = {
+	hardware.graphics = {
 		enable = true;
 		# driSupport = true;
 		# driSupport32Bit = true;
@@ -101,7 +101,7 @@
 		};
 		users.linkman = {
     			isNormalUser = true;
-    			description = "***REMOVED***";
+    			description = "linkman";
     			extraGroups = [ "networkmanager" "wheel" ];
     			packages = with pkgs; [
     				#  thunderbird
@@ -125,14 +125,14 @@
 				gdm.enable = true;
 			};
 			desktopManager = {
-				gnome.enable = true;
+				# gnome.enable = true;
 			};
 		};
 		desktopManager = {
 			plasma6.enable = true;
 		};
 	};
-	programs.ssh.askPassword = "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
+	#programs.ssh.askPassword = "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
 	programs.fish.enable = true;
 
 
@@ -179,7 +179,7 @@
   	# Define a user account. Don't forget to set a password with ‘passwd’.
   	# users.users.linkman = {
     	#	isNormalUser = true;
-    	#	description = "***REMOVED***";
+    	#	description = "linkman";
     	#	extraGroups = [ "networkmanager" "wheel" ];
     	#	packages = with pkgs; [
       	#		firefox
@@ -192,6 +192,22 @@
 		config = {
 			allowUnfree = true;
 		};
+		overlays = [
+#			(final: prev: {
+#    				gnome.gnome-backgrounds = final.gnome-backgrounds;
+#  			})
+			
+			#(final: prev: {
+			#	gnome._gdkPixbufCacheBuilder_DO_NOT_USE = final._gdkPixbufCacheBuilder_DO_NOT_USE;
+  			#})
+			
+			(final: _prev: {
+    				stable = import pkgs-stable {
+      					inherit (final) system config;
+    				};
+  			})
+		];
+
 	};
 
 	fonts.packages = with pkgs; [
@@ -208,9 +224,9 @@
 		tor
 		ngspice
 		tor-browser
-		pkgs-unstable.playerctl
+		playerctl
 		fzf
-		pkgs-unstable.hugo
+		hugo
 		brightnessctl
 		git-lfs
 		kmonad
@@ -227,8 +243,9 @@
 		logisim
 		catppuccin
 		mpd
-		pkgs-unstable.fuzzel
+		fuzzel
 		libfaketime
+#		stable.gnome
 		lutgen
 		zoxide
 		feh
@@ -249,13 +266,13 @@
 		xorg.xev
 		wev
 		libreoffice-qt6-still
-		pkgs-unstable.godot_4
+		godot_4
 		audacity
 		hyprlock
 		libnotify
 		wget
 		mpv
-		pkgs-unstable.hyprnotify
+		hyprnotify #pkgs-unstable.hyprnotify
 		libnotify
 		handbrake
 		unityhub
@@ -314,6 +331,11 @@
   		git
 		wofi
   	];
+
+#	environment.gnome.excludePackages = with pkgs; [
+#		gnome-tour
+#		gnome-console
+#	];
 
 	programs = {
 		neovim = {

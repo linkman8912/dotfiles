@@ -206,6 +206,10 @@
 		"spotify"
 	];
 
+	config.scheme = {
+		use-ifd = "auto";
+	};
+
 	catppuccin = {
 		enable = true;
 		flavor = "mocha";

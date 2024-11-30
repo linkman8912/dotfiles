@@ -1,14 +1,13 @@
 {
-
   	description = "flake";
 
 	inputs = {
-		nixpkgs.url = "nixpkgs/nixos-24.05";
+		nixpkgs.url = "nixpkgs/nixos-unstable";
 		home-manager.url = "github:nix-community/home-manager/release-24.05";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 		hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 		stylix.url = "github:danth/stylix/release-24.05";
-		nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+		nixpkgs-stable.url = "nixpkgs/nixos-24.05";
 		zen-browser.url = "github:MarceColl/zen-browser-flake";
 		catppuccin.url = "github:catppuccin/nix";
 		spicetify-nix = {
@@ -17,17 +16,17 @@
     		};
   	};
 
-  	outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-unstable, catppuccin, spicetify-nix, ... } @ inputs:
+  	outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, ... } @ inputs:
 		let
 			system = "x86_64-linux";
-			lib = nixpkgs.lib;
+		
 			pkgs = nixpkgs.legacyPackages.${system};
 	in {
 		nixosConfigurations = {
-			nixos = lib.nixosSystem {
+			nixos = nixpkgs.lib.nixosSystem {
 				specialArgs = {
 					inherit inputs;
-					pkgs-unstable = import nixpkgs-unstable {
+					pkgs-stable = import nixpkgs-stable {
 						inherit system;
 						config.allowUnfree = true;
 					};
@@ -51,7 +50,7 @@
 				];
 				extraSpecialArgs = {
 					inherit inputs;
-					pkgs-unstable = import nixpkgs-unstable {
+					pkgs-stable = import nixpkgs-stable {
 						inherit system;
 						config.allowUnfree = true;
 					};
@@ -60,5 +59,6 @@
 			};
 
 		};
+
 	};
 }
