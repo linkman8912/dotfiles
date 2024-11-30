@@ -123,7 +123,9 @@
 				catppuccin.enable = true;
 				extraConfig = ''
 					allow_remote_control yes
-					window_title_format {title} kitty
+					window_title_format {title}
+					cursor_shape block
+					shell_integration no-cursor
 				'';
 				font = {
 					name = lib.mkForce "SauceCodePro Nerd Font Mono";
