@@ -221,6 +221,7 @@
 		vim
 		openscad
 		wl-clipboard
+        git-filter-repo
 		tor
 		ngspice
 		tor-browser
