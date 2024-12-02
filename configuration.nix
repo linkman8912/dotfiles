@@ -5,152 +5,141 @@
 { config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, ... }:
 
 {
-  	imports = 
-	[ 
-	./config/stylix.nix
+  imports = 
+  [ 
+    ./config/stylix.nix
 	# ./config/udev/udev.nix
 	inputs.spicetify-nix.nixosModules.default
-	];
+  ];
 
-	# Enable OpenGL
-	hardware.graphics = {
-		enable = true;
-		# driSupport = true;
-		# driSupport32Bit = true;
-	};
+  # Enable OpenGL
+  hardware.graphics = {
+	enable = true;
+	# driSupport = true;
+	# driSupport32Bit = true;
+  };
 	
-	hardware.nvidia = {
-		# Modesetting is required
-		modesetting.enable = true;
-		powerManagement = {
-			# Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-			# Enable this if you have graphical corruption issues or application crashes after waking
-			# up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
-			# of just the bare essentials
-			enable = false;
+  hardware.nvidia = {
+	# Modesetting is required
+	modesetting.enable = true;
+	powerManagement = {
+	  # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
+	  # enable this if you have graphical corruption issues or application crashes after waking
+	  # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
+	  # of just the bare essentials
+	  enable = false;
 	
-			# Fine-grained power management. Turns off GPU when not in use.
-			# Experimental and only works on modern Nvidia GPUs (Turing or newer).
-			finegrained = false;
-		};
-
-		# Use the Nvidia open source kernel module (not to be confused with the
-		# independent third-party "nouveau" open source driver).
-		# Support is limited to the Turing and later architectures. Full list of
-		# supported GPUs is at:
-		# https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
-		# Only available from driver 515.43.04+
-		# Currently alpha-quality/buggy, so false is currently the recommended setting.
-		open = false;
-
-		# Enable the Nvidia settings menu,
-		# accessible via 'nvidia-settings'.
-		nvidiaSettings = true;
-
-		# Optionally, you may need to select the appropriate driver version for your specific GPU.
-		package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-		prime = {
-			offload.enable = true;
-		};
+	  # Fine-grained power management. Turns off GPU when not in use.
+	  # Experimental and only works on modern Nvidia GPUs (Turing or newer).
+	  finegrained = false;
 	};
 
-  	# Bootloader.
-  	boot.loader.systemd-boot.enable = true;
-  	boot.loader.efi.canTouchEfiVariables = true;
+	# Use the Nvidia open source kernel module (not to be confused with the
+	# independent third-party "nouveau" open source driver).
+	# Support is limited to the Turing and later architectures. Full list of
+	# supported GPUs is at:
+	# https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
+	# Only available from driver 515.43.04+
+	# Currently alpha-quality/buggy, so false is currently the recommended setting.
+	open = false;
+
+	# Enable the Nvidia settings menu,
+	# accessible via 'nvidia-settings'.
+	nvidiaSettings = true;
+
+	# Optionally, you may need to select the appropriate driver version for your specific GPU.
+	package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+	prime = {
+	  offload.enable = true;
+	};
+  };
+
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 	
-  	networking.hostName = "nixos"; # Define your hostname.
-  	# networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.hostName = "nixos"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  	# Configure network proxy if necessary
-  	# networking.proxy.default = "http://user:password@proxy:port/";
-  	# networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  	# Enable networking
-  	networking.networkmanager.enable = true;
+  # Enable networking
+  networking.networkmanager.enable = true;
 
-  	# Set your time zone.
-  	time.timeZone = "America/New_York";
+  # Set your time zone.
+  time.timeZone = "America/New_York";
 
-  	# Select internationalisation properties.
-  	i18n.defaultLocale = "en_US.UTF-8";
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
 
-  	i18n.extraLocaleSettings = {
-  		LC_ADDRESS = "en_US.UTF-8";
-    		LC_IDENTIFICATION = "en_US.UTF-8";
-    		LC_MEASUREMENT = "en_US.UTF-8";
-    		LC_MONETARY = "en_US.UTF-8";
-    		LC_NAME = "en_US.UTF-8";
-    		LC_NUMERIC = "en_US.UTF-8";
-    		LC_PAPER = "en_US.UTF-8";
-    		LC_TELEPHONE = "en_US.UTF-8";
-    		LC_TIME = "en_US.UTF-8";
-  	};
+  i18n.extraLocaleSettings = {
+  	LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
 
-	virtualisation = {
-		virtualbox = {
-			host = {
-				enable = true;
-				enableExtensionPack = true;
-			};
-		};
+  virtualisation = {
+	virtualbox = {
+	  host = {
+	    enable = true;
+		enableExtensionPack = true;
+	  };
 	};
-	users = {
-		extraGroups = {
-			vboxusers.members = [ "linkman" ];
-		};
-		users.linkman = {
-    			isNormalUser = true;
-    			description = "linkman";
-    			extraGroups = [ "networkmanager" "wheel" ];
-    			packages = with pkgs; [
-    				#  thunderbird
-    			];
-		};
-		groups = {
-			input = {
-				members = [ "linkman" ];
-			};
-			uinput = {
-				members = [ "linkman" ];
-			};
-		};
+  };
+  users = {
+	extraGroups = {
+	  vboxusers.members = [ "linkman" ];
+	};
+	users.linkman = {
+      isNormalUser = true;
+      description = "linkman";
+      extraGroups = [ "networkmanager" "wheel" ];
+      packages = with pkgs; [
+        #  thunderbird
+      ];
+    };
+    groups = {
+	  input = {
+	    members = [ "linkman" ];
+	  };
+	  uinput = {
+	    members = [ "linkman" ];
+	  };
+    };
+
+  };
+
+  services = {
+	xserver = {
+	  enable = true;
+	  displayManager = {
+		gdm.enable = true;
+	  };
+	  desktopManager = {
+		# gnome.enable = true;
+	  };
+      xkb = {
+		layout = "us";
+  	  	variant = "dvorak";
+	  };
 
 	};
-
-	services = {
-		xserver = {
-			enable = true;
-			displayManager = {
-				gdm.enable = true;
-			};
-			desktopManager = {
-				# gnome.enable = true;
-			};
-		};
-		desktopManager = {
-			plasma6.enable = true;
-		};
+	desktopManager = {
+	  plasma6.enable = true;
 	};
-	#programs.ssh.askPassword = "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
-	programs.fish.enable = true;
+  };
+  #programs.ssh.askPassword = "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
+  programs.fish.enable = true;
 
-
-  	# Enable the X11 windowing system.
-  	# services.xserver.enable = true;
-
-  	# Enable the GNOME Desktop Environment.
-  	# services.xserver.displayManager.gdm.enable = true;
-  	# services.xserver.desktopManager.gnome.enable = true;
-
-  	# Configure keymap in X11
-  	services.xserver = {
-  	  	xkb = {
-			layout = "us";
-  	  		variant = "dvorak";
-		};
-  	};
-	
   	# Configure console keymap
   	console.keyMap = "dvorak";
 
@@ -172,20 +161,6 @@
     		# no need to redefine it in your config for now)
     		#media-session.enable = true;
   	};
-
-  	# Enable touchpad support (enabled default in most desktopManager).
-  	# services.xserver.libinput.enable = true;
-
-  	# Define a user account. Don't forget to set a password with ‘passwd’.
-  	# users.users.linkman = {
-    	#	isNormalUser = true;
-    	#	description = "linkman";
-    	#	extraGroups = [ "networkmanager" "wheel" ];
-    	#	packages = with pkgs; [
-      	#		firefox
-    	#		#  thunderbird
-    	#	];
-  	#};
 
   	# Allow unfree packages
   	nixpkgs = {
@@ -246,7 +221,6 @@
 		mpd
 		fuzzel
 		libfaketime
-#		stable.gnome
 		lutgen
 		zoxide
 		feh
