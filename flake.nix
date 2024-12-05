@@ -11,8 +11,8 @@
 		zen-browser.url = "github:MarceColl/zen-browser-flake";
 		catppuccin.url = "github:catppuccin/nix";
 		spicetify-nix = {
-      			url = "github:Gerg-L/spicetify-nix";
-      			inputs.nixpkgs.follows = "nixpkgs";
+    			url = "github:Gerg-L/spicetify-nix";
+    			inputs.nixpkgs.follows = "nixpkgs";
     		};
   	};
 
