@@ -209,10 +209,12 @@
 		mpvpaper
 		bat
 		most
+        hyprpanel
 		bfg-repo-cleaner
 		libwebp
 		openjdk17
 		nwg-look
+        blender
 		emacs
 		gamescope
 		hyfetch
@@ -229,6 +231,7 @@
 		vimPlugins.lazy-nvim
 		darktable
 		ncspot
+        rpi-imager
 		espanso-wayland
 		hypridle
 		cups

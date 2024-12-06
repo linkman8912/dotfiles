@@ -128,7 +128,6 @@
 		  catppuccin.enable = true;
 		  extraConfig =
           ''
-			allow_remote_control yes
 			window_title_format {title}
 			cursor_shape block
 			shell_integration no-cursor
@@ -178,6 +177,7 @@
 			  ".." = "z ..";
 			  "..." = "z ../..";
 			  "...." = "z ../../..";
+              "v" = "nvim";
 			};
 		  };
 		  fuzzel = {

@@ -126,6 +126,6 @@
 		"rewrite": {
 			"(.*) — Zen Browser": "󰈹 $1" // [——–-] 
 		},
-		"max-length": 50
+		"max-length": 70
 	}
 }
