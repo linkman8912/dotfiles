@@ -214,6 +214,7 @@
 		libwebp
 		openjdk17
 		nwg-look
+        flac2all
         blender
 		emacs
 		gamescope
@@ -239,6 +240,8 @@
 		mopidy-mpd
 		mopidy-mopify
 		inputs.zen-browser.packages."${system}".specific
+        firefox
+        brave
 		ffmpeg_7
 		swaynotificationcenter
 		xorg.xev
