@@ -117,7 +117,7 @@
 		"format-en": "en",
 		"format-fa": "fa",
 		"interval": 1,
-		"keyboard-name": "gaming-keyboard",
+		"keyboard-name": "at-translated-set-2-keyboard",
 		"on-click": "hyprctl switchxkblayout gaming-keyboard next"
 	},
 	"hyprland/window": {
