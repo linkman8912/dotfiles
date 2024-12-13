@@ -8,7 +8,6 @@
 	],
 	"modules-center": [
 		"custom/music"
-		// "hyprland/window"
 	],
 	"modules-right": [
 		"pulseaudio",
@@ -118,13 +117,14 @@
 		"format-en": "en",
 		"format-fa": "fa",
 		"interval": 1,
-		"keyboard-name": "gaming-keyboard",
+		"keyboard-name": "at-translated-set-2-keyboard",
 		"on-click": "hyprctl switchxkblayout gaming-keyboard next"
 	},
 	"hyprland/window": {
 		"format": "{title}",
 		"rewrite": {
-			"(.*) — Zen Browser": "󰈹 $1" // [——–-] 
+		  "(.*) — Zen Browser": "󰈹 $1", // [——–-] 
+          "Zen Browser": "󰈹"
 		},
 		"max-length": 70
 	}
