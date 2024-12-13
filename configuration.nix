@@ -13,10 +13,16 @@
   ];
 
   # Enable OpenGL
-  hardware.graphics = {
-	enable = true;
-	# driSupport = true;
-	# driSupport32Bit = true;
+  hardware = {
+    graphics = {
+	  enable = true;
+	  # driSupport = true;
+	  # driSupport32Bit = true;
+    };
+    bluetooth = {
+      enable = true; # enables support for bluetooth
+      powerOnBoot = true; # powers up the default bluetooth controller on boot
+    };
   };
 	
   hardware.nvidia = {
@@ -290,7 +296,6 @@
 		killall
   		playonlinux
 		xwayland
-		blueman
 		hyprpaper
   		wine
 		hyprland
@@ -375,7 +380,10 @@
   	# List services that you want to enable:
 	
   	# Enable the OpenSSH daemon.
-  	services.openssh.enable = true;
+  	services = {
+      openssh.enable = true;
+      blueman.enable = true;
+    };
   	# Open ports in the firewall.
   	# networking.firewall.allowedTCPPorts = [ ... ];
   	# networking.firewall.allowedUDPPorts = [ ... ];
