@@ -223,6 +223,7 @@
       ryujinx
 	  libwebp
       pavucontrol
+      amidst
 	  openjdk17
 	  nwg-look
       flac2all
