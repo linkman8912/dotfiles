@@ -52,7 +52,8 @@
 		"timezone": "America/New_York",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 		"format-alt": " {:%d/%m/%Y}",
-		"format": " {:%H:%M}"
+		"format": " {:%H:%M:%S}",
+        "interval": 1
 	},
 	"backlight": {
 		"device": "nvidia_0",

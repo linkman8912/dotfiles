@@ -209,6 +209,7 @@
 	  playerctl
 	  fzf
 	  hugo
+      exfatprogs
       zip
       unzip
 	  brightnessctl
@@ -217,6 +218,7 @@
 	  mpvpaper
 	  bat
       brillo
+      gparted
 	  most
       hyprpanel
 	  bfg-repo-cleaner
