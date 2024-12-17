@@ -208,6 +208,7 @@
 	  tor-browser
 	  playerctl
 	  fzf
+      anydesk
 	  hugo
       exfatprogs
       zip
@@ -224,6 +225,10 @@
 	  bfg-repo-cleaner
       ryujinx
 	  libwebp
+      unp
+      rar
+      unrar
+      motrix
       pavucontrol
       amidst
 	  openjdk17
