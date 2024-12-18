@@ -1,7 +1,4 @@
 # Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, ... }:
 
 {
@@ -25,6 +22,7 @@
     };
   };
 	
+/*
   hardware.nvidia = {
 	# Modesetting is required
 	modesetting.enable = true;
@@ -60,6 +58,7 @@
 	  sync.enable = true;
 	};
   };
+*/
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -220,6 +219,7 @@
       unzip
 	  brightnessctl
 	  git-lfs
+      pciutils
 	  kmonad
       vmware-workstation
 	  mpvpaper
