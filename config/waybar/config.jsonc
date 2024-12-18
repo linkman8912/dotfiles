@@ -12,6 +12,7 @@
 	"modules-right": [
 		"pulseaudio",
 		"backlight",
+        "idle_inhibitor",
 		"battery",
 		"clock",
 		"tray",
@@ -128,5 +129,12 @@
           "Zen Browser": "󰈹"
 		},
 		"max-length": 70
-	}
+	},
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "",
+        "deactivated": ""
+      }
+    }
 }

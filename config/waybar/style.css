@@ -43,6 +43,7 @@
 #pulseaudio,
 #custom-lock,
 #window,
+#idle_inhibitor,
 #language,
 #custom-power {
   background-color: @surface0;
@@ -117,4 +118,9 @@
 
 #workspaces button.urgent {
   color: @red;
+}
+
+#idle_inhibitor {
+  color: @teal;
+  font-size: 20px;
 }

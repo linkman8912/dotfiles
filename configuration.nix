@@ -57,7 +57,7 @@
 	package = config.boot.kernelPackages.nvidiaPackages.stable;
 
 	prime = {
-	  offload.enable = true;
+	  sync.enable = true;
 	};
   };
 
@@ -100,6 +100,11 @@
 		enableExtensionPack = true;
 	  };
 	};
+    vmware = {
+      host = {
+        enable = true;
+      };
+    };
   };
   users = {
 	extraGroups = {
@@ -216,6 +221,7 @@
 	  brightnessctl
 	  git-lfs
 	  kmonad
+      vmware-workstation
 	  mpvpaper
 	  bat
       brillo
@@ -231,6 +237,7 @@
       motrix
       pavucontrol
       amidst
+      zoom-us
 	  openjdk17
 	  nwg-look
       flac2all

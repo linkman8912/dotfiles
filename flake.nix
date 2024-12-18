@@ -14,12 +14,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    suyu = {
+      url = "git+https://github.com/Noodlez1232/suyu-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, hyprpanel, ... } @ inputs:
   let
 	system = "x86_64-linux";
 	pkgs = nixpkgs.legacyPackages.${system};
+    nur = nur.legacyPackages.${system};
   in
   {
     nixosConfigurations = {
