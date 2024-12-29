@@ -104,6 +104,8 @@
         enable = true;
       };
     };
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
   };
   users = {
 	extraGroups = {
@@ -124,6 +126,9 @@
 	  uinput = {
 	    members = [ "linkman" ];
 	  };
+      libvirtd = {
+        members = [ "linkman" ];
+      };
     };
 
   };
@@ -146,6 +151,16 @@
 	desktopManager = {
 	  plasma6.enable = true;
 	};
+    udev = {
+      packages = with pkgs; [
+        via
+        vial
+      ];
+      extraRules = ''
+        KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+        KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+      '';
+    };
   };
   #programs.ssh.askPassword = "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
   programs.fish.enable = true;
@@ -218,10 +233,13 @@
       zip
       unzip
 	  brightnessctl
+      vial
 	  git-lfs
       pciutils
+      litemdview
 	  kmonad
       vmware-workstation
+      ventoy-full
 	  mpvpaper
 	  bat
       brillo
@@ -231,6 +249,7 @@
 	  bfg-repo-cleaner
       ryujinx
 	  libwebp
+      via
       unp
       rar
       unrar
@@ -383,6 +402,9 @@
 			xwayland.enable = true;
 			package = inputs.hyprland.packages.${pkgs.system}.hyprland;
 		};
+        virt-manager = {
+          enable = true;
+        };
 	};
 
 	catppuccin = {
@@ -390,9 +412,9 @@
 		flavor = "mocha";
 	};
 
-	# environment.sessionVariables = {
-	#	NIXOS_OZONE_WL = "1";
-	# };
+	environment.sessionVariables = {
+		NIXOS_OZONE_WL = "1";
+	};
 
   	# Some programs need SUID wrappers, can be configured further or are
   	# started in user sessions.
