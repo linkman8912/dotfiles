@@ -223,6 +223,7 @@
 	  kmonad
       vmware-workstation
 	  mpvpaper
+      jdk17
 	  bat
       brillo
       gparted
@@ -265,7 +266,7 @@
 	  mopidy
 	  mopidy-mpd
 	  mopidy-mopify
-	  inputs.zen-browser.packages."${system}".specific
+	  inputs.zen-browser.packages."${pkgs.system}".default
       firefox
       brave
 	  ffmpeg_7

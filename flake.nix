@@ -7,7 +7,8 @@
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     stylix.url = "github:danth/stylix/release-24.05";
     nixpkgs-stable.url = "nixpkgs/nixos-24.05";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.url = "github:youwen5/zen-browser-flake";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
