@@ -1,24 +1,24 @@
 (defcfg
-	input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
-	;;input (device-file "$KBD_DEV")
-	output (uinput-sink "kmonad")
-	fallthrough true
+  input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  ;;input (device-file "$KBD_DEV")
+  output (uinput-sink "kmonad")
+  fallthrough true
 )
 
 (defsrc
-    a    s    d    f    g    h    j    k    l    ;
+  a    s    d    f    g    h    j    k    l    ;
 )
 
 (defalias
-    	met_a (tap-hold-next-release 350 a lsft)
-    	alt_s (tap-hold-next-release 350 s lalt)
-    	ctl_d (tap-hold-next-release 350 d lctl)
-    	sft_f (tap-hold-next-release 350 f lmet)
+  met_a (tap-hold-next-release 400 a lsft)
+  alt_s (tap-hold-next-release 400 s lalt)
+  ctl_d (tap-hold-next-release 400 d lctl)
+  sft_f (tap-hold-next-release 300 f lmet)
 
-	sft_j (tap-hold-next-release 350 j rmet)
-	ctl_k (tap-hold-next-release 350 k rctl)
-	alt_l (tap-hold-next-release 350 l lalt)
-	met_; (tap-hold-next-release 350 ; rsft)
+  sft_j (tap-hold-next-release 300 j rmet)
+  ctl_k (tap-hold-next-release 400 k rctl)
+  alt_l (tap-hold-next-release 400 l lalt)
+  met_; (tap-hold-next-release 400 ; rsft)
 )
 
 (deflayer homerowmods
