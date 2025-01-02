@@ -117,18 +117,18 @@
 	"hyprland/language": {
 		"format": " {}",
 		"format-en": "en",
-		"format-fa": "fa",
+		"format-dvorak": "dv",
 		"interval": 1,
 		"keyboard-name": "at-translated-set-2-keyboard",
-		"on-click": "hyprctl switchxkblayout gaming-keyboard next"
+		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
 	},
 	"hyprland/window": {
 		"format": "{title}",
 		"rewrite": {
-		  "(.*) — Zen Browser": "󰈹 $1", // [——–-] 
+		  "(.*) — Zen Browser": "󰈹 $1",
           "Zen Browser": "󰈹"
 		},
-		"max-length": 70
+		"max-length": 65
 	},
     "idle_inhibitor": {
       "format": "{icon}",

@@ -234,11 +234,13 @@
       unzip
 	  brightnessctl
       vial
+      cider
 	  git-lfs
       pciutils
       litemdview
 	  kmonad
       vmware-workstation
+      itch
       ventoy-full
 	  mpvpaper
       jdk17
