@@ -239,6 +239,7 @@
       pciutils
       litemdview
 	  kmonad
+      dolphin-emu
       vmware-workstation
       itch
       ventoy-full
