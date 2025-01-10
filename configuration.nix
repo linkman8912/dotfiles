@@ -226,12 +226,15 @@
 	  ngspice
 	  tor-browser
 	  playerctl
+      protonvpn-gui
 	  fzf
       anydesk
 	  hugo
       exfatprogs
+      calibre
       zip
       unzip
+      networkmanager
 	  brightnessctl
       vial
       cider
@@ -247,6 +250,8 @@
       jdk17
 	  bat
       brillo
+      wireguard-ui
+      wireguard-tools
       gparted
 	  most
       hyprpanel
