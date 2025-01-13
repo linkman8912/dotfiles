@@ -146,7 +146,7 @@
 		layout = "us";
   	  	variant = "dvorak";
 	  };
-
+      videoDrivers = [ "nvidia" ];
 	};
 	desktopManager = {
 	  plasma6.enable = true;
@@ -239,12 +239,14 @@
       vial
       cider
 	  git-lfs
+      bottom
       pciutils
       litemdview
 	  kmonad
       dolphin-emu
       vmware-workstation
       itch
+      btop
       ventoy-full
 	  mpvpaper
       jdk17

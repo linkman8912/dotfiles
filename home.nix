@@ -59,6 +59,7 @@
 		".config/background.png".source = ./config/hypr/background.png;
 		".face".source = ./config/hypr/hyprpaper/Biden.png;
 		".config/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
+        ".config/btop/themes/catppuccin_mocha.theme".source = ./config/btop_catppuccin_mocha.theme;
 		
 		# # You can also set the file content immediately.
 		# ".gradle/gradle.properties".text = ''
