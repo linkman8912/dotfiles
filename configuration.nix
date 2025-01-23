@@ -15,6 +15,9 @@
 	  enable = true;
 	  # driSupport = true;
 	  # driSupport32Bit = true;
+      extraPackages = with pkgs; [
+        intel-media-driver # For Broadwell (2014) or newer processors. LIBVA_DRIVER_NAME=iHD
+      ];
     };
     bluetooth = {
       enable = true; # enables support for bluetooth
@@ -146,7 +149,7 @@
 		layout = "us";
   	  	variant = "dvorak";
 	  };
-      videoDrivers = [ "nvidia" ];
+      # videoDrivers = [ "nvidia" ];
 	};
 	desktopManager = {
 	  plasma6.enable = true;
@@ -339,6 +342,7 @@
 	  python311Packages.jedi-language-server
 	  superTux
 	  superTuxKart
+      moonlight-qt
   	  winetricks
   	  input-remapper
   	  gimp-with-plugins
@@ -441,6 +445,12 @@
   	services = {
       openssh.enable = true;
       blueman.enable = true;
+      sunshine = {
+        enable = true;
+        autoStart = true;
+        capSysAdmin = true;
+        openFirewall = true;
+      };
     };
   	# Open ports in the firewall.
   	# networking.firewall.allowedTCPPorts = [ ... ];
