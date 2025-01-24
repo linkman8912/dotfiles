@@ -11,13 +11,13 @@
 
 (defalias
   met_a (tap-hold-next-release 400 a lsft)
-  alt_s (tap-hold-next-release 400 s lalt)
-  ctl_d (tap-hold-next-release 400 d lctl)
+  alt_s (tap-hold-next-release 500 s lalt)
+  ctl_d (tap-hold-next-release 500 d lctl)
   sft_f (tap-hold-next-release 300 f lmet)
 
   sft_j (tap-hold-next-release 300 j rmet)
-  ctl_k (tap-hold-next-release 400 k rctl)
-  alt_l (tap-hold-next-release 400 l lalt)
+  ctl_k (tap-hold-next-release 500 k rctl)
+  alt_l (tap-hold-next-release 500 l lalt)
   met_; (tap-hold-next-release 400 ; rsft)
 )
 
