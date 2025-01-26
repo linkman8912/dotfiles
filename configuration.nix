@@ -237,12 +237,14 @@
       calibre
       zip
       unzip
+      arp-scan
       networkmanager
 	  brightnessctl
       vial
       cider
 	  git-lfs
       bottom
+      hyprpolkitagent
       pciutils
       litemdview
 	  kmonad
