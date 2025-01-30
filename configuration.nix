@@ -363,6 +363,7 @@
 	  fastfetch
 	  flatpak
   	  lutris
+      protonup-qt
 	  dotnetCorePackages.sdk_8_0_3xx
   	  protontricks
 	  bibata-cursors
