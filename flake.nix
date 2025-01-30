@@ -14,11 +14,12 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    inputs.hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     suyu = {
       url = "git+https://github.com/Noodlez1232/suyu-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ags.url = "github:Aylur/ags";
   };
 
   outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, hyprpanel, ... } @ inputs:
@@ -65,15 +66,16 @@
 	    ];
 	  };
 	};
+
 	homeConfigurations = {
 	  linkman = home-manager.lib.homeManagerConfiguration {
-		inherit pkgs;
 		modules = [ 
 		  ./home.nix
 		  stylix.homeManagerModules.stylix 
 		  catppuccin.homeManagerModules.catppuccin
 		];
 		extraSpecialArgs = {
+          inherit pkgs;
 		  inherit inputs;
 		  pkgs-stable = import nixpkgs-stable {
 			inherit system;
