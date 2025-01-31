@@ -257,6 +257,7 @@
 	  hugo
       exfatprogs
       calibre
+      ollama
       zip
       unzip
       arp-scan
