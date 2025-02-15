@@ -60,6 +60,8 @@
 		".face".source = ./config/hypr/hyprpaper/Biden.png;
 		".config/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
         ".config/btop/themes/catppuccin_mocha.theme".source = ./config/btop_catppuccin_mocha.theme;
+        # kanata config
+        ".config/kanata/kanata.kbd".source = ./config/kanata/config.kbd;
 		
 		# # You can also set the file content immediately.
 		# ".gradle/gradle.properties".text = ''
@@ -85,6 +87,7 @@
 		  "..." = "z ../..";
 		  "...." = "z ../../..";
 		  "calculator" = "python -q";
+          "search" = "grep -nr";
 		};
 				
 		initExtra = 
@@ -181,6 +184,7 @@
 			  "...." = "z ../../..";
               "v" = "nvim";
               "unpack" = "unp -U";
+              "km" = "~/.dotfiles/config/kToggle.sh";
 			};
 		  };
 		  fuzzel = {

@@ -272,6 +272,7 @@
       pciutils
       litemdview
 	  kmonad
+      kanata
       dolphin-emu
       vmware-workstation
       itch
@@ -282,6 +283,7 @@
 	  bat
       brillo
       wireguard-ui
+      tldr
       wireguard-tools
       gparted
 	  most
