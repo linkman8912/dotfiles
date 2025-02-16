@@ -248,7 +248,6 @@
       wl-clipboard
       git-filter-repo
 	  tor
-	  ngspice
 	  tor-browser
 	  playerctl
       protonvpn-gui
@@ -257,6 +256,7 @@
 	  hugo
       exfatprogs
       calibre
+      kicad
       ollama
       zip
       unzip

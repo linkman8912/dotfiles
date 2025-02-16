@@ -19,15 +19,13 @@
   alt_l      (tap-hold 500 300 l lalt)
   sft_;      (tap-hold 500 200 ; rsft)
   
-  ;; Define an alias for the layer–tap key on "'".
-  ;; ltap_' (lt numbers ')
   num_'        (tap-hold 500 500 ' (layer-toggle numbers))
 )
 
 (deflayer main
   grv  1        2       3       4       5    6    7         8       9    0    -    =    bspc
   tab  q        w       e       r       t    y    u         i       o    p    [    ]    \
-  caps @sft_a    @alt_s   @ctl_d   @met_f    g    h    @met_j    @ctl_k   @alt_l     @sft_;    @num_'    ret
+  esc @sft_a    @alt_s   @ctl_d   @met_f    g    h    @met_j    @ctl_k   @alt_l     @sft_;    @num_'    ret
   lsft z        x       c       v       b    n    m         ,       .    /    rsft
   lctl lmet lalt           spc            ralt rctl
 )
