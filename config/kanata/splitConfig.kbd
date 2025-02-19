@@ -1,0 +1,54 @@
+;; home keys are T and I, home row is W, E, R, T, Y, U, I, O, P, [
+(defcfg)
+
+(defsrc
+  2    3    4    5    6    7    8    9    0    - 
+  w    e    r    t    y    u    i    o    p    [   ;; home row and more
+  s    d    f    g    h    j    k    l    ;    '
+       c    v    b    n    m    ,   ;; Thumb keys
+)
+
+(defvar
+  tap-timeout 250
+  hold-timeout 500
+)
+
+(defalias
+  a      (tap-hold $hold-timeout $tap-timeout a lsft)
+  s      (tap-hold $hold-timeout $tap-timeout s lalt)
+  d      (tap-hold $hold-timeout $tap-timeout d lctl)
+  f      (tap-hold $hold-timeout $tap-timeout f lmet)
+
+  j      (tap-hold $hold-timeout $tap-timeout j rmet)
+  k      (tap-hold $hold-timeout $tap-timeout k rctl)
+  l      (tap-hold $hold-timeout $tap-timeout l lalt)
+  ;      (tap-hold $hold-timeout $tap-timeout ; rsft)
+  
+  esc    (tap-hold 0 $tap-timeout esc (layer-toggle nav))
+  ret    (tap-hold 0 $tap-timeout ret (layer-toggle num))
+
+  ;; num layer homerow keys
+  =      (tap-hold $hold-timeout $tap-timeout = lsft)
+
+)
+
+(deflayer main ;; standard layer, default for typing
+  q    w    e    r    t    y    u    i    o    p 
+  @a   @s   @d   @f   g    h    @j   @k   @l   @; ;; home row and more
+  z    x    c    v    b    n    m    ,    .    /     
+       @esc lsft tab  bspc spc  @ret    ;; Thumb keys
+)
+
+(deflayer num ;; number and symbol layer
+  1    2    3    4    5    6    7    8    9    0 
+  S--  S-=  -    =    '    [    S-9  S-0  '    ] ;; right bracket is actually = and = is actually right bracket, dvorak lol
+  S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8    .    \     
+       @esc lsft tab    bspc spc  @ret    ;; Thumb keys
+)
+
+(deflayer nav ;; navigation layer, maybe also with some built in keybinds (macros?)
+  1    2    3    4    5    6    7    8    9    0 
+  @a   @s   @d   @f   g    h    @j   @k   [    ] ;; home row and more
+  z    x    c    v    b    n    m    ,    .    /     
+       @esc lsft tab    bspc spc  @ret    ;; Thumb keys
+)
