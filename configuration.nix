@@ -266,6 +266,7 @@
       everest-mons
       vial
       cider
+      pkgs-stable.kicad
 	  git-lfs
       bottom
       hyprpolkitagent
