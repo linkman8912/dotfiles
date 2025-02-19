@@ -1,0 +1,146 @@
+[
+  [
+    {
+      "t": "#000000\n#BD9A7A",
+      "d": true
+    },
+    "\n1",
+    {
+      "x": -1,
+      "t": "#006699\n#BD9A7A\n#2e8b57"
+    },
+    "1\n1\ncaps\n\n\n\n\n\n\n'",
+    {
+      "t": "#006699\n#BD9A7A"
+    },
+    "2\n2\n\n\n\n\n\n\n\n,",
+    "3\n3\n\n\n\n\n\n\n\n.",
+    "4\n4\n\n\n\n\n\n\n\nP",
+    "5\n5\n\n\n\n\n\n\n\nY",
+    {
+      "x": 0.25,
+      "d": true
+    },
+    "\n6",
+    {
+      "x": 0.25
+    },
+    "6\n7\n\n\n\n\n\n\n\nF",
+    "7\n8\n\n\n\n\n\n\n\nG",
+    "8\n9\n\n\n\n\n\n\n\nC",
+    "9\n0\n\n\n\n\n\n\n\nR",
+    {
+      "t": "#006699\n#BD9A7A\n#2e8b57",
+      "sm": "cherry"
+    },
+    "0\n-\n→\n\n\n\n\n\n\nL"
+  ],
+  [
+    {
+      "t": "#000000\n#BD9A7A",
+      "sm": "",
+      "d": true
+    },
+    "\nQ",
+    {
+      "x": -1,
+      "t": "#006699\n#BD9A7A\n#2e8b57"
+    },
+    "{\nQ\ncut\n\nShift\n\n\n\n\nA",
+    "}\nW\ncopy\n\nAlt\n\n\n\n\nO",
+    "[\nE\npaste\n\nCtrl\n\n\n\n\nE",
+    {
+      "n": true
+    },
+    "]\nR\nundo\n\nWin\n\n\n\n\nU",
+    "*\nT\nredo\n\n\n\n\n\n\nI",
+    {
+      "x": 0.25,
+      "t": "#006699\n#BD9A7A",
+      "d": true
+    },
+    "\nY",
+    {
+      "x": 0.25,
+      "t": "#006699\n#BD9A7A\n#2e8b57"
+    },
+    "/\nU\nhome\n\n\n\n\n\n\nD",
+    {
+      "n": true
+    },
+    "(\nI\n←\n\nWin\n\n\n\n\nH",
+    ")\nO\npgup\n\nCtrl\n\n\n\n\nT",
+    "-\nP\npgdn\n\nAlt\n\n\n\n\nN",
+    "=\n[\nend\n\nShift\n\n\n\n\nS"
+  ],
+  [
+    {
+      "t": "#006699\n#BD9A7A",
+      "d": true
+    },
+    "\nA",
+    {
+      "x": -1
+    },
+    "!\nA\n\n\n\n\n\n\n\n;",
+    "@\nS\n\n\n\n\n\n\n\nQ",
+    {
+      "t": "#006699\n#BD9A7A\n#2e8b57"
+    },
+    "#\nD\n↓\n\n\n\n\n\n\nJ",
+    "$\nF\n↑\n\n\n\n\n\n\nK",
+    {
+      "t": "#006699\n#BD9A7A"
+    },
+    "%\nG\n\n\n\n\n\n\n\nX",
+    {
+      "x": 0.25,
+      "d": true
+    },
+    "\nH",
+    {
+      "x": 0.25,
+      "t": "#006699\n#BD9A7A\n#2e8b57"
+    },
+    "^\nJ\nprsc\n\n\n\n\n\n\nB",
+    "&\nK\nins\n\n\n\n\n\n\nM",
+    "*\nL\ndel\n\n\n\n\n\n\nW",
+    {
+      "t": "#006699\n#BD9A7A"
+    },
+    "|\n:\n\n\n\n\n\n\n\nV",
+    "\\\n'\n\n\n\n\n\n\n\nZ"
+  ],
+  [
+    {
+      "d": true
+    },
+    "\nZ",
+    {
+      "d": true
+    },
+    "\nX",
+    {
+      "t": "#006699\n#BD9A7A\n\n\n#2e8b57"
+    },
+    "\nC\n\n\nNAV\n\n\n\n\nESC",
+    {
+      "t": "#006699\n#BD9A7A",
+      "n": true
+    },
+    "\nV\n\n\n\n\n\n\n\nShift",
+    "\nB\n\n\n\n\n\n\n\nTab",
+    {
+      "x": 0.5
+    },
+    "\nN\n\n\n\n\n\n\n\nBksp",
+    {
+      "n": true
+    },
+    "\nM\n\n\n\n\n\n\n\nSpace",
+    {
+      "t": "#006699\n#BD9A7A\n\n\n#006699"
+    },
+    "\n,\n\n\nNUM\n\n\n\n\nReturn"
+  ]
+]
