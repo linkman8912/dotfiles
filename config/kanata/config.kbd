@@ -1,4 +1,10 @@
-(defcfg)
+(defcfg
+  linux-dev-names-exclude (
+    Compx 2.4G Receiver
+    Compx 2.4G Receiver Mouse
+    Compx 2.4G Receiver Consumer Control
+  )
+)
 
 (defsrc
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
@@ -19,8 +25,6 @@
   alt_l      (tap-hold 500 300 l lalt)
   sft_;      (tap-hold 500 200 ; rsft)
   
-  ;; Define an alias for the layer–tap key on "'".
-  ;; ltap_' (lt numbers ')
   num_'        (tap-hold 500 500 ' (layer-toggle numbers))
 )
 
