@@ -385,7 +385,6 @@
 	  blueman
 	  hyprpaper
   	  wine
-	  hyprland
 	  waybar
 	  fastfetch
 	  flatpak
@@ -446,6 +445,7 @@
 			enable = true;
 			xwayland.enable = true;
 			package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+            withUWSM  = true;
 		};
         virt-manager = {
           enable = true;
