@@ -18,14 +18,14 @@
 
 (defalias
   a      (tap-hold $hold-timeout $tap-timeout a lsft)
-  o      (tap-hold $hold-timeout $tap-timeout o lalt)
-  e      (tap-hold $hold-timeout $tap-timeout e lctl)
-  u      (tap-hold $hold-timeout $tap-timeout u lmet)
+  s      (tap-hold $hold-timeout $tap-timeout s lalt)
+  d      (tap-hold $hold-timeout $tap-timeout d lctl)
+  f      (tap-hold $hold-timeout $tap-timeout f lmet)
 
-  h      (tap-hold $hold-timeout $tap-timeout h rmet)
-  t      (tap-hold $hold-timeout $tap-timeout t rctl)
-  n      (tap-hold $hold-timeout $tap-timeout n lalt)
-  s      (tap-hold $hold-timeout $tap-timeout s rsft)
+  j      (tap-hold $hold-timeout $tap-timeout j rmet)
+  k      (tap-hold $hold-timeout $tap-timeout k rctl)
+  l      (tap-hold $hold-timeout $tap-timeout l lalt)
+  ;      (tap-hold $hold-timeout $tap-timeout ; rsft)
   
   esc    (tap-hold 0 $tap-timeout esc (layer-toggle nav))
   tab    (tap-hold 0 $tap-timeout tab lmet)
@@ -39,8 +39,8 @@
 
   S9      (tap-hold $hold-timeout $tap-timeout S-9 rmet)
   S0      (tap-hold $hold-timeout $tap-timeout S-0 rctl)
-  -      (tap-hold $hold-timeout $tap-timeout - rsft)
-  =      (tap-hold $hold-timeout $tap-timeout = ralt)
+  -      (tap-hold $hold-timeout $tap-timeout - lalt)
+  =      (tap-hold $hold-timeout $tap-timeout = rsft)
 
   ;; nav layer homerow mods
   cut      (tap-hold $hold-timeout $tap-timeout C-x lsft)
@@ -57,15 +57,15 @@
 )
 
 (deflayer main ;; standard layer, default for typing
-  '    ,    .    p    y    f    g    c    r    l 
-  @a   @o   @e   @u   i    d    @h   @t   @n   @s ;; home row
-  ;    q    j    k    x    b    m    w    v    z     
+  q    w    e    r    t    y    u    i    o    p 
+  @a   @s   @d   @f   g    h    @j   @k   @l   @; ;; home row
+  z    x    c    v    b    n    m    ,    .    /     
        @esc lsft tab  bspc spc  @ret    ;; Thumb keys
 )
 
 (deflayer num ;; number and symbol layer
   1    2    3    4    5    6    7    8    9    0 
-  @{   @}   @[   @]   S-8  /    @S9  @S0  @=    @- 
+  @{   @}   @[   @]   S-8  '    @S9  @S0  @-    @= 
   S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-\  \     
        @esc lsft tab    bspc spc  @ret    ;; Thumb keys
 )

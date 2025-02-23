@@ -266,6 +266,7 @@
       everest-mons
       vial
       cider
+      nodePackages.ergogen
       pkgs-stable.kicad
 	  git-lfs
       bottom
@@ -285,6 +286,8 @@
       brillo
       wireguard-ui
       tldr
+      nodejs_23
+      node2nix
       wireguard-tools
       gparted
 	  most

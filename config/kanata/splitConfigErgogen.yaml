@@ -1,0 +1,75 @@
+meta:
+  engine: 4.1.0
+units:
+  kx: u
+  ky: U
+  px: kx + 2
+  py: ky + 2
+points: 
+  zones:
+    matrix:
+      key:
+        padding: 1ky
+        spread: 1kx
+      columns:
+        pinky:
+          key:
+            stagger: 17
+        ring:
+          key:
+            stagger: 17
+        middle:
+          key:
+            stagger: 11
+        index:
+          key:
+            stagger: -15
+        inner:
+      rows:
+        bottom:
+        home:
+        top:
+    thumbs:
+      key:
+        padding: 1ky
+        spread: 1kx
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [2, -1ky - 2] 
+      columns:
+        left:
+        center:
+        right:
+      rows:
+        cluster:
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [px, py]
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-0.5,ky-0.5]
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_ring_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_middle_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_middle_top
+          shift: [0.5px,0.5py]
+        - ref: matrix_inner_top
+          shift: [0.5px,0.5py]
+        - ref: thumbs_right_cluster
+          shift: [0.75px,-0.5py]
+        - ref: thumbs_left_cluster
+          shift: [-0.5px,-0.5py]
+        - ref: matrix_ring_bottom
+          shift: [-0.5px,-0.5py]
+        - ref: matrix_pinky_bottom
+          shift: [-0.5px,-0.5py]
