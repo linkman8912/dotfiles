@@ -8,6 +8,9 @@ units:
 points: 
   zones:
     matrix:
+      # Fix placement on KiCAD sheet.
+      anchor:
+        shift: [100, -100]
       key:
         padding: 1ky
         spread: 1kx
@@ -67,9 +70,7 @@ outlines:
         - ref: matrix_middle_top
           shift: [0.5px,0.5py - 5]
         - ref: matrix_inner_top
-          shift: [0.5px,0.5py + 10]
-        - ref: matrix_inner_bottom
-          shift: [0.5px, -0.5py]
+          shift: [0.5px + 20.5, 0.5py + 10]
         - ref: thumbs_right_cluster
           shift: [-0.5px, 0.5py]
         - ref: thumbs_right_cluster
@@ -89,3 +90,54 @@ outlines:
     - name: board
     - operation: subtract
       name: keys
+
+pcbs:
+  pineapple:
+    outlines:
+      main:
+        outline: board
+    footprints:
+      mx_hotswap:
+        what: mx
+        where: true 
+        params:
+          keycaps: true 
+          reverse: true 
+          hotswap: true 
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      promicro:
+        what: promicro
+        params:
+          orientation: "down"
+        where:
+          ref: matrix_inner_top
+          shift: [1px - 2.5, 0]
+          rotate: -90
+      reset:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: matrix_inner_top
+          shift: [0.5px - 6, 0.75py - 3]
+          rotate: -90
+      jstph:
+        what: jstph
+        params:
+          side: 'B'
+          pos: ''
+          neg: ''
+        where:
+          ref: matrix_ring_bottom
+          shift: [0, 1py]
+          rotate: 0
