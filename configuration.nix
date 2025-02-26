@@ -266,7 +266,6 @@
       everest-mons
       vial
       cider
-      nodePackages.ergogen
       pkgs-stable.kicad
 	  git-lfs
       bottom
@@ -297,6 +296,7 @@
 	  libwebp
       via
       unp
+      croc
       rar
       unrar
       motrix
@@ -448,11 +448,14 @@
 			enable = true;
 			xwayland.enable = true;
 			package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-            withUWSM  = true;
+        #    withUWSM  = true;
 		};
         virt-manager = {
           enable = true;
         };
+        # uwsm = {
+        #  enable = true;
+        # };
 	};
 
 	catppuccin = {

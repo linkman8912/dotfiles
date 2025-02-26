@@ -94,7 +94,10 @@
 		''
 		  # fastfetch
 		  # eval "$(zoxide init bash)"
-	
+	      if uwsm check may-start && uwsm select; then
+	        exec systemd-cat -t uwsm_start uwsm start default
+          fi
+
 		  if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
 	      then
 	      	shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
