@@ -256,6 +256,7 @@
       anydesk
 	  hugo
       exfatprogs
+      grimblast
       calibre
       ollama
       zip
@@ -268,6 +269,7 @@
       cider
       pkgs-stable.kicad
 	  git-lfs
+      waydroid
       bottom
       hyprpolkitagent
       pciutils
