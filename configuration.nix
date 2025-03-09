@@ -281,6 +281,7 @@
       itch
       btop
       ventoy-full
+      hyprland
 	  mpvpaper
       jdk17
 	  bat
@@ -450,14 +451,14 @@
 			enable = true;
 			xwayland.enable = true;
 			package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-        #    withUWSM  = true;
+            withUWSM  = true;
 		};
         virt-manager = {
           enable = true;
         };
-        # uwsm = {
-        #  enable = true;
-        # };
+        uwsm = {
+          enable = true;
+        };
 	};
 
 	catppuccin = {
