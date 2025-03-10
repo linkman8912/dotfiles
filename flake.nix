@@ -20,9 +20,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ags.url = "github:Aylur/ags";
+    nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, hyprpanel, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, hyprpanel, nix-flatpak, ... } @ inputs:
   let
 	system = "x86_64-linux";
 	pkgs = nixpkgs.legacyPackages.${system};
@@ -45,6 +46,7 @@
 		  inputs.stylix.nixosModules.stylix
 		  catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+          nix-flatpak.nixosModules.nix-flatpak
 	    ];
 	  };
 	  gtx980 = nixpkgs.lib.nixosSystem {
@@ -62,6 +64,7 @@
 		  inputs.stylix.nixosModules.stylix
 		  catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+          nix-flatpak.nixosModules.nix-flatpak
           ./nvidia980.nix
 	    ];
 	  };

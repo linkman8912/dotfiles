@@ -333,7 +333,7 @@
 	  mopidy
 	  mopidy-mpd
 	  mopidy-mopify
-	  # inputs.zen-browser.packages."${pkgs.system}".default
+	  inputs.zen-browser.packages."${pkgs.system}".default
       firefox
       brave
 	  ffmpeg_7
@@ -491,7 +491,13 @@
         openFirewall = true;
       };
       tailscale.enable = true;
-      flatpak.enable = true;
+      flatpak = { 
+        enable = true;
+        packages = [
+          { appId = "io.github.everestapi.Olympus"; origin = "flathub";  }
+          "app.zen_browser.zen"
+        ];
+      };
     };
   	# Open ports in the firewall.
   	# networking.firewall.allowedTCPPorts = [ ... ];
@@ -508,9 +514,9 @@
   	system.stateVersion = "23.11"; # Did you read the comment?
 	
   	nix.settings = {
-	experimental-features = [ "nix-command" "flakes" ];
-	substituters = ["https://hyprland.cachix.org"];
-	trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+	  experimental-features = [ "nix-command" "flakes" ];
+	  substituters = ["https://hyprland.cachix.org"];
+	  trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
 	};
 
 	nix.optimise.automatic = true;
