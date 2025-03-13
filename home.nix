@@ -205,8 +205,9 @@
 			  "~/.dotfiles/config/hypr/hyprpaper/bnwWallpaper.jpg"
 			  "~/.dotfiles/config/hypr/hyprpaper/pixel-car.png"
               "~/.dotfiles/config/hypr/hyprpaper/aesthetic.jpg"
+              "~/.dotfiles/config/hypr/hyprpaper/shaded.png"
 			];
-			wallpaper = [ ", ~/.dotfiles/config/hypr/hyprpaper/aesthetic.jpg" ];
+			wallpaper = [ ", ~/.dotfiles/config/hypr/hyprpaper/shaded.png" ];
 		  };
 		};
 		catppuccin = {
