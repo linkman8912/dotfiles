@@ -69,7 +69,7 @@
     	#   org.gradle.daemon.idletimeout=3600000
     	# '';
         ".config/nvim" = {
-          source = config.lib.file.mkOutOfStoreSymlink "~/.dotfiles/config/nvim";
+          source = config.lib.file.mkOutOfStoreSymlink "/home/linkman/.dotfiles/config/nvim";
           recursive = true;
         };
 
