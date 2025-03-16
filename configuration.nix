@@ -399,6 +399,7 @@
 	  dotnetCorePackages.sdk_8_0_3xx
   	  protontricks
 	  inkscape
+      jrnl
 	  kdePackages.polkit-kde-agent-1
   	  qbittorrent
   	  p7zip
@@ -406,6 +407,12 @@
   	  git
 	  wofi
       prusa-slicer
+      # linters/stylers
+      eslint
+      stylua
+      prettierd
+      black
+      isort
       # LSPs
       arduino-language-server
       ast-grep
