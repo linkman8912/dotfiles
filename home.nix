@@ -55,8 +55,8 @@
 		# ".icons".source = ./config/hypr/hyprcursor;
 		".config/hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
 		".config/hypr/mocha.conf".source = ./config/hypr/mocha.conf;
-		".config/hypr/hyprlock.conf".source = ./config/hypr/hyprlock.conf;
-		".config/background.png".source = ./config/hypr/background.png;
+		".config/hypr/hyprlock.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/hypr/hyprlock.conf;
+		".config/background.png".source = ./config/hypr/hyprpaper/shaded.png;
 		".face".source = ./config/hypr/hyprpaper/Biden.png;
 		".config/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
         ".config/btop/themes/catppuccin_mocha.theme".source = ./config/btop_catppuccin_mocha.theme;

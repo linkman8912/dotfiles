@@ -242,7 +242,7 @@
 
   	# List packages installed in system profile. To search, run:
   	# $ nix search wget
-  	environment.systemPackages = with pkgs; [
+    environment.systemPackages = with pkgs; [
 	  vim
 	  openscad
       wl-clipboard
@@ -256,6 +256,7 @@
       anydesk
 	  hugo
       exfatprogs
+      ripgrep
       grimblast
       calibre
       ollama
@@ -270,7 +271,6 @@
       pkgs-stable.kicad
 	  git-lfs
       waydroid
-      bottom
       hyprpolkitagent
       pciutils
       litemdview
@@ -398,7 +398,6 @@
       protonup-qt
 	  dotnetCorePackages.sdk_8_0_3xx
   	  protontricks
-	  bibata-cursors
 	  inkscape
 	  kdePackages.polkit-kde-agent-1
   	  qbittorrent
@@ -407,7 +406,16 @@
   	  git
 	  wofi
       prusa-slicer
-  	];
+      # LSPs
+      arduino-language-server
+      ast-grep
+      superhtml
+      hyprls
+      nil
+      # python312Packages.python-lsp-server
+      pylyzer
+      lua-language-server
+      ];
 
 #	environment.gnome.excludePackages = with pkgs; [
 #		gnome-tour
