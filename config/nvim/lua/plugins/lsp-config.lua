@@ -19,7 +19,7 @@ return {
       lspconfig.superhtml.setup({})
       lspconfig.hyprls.setup({})
       lspconfig.nil_ls.setup({})
-      -- lspconfig.pylsp.setup({})
+      lspconfig.pylsp.setup({})
       lspconfig.pylyzer.setup({})
 
       -- This is where you enable features that only work
@@ -28,7 +28,7 @@ return {
         desc = 'LSP actions',
         callback = function(event)
           local opts = { buffer = event.buf }
- 
+
           vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
           vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
           vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
@@ -38,7 +38,7 @@ return {
           vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
           vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
           vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-          vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+          vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
         end,
       })
     end
@@ -63,6 +63,6 @@ return {
         },
         mapping = cmp.mapping.preset.insert({}),
       })
-    end 
+    end
   },
 }

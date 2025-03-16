@@ -1,5 +1,5 @@
-return { 
-  "nvim-neo-tree/neo-tree.nvim", 
+return {
+  "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -8,6 +8,6 @@ return {
     -- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
   },
   config = function()
-    vim.keymap.set('n', '<C-f>', ':Neotree filesystem toggle left<CR>', {})
+    vim.keymap.set('n', '<leader>n', ':Neotree filesystem toggle left<CR>', {})
   end
 }

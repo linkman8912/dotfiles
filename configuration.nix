@@ -412,8 +412,9 @@
       superhtml
       hyprls
       nil
-      # python312Packages.python-lsp-server
+      python312Packages.python-lsp-server
       pylyzer
+      pyright
       lua-language-server
       ];
 
