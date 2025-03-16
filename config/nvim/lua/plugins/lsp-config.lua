@@ -19,8 +19,9 @@ return {
       lspconfig.superhtml.setup({})
       lspconfig.hyprls.setup({})
       lspconfig.nil_ls.setup({})
-      lspconfig.pylsp.setup({})
-      lspconfig.pylyzer.setup({})
+      -- lspconfig.pylsp.setup({})
+      -- lspconfig.pylyzer.setup({})
+      lspconfig.pyright.setup{}
 
       -- This is where you enable features that only work
       -- if there is a language server active in the file
