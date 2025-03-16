@@ -202,6 +202,9 @@
       		  set fish_greeting # Disable greeting
 			  hyfetch -b fastfetch
 			  zoxide init fish | source
+              fzf --fish | source
+              starship init fish | source
+              enable_transience
 	    	'';
 			shellAliases = {
 			  "ls" = "ls -A --color=auto";

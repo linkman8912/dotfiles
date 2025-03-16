@@ -146,6 +146,7 @@
       waybar
       fastfetch
       wofi
+      starship
 ### GAMES ###
       everest-mons
       dolphin-emu
