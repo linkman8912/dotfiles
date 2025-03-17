@@ -62,6 +62,8 @@
         ".config/btop/themes/catppuccin_mocha.theme".source = ./config/btop_catppuccin_mocha.theme;
         # kanata config
         ".config/kanata/kanata.kbd".source = ./config/kanata/config.kbd;
+        
+        ".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink ./config/starship.toml;
 		
 		# # You can also set the file content immediately.
 		# ".gradle/gradle.properties".text = ''

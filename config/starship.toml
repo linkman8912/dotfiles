@@ -1,13 +1,128 @@
-# Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
+palette = "catppuccin_mocha"
+format = """
+[](mauve)\
+$os\
+[](fg:surface0 bg:mauve)\
+[](fg:mauve bg:blue)\
+$directory\
+[](fg:blue bg:red)\
+$git_branch\
+$git_status\
+[](fg:red bg:base)
+[❯](fg:green bg:base) """
 
-# Inserts a blank line between shell prompts
-add_newline = true
+# Disable the blank line at the start of the prompt
+# add_newline = true
 
-# Replace the '❯' symbol in the prompt with '➜'
-[character] # The name of the module we are configuring is 'character'
-success_symbol = '[❯](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
-
-# Disable the package module, hiding it from the prompt completely
-[package]
+[os]
+style = "bg:mauve"
 disabled = true
+
+[directory]
+style = "fg:surface0 bg:blue"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = "…/"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Projects" = " "
+
+[c]
+symbol = " "
+style = "fg:#11111b bg:#cba6f7"
+format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+
+[docker_context]
+symbol = " "
+style = "fg:#11111b bg:#a6e3a1"
+format = '[[ $symbol $context ](fg:#11111b bg:#a6e3a1)]($style) $path'
+
+[elixir]
+symbol = " "
+style = "fg:#11111b bg:#cba6f7"
+format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+
+[elm]
+symbol = " "
+style = "fg:#11111b bg:#cba6f7"
+format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+
+[git_branch]
+symbol = ""
+style = "fg:surface0 bg:red"
+format = '[[ $symbol $branch ]($style)]($style)'
+
+[git_status]
+style = "fg:surface0 bg:red"
+format = '[[($all_status$ahead_behind )]($style)]($style)'
+
+[golang]
+symbol = " "
+style = "fg:#11111b bg:##cba6f7"
+#format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+format = '[[ $symbol](fg:#11111b bg:#cba6f7)]($style)'
+[haskell]
+symbol = " "
+style = "fg:#11111b bg:#cba6f7"
+format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+
+[java]
+symbol = " "
+style = "fg:#11111b bg:#cba6f7"
+format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+
+[julia]
+symbol = " "
+style = "fg:#11111b bg:#cba6f7"
+format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+
+[nodejs]
+symbol = ""
+style = "fg:#11111b bg:#cba6f7"
+format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+
+[rust]
+symbol = ""
+style = "fg:#11111b bg:#cba6f7"
+format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "fg:#11111b bg:#89b4fa"
+format = '[[  $time ](fg:#11111b bg:#89b4fa)]($style)'
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

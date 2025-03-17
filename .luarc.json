@@ -1,7 +1,5 @@
 {
     "diagnostics.globals": [
-        "vim",
-        "local",
-        "null_ls"
+        "vim"
     ]
 }
