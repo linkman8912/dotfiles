@@ -15,9 +15,9 @@
         "idle_inhibitor",
 		"battery",
 		"clock",
-		"tray",
-		"hyprland/language",
-		"custom/lock"
+		"tray"
+		// "hyprland/language",
+		// "custom/lock"
 	],
 	"hyprland/workspaces": {
 		"on-click": "activate",
