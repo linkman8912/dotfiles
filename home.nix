@@ -56,7 +56,7 @@
           source = ./config/hypr/hyprcursor;
           recursive = true;
         };
-		".config/hypr/hyprland.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/hypr/hyprland.conf;
+		".config/hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
 		".config/hypr/mocha.conf".source = ./config/hypr/mocha.conf;
 		".config/hypr/hyprlock.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/hypr/hyprlock.conf;
 		".config/background.png".source = ./config/hypr/hyprpaper/shaded.png;
