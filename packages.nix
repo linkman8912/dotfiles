@@ -167,6 +167,7 @@
       lutris
       protonup-qt
       protontricks
+      samrewritten
 # GAMEDEV #
       godot_4
       unityhub
