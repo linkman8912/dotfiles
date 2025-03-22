@@ -93,6 +93,7 @@
       p7zip
       appimage-run
       git
+      baobab
 ### TERMINAL TOOLS ###
       fzf
       unp

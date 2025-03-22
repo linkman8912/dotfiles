@@ -52,8 +52,11 @@
 		".config/waybar/config.jsonc".source = ./config/waybar/config.jsonc;
 		".config/waybar/mocha.css".source = ./config/waybar/mocha.css;
 		".config/waybar/colors.css".source = ./config/waybar/colors.css;
-		# ".icons".source = ./config/hypr/hyprcursor;
-		".config/hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
+		".icons" = {
+          source = ./config/hypr/hyprcursor;
+          recursive = true;
+        };
+		".config/hypr/hyprland.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/hypr/hyprland.conf;
 		".config/hypr/mocha.conf".source = ./config/hypr/mocha.conf;
 		".config/hypr/hyprlock.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/hypr/hyprlock.conf;
 		".config/background.png".source = ./config/hypr/hyprpaper/shaded.png;
