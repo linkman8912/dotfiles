@@ -67,8 +67,28 @@
           nix-flatpak.nixosModules.nix-flatpak
           ./nvidia980.nix
 	    ];
-	  };
-	};
+      };
+      hplaptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+        inherit system;
+        modules = [ 
+          ./configuration.nix
+          /etc/nixos/hardware-configuration.nix
+          inputs.stylix.nixosModules.stylix
+          catppuccin.nixosModules.catppuccin
+          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+        nix-flatpak.nixosModules.nix-flatpak
+          ./hplaptop.nix
+        ];
+      };
+
+    };
 
 	homeConfigurations = {
 	  linkman = home-manager.lib.homeManagerConfiguration {

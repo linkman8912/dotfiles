@@ -13,6 +13,7 @@ $git_status\
 
 # Disable the blank line at the start of the prompt
 # add_newline = true
+command_timeout = 1000
 
 [os]
 style = "bg:mauve"
