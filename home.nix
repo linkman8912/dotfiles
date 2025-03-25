@@ -64,7 +64,7 @@
         ".config/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
         ".config/btop/themes/catppuccin_mocha.theme".source = ./config/btop_catppuccin_mocha.theme;
 # kanata config
-        ".config/kanata/kanata.kbd".source = ./config/kanata/config.kbd;
+        ".config/kanata/kanata.kbd".source = ./config/kanata/splitConfigDvorak.kbd;
 
         ".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink ./config/starship.toml;
 

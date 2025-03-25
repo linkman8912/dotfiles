@@ -8,6 +8,7 @@
       brave
       browsh
       floorp
+      lynx
 ### EDITORS ###
       vim
       emacs
