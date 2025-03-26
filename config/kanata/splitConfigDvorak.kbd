@@ -73,6 +73,6 @@
 (deflayer nav ;; navigation layer, maybe also with some built in keybinds (macros?)
   f1   f2    f3     f4    f5    f6   f7   bck  fwd  rght 
   @cut @copy @paste @undo C-S-z home @lft @pgup @pgdn @end ;; home row and more
-  caps x     down   up    b     f8   f9   f10   f11   f12     
+  caps prtsc  down   up    b     f8   f9   f10   f11   f12     
        @esc lsft tab    bspc spc  @ret    ;; Thumb keys
 )
