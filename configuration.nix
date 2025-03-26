@@ -110,6 +110,9 @@
     };
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
+    docker = {
+      enable = true;
+    };
   };
   users = {
 	extraGroups = {
@@ -118,7 +121,7 @@
 	users.linkman = {
       isNormalUser = true;
       description = "linkman";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" ];
       packages = with pkgs; [
         #  thunderbird
       ];
