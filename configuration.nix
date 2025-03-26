@@ -286,6 +286,9 @@
         uwsm = {
           enable = true;
         };
+        nix-ld = {
+          enable = true;
+        };
 	};
 
 	catppuccin = {
