@@ -141,7 +141,7 @@
 	xserver = {
 	  enable = true;
 	  displayManager = {
-		# gdm.enable = true;
+		gdm.enable = true;
 	  };
 	  desktopManager = {
 		# gnome.enable = true;
