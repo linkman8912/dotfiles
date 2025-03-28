@@ -1,6 +1,7 @@
 { config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, ... }:
 
 {
+  networking.hostName = "smartandgay";
   hardware.nvidia = {
 	# Modesetting is required
 	modesetting.enable = true;

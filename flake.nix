@@ -47,6 +47,7 @@
 		  catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
           nix-flatpak.nixosModules.nix-flatpak
+          ./systems/default.nix
 	    ];
 	  };
 	  gtx980 = nixpkgs.lib.nixosSystem {
@@ -65,7 +66,7 @@
 		  catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
           nix-flatpak.nixosModules.nix-flatpak
-          ./nvidia980.nix
+          ./systems/nvidia980.nix
 	    ];
       };
       hplaptop = nixpkgs.lib.nixosSystem {
@@ -84,7 +85,7 @@
           catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         nix-flatpak.nixosModules.nix-flatpak
-          ./hplaptop.nix
+          ./systems/hplaptop.nix
         ];
       };
 
