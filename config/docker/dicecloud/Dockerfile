@@ -28,4 +28,4 @@ RUN meteor npm install
 
 # RUN rm -r /home/mt/dicecloud
 
-ENTRYPOINT meteor
+ENTRYPOINT meteor run --settings exampleMeteorSettings.json
