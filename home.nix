@@ -212,15 +212,15 @@
           enable_transience
           '';
         shellAliases = {
-          "ls" = "ls -A --color=auto";
-          "ll" = "ls -slak";
+          "ls" = "eza -A";
+          "ll" = "eza -lA";
           "l" = "ls -A --color=auto";
           ".." = "z ..";
           "..." = "z ../..";
           "...." = "z ../../..";
           "v" = "nvim";
           "unpack" = "unp -U";
-          "km" = "~/.dotfiles/config/kToggle.sh";
+          # "km" = "~/.dotfiles/config/kToggle.sh";
         };
       };
       fuzzel = {

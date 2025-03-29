@@ -43,8 +43,10 @@
       mopidy
       mopidy-mpd
       mopidy-mopify
+      mopidy-iris
       audacity
       spotify
+      pkgs-stable.cava
 ### VIDEO ###
       vlc
       handbrake
@@ -112,6 +114,7 @@
       feh
       lutgen
       pamixer
+      eza
 ### SECURITY ###
       tor
       tor-browser
