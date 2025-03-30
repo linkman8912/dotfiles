@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, lib, inputs, pkgs-stable, ... }:
 
 {
   config = {
@@ -19,12 +19,9 @@
 
 # The home.packages option allows you to install Nix packages into your
 # environment.
-        packages = [
+#        packages = [
 # # Adds the 'hello' command to your environment. It prints a friendly
 # # "Hello, world!" when run.
-        pkgs.hello
-          pkgs.cowsay 
-          pkgs.fortune
 
 # # It is sometimes useful to fine-tune packages, for example, by applying
 # # overrides. You can do that directly here, just don't forget the
@@ -38,7 +35,7 @@
 # (pkgs.writeShellScriptBin "my-hello" ''
 #   echo "Hello, ${config.home.username}!"
 # '')
-        ];
+#        ];
 
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
 # plain files is through 'home.file'.
@@ -175,6 +172,7 @@
           size = 12;
         };
       };
+      /*
       spicetify = 
         let
         spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
@@ -199,7 +197,9 @@
         ];
         theme = spicePkgs.themes.catppuccin;
         colorScheme = "mocha";
+        spotifyPackage = pkgs-stable.spotify;
       };
+      */
       fish = {
         enable = true;
         interactiveShellInit =

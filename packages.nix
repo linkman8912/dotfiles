@@ -44,8 +44,9 @@
       mopidy-mpd
       mopidy-mopify
       mopidy-iris
+      mopidy-local
       audacity
-      spotify
+      # pkgs-stable.spotify
       pkgs-stable.cava
 ### VIDEO ###
       vlc

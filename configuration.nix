@@ -329,12 +329,13 @@
         packages = [
           { appId = "io.github.everestapi.Olympus"; origin = "flathub";  }
           "app.zen_browser.zen"
+          "com.spotify.Client"
         ];
       };
     };
   	# Open ports in the firewall.
   	# networking.firewall.allowedTCPPorts = [ ... ];
-  	# networking.firewall.allowedUDPPorts = [ ... ];
+  	networking.firewall.allowedUDPPorts = [ 57621 ];
   	# Or disable the firewall altogether.
   	# networking.firewall.enable = false;
 
