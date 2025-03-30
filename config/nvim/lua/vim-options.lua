@@ -13,4 +13,4 @@ vim.cmd("syntax on")
 vim.opt.signcolumn = "yes"
 
 -- Change vimwiki syntak to markdown
-vim.cmd("let g:vimwiki_list = [{'path': '~/vimwiki/',  'syntax': 'markdown', 'ext': 'md'}]")
+vim.cmd("let g:vimwiki_list = [{'path': '~/Dropbox/Notes/',  'syntax': 'markdown', 'ext': 'md'}]")

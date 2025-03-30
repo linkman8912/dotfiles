@@ -1,5 +1,5 @@
 # Edit this configuration file to define what should be installed on
-{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, ... }:
+{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, lib, ... }:
 
 {
   imports = 
@@ -67,7 +67,25 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-	
+
+  systemd.user.services.dropbox = {
+    description = "Dropbox";
+    wantedBy = [ "graphical-session.target" ];
+    environment = {
+      QT_PLUGIN_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtPluginPrefix;
+      QML2_IMPORT_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtQmlPrefix;
+    };
+    serviceConfig = {
+      ExecStart = "${lib.getBin pkgs.dropbox}/bin/dropbox";
+      ExecReload = "${lib.getBin pkgs.coreutils}/bin/kill -HUP $MAINPID";
+      KillMode = "control-group"; # upstream recommends process
+        Restart = "on-failure";
+      PrivateTmp = true;
+      ProtectSystem = "full";
+      Nice = 10;
+    };
+  };
+
   # networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -335,7 +353,10 @@
     };
   	# Open ports in the firewall.
   	# networking.firewall.allowedTCPPorts = [ ... ];
-  	networking.firewall.allowedUDPPorts = [ 57621 ];
+    networking.firewall = {
+      allowedUDPPorts = [ 57621 17500 ];
+      allowedTCPPorts = [ 17500 ];
+    };
   	# Or disable the firewall altogether.
   	# networking.firewall.enable = false;
 

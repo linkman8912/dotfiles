@@ -193,9 +193,13 @@
       kdePackages.kdenlive
       obs-studio
       inkscape
-### REMOTE DESKTOP ###
-      moonlight-qt
+### BACKUPS ###
+      maestral
+      celeste
+      dropbox
+      dropbox-cli
 ### OTHER ###
+      moonlight-qt
       ollama
       waydroid
       motrix
