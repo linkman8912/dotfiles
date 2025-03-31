@@ -98,6 +98,7 @@
       appimage-run
       git
       baobab
+      podman
 ### TERMINAL TOOLS ###
       fzf
       unp
