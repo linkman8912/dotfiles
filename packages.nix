@@ -41,10 +41,6 @@
       playerctl
       mpd
       mopidy
-      mopidy-mpd
-      mopidy-mopify
-      mopidy-iris
-      mopidy-local
       audacity
       # pkgs-stable.spotify
       pkgs-stable.cava
