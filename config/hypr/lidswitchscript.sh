@@ -9,7 +9,7 @@ if cat ~/.lidswitchkeepson > /dev/null
   # hyprctl keyword monitor "eDP-1, disable"
   if nmcli con show | grep Hotspot > /dev/null
     nmcli con up Hotspot
-  else
+  else if false
     nmcli con add type wifi ifname wlp1s0 con-name Hotspot autoconnect yes ssid Hotspot
     nmcli con modify Hotspot 802-11-wireless.mode ap 802-11-wireless.band bg ipv4.method shared
     nmcli con modify Hotspot wifi-sec.key-mgmt wpa-psk
