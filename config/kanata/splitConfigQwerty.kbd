@@ -1,0 +1,78 @@
+;; home keys are R and I, home row is Q, W, E, R, T, U, I, O, P, [
+(defcfg
+  process-unmapped-keys yes
+  block-unmapped-keys yes
+)
+
+(defsrc
+  1    2    3    4    5         7    8    9    0    - 
+  q    w    e    r    t         u    i    o    p    [   ;; home row and more
+  a    s    d    f    g         j    k    l    ;    '
+       c    v    b         n    m    ,   ;; Thumb keys
+)
+
+(defvar
+  tap-timeout 250
+  hold-timeout 500
+)
+
+(defalias
+  a      (tap-hold $hold-timeout $tap-timeout a lsft)
+  s      (tap-hold $hold-timeout $tap-timeout s lalt)
+  d      (tap-hold $hold-timeout $tap-timeout d lctl)
+  f      (tap-hold $hold-timeout $tap-timeout f lmet)
+
+  j      (tap-hold $hold-timeout $tap-timeout j rmet)
+  k      (tap-hold $hold-timeout $tap-timeout k rctl)
+  l      (tap-hold $hold-timeout $tap-timeout l lalt)
+  ;      (tap-hold $hold-timeout $tap-timeout ; rsft)
+  
+  esc    (tap-hold 0 $tap-timeout esc (layer-toggle nav))
+  tab    (tap-hold 0 $tap-timeout tab lmet)
+  ret    (tap-hold 0 $tap-timeout ret (layer-toggle num))
+
+  ;; num layer homerow keys
+  {      (tap-hold $hold-timeout $tap-timeout { lsft)
+  }      (tap-hold $hold-timeout $tap-timeout } lalt)
+  [      (tap-hold $hold-timeout $tap-timeout [ lctl)
+  ]      (tap-hold $hold-timeout $tap-timeout ] lmet)
+
+  S9      (tap-hold $hold-timeout $tap-timeout S-9 rmet)
+  S0      (tap-hold $hold-timeout $tap-timeout S-0 rctl)
+  -      (tap-hold $hold-timeout $tap-timeout - lalt)
+  =      (tap-hold $hold-timeout $tap-timeout = rsft)
+
+  ;; nav layer homerow mods
+  cut      (tap-hold $hold-timeout $tap-timeout C-x lsft)
+  copy      (tap-hold $hold-timeout $tap-timeout C-ins lalt)
+  paste      (tap-hold $hold-timeout $tap-timeout S-ins lctl)
+  undo      (tap-hold $hold-timeout $tap-timeout C-z lmet)
+
+  lft      (tap-hold $hold-timeout $tap-timeout lft rmet)
+  pgup      (tap-hold $hold-timeout $tap-timeout pgup rctl)
+  pgdn      (tap-hold $hold-timeout $tap-timeout pgdn lalt)
+  end      (tap-hold $hold-timeout $tap-timeout end rsft)
+
+
+)
+
+(deflayer main ;; standard layer, default for typing
+  q    w    e    r    t    y    u    i    o    p 
+  @a   @s   @d   @f   g    h    @j   @k   @l   @; ;; home row
+  z    x    c    v    b    n    m    ,    .    /     
+       @esc lsft tab  bspc spc  @ret    ;; Thumb keys
+)
+
+(deflayer num ;; number and symbol layer
+  1    2    3    4    5    6    7    8    9    0 
+  @{   @}   @[   @]   S-8  '    @S9  @S0  @-    @= 
+  S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-\  \     
+       @esc lsft tab    bspc spc  @ret    ;; Thumb keys
+)
+
+(deflayer nav ;; navigation layer, maybe also with some built in keybinds (macros?)
+  f1   f2    f3     f4    f5    f6   f7   bck  fwd  rght 
+  @cut @copy @paste @undo C-S-z home @lft @pgup @pgdn @end ;; home row and more
+  caps x     down   up    b     f8   f9   f10   f11   f12     
+       @esc lsft tab    bspc spc  @ret    ;; Thumb keys
+)

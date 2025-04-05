@@ -15,9 +15,9 @@
         "idle_inhibitor",
 		"battery",
 		"clock",
-		"tray",
-		"hyprland/language",
-		"custom/lock"
+		"tray"
+		// "hyprland/language",
+		// "custom/lock"
 	],
 	"hyprland/workspaces": {
 		"on-click": "activate",
@@ -45,9 +45,10 @@
 		"escape": true,
 		"interval": 1,
 		"tooltip": false,
-		"exec": "playerctl metadata --format='{{ title }} - {{ artist }}'",
+		"exec": "playerctl metadata --format='[{{status}}] {{ title }} - {{ artist }}'",
 		"on-click": "playerctl play-pause",
-		"max-length": 50
+		"max-length": 50,
+        "tooltip-format": "playerctl metadata --format='{{ title }} - {{ album }} - {{ artist }}'"
 	},
 	"clock": {
 		"timezone": "America/New_York",

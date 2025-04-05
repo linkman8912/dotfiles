@@ -13,9 +13,9 @@
   met_a (tap-hold-next-release 400 a lsft)
   alt_s (tap-hold-next-release 400 s lalt)
   ctl_d (tap-hold-next-release 400 d lctl)
-  sft_f (tap-hold-next-release 300 f lmet)
+  sft_f (tap-hold-next-release 250 f lmet)
 
-  sft_j (tap-hold-next-release 300 j rmet)
+  sft_j (tap-hold-next-release 250 j rmet)
   ctl_k (tap-hold-next-release 400 k rctl)
   alt_l (tap-hold-next-release 400 l lalt)
   met_; (tap-hold-next-release 400 ; rsft)
@@ -24,4 +24,3 @@
 (deflayer homerowmods
 	@met_a   @alt_s   @ctl_d   @sft_f   g   h   @sft_j   @ctl_k   @alt_l   @met_;
 )
-

@@ -1,7 +1,8 @@
 { config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, ... }:
 
 {
-hardware.nvidia = {
+  networking.hostName = "smartandgay";
+  hardware.nvidia = {
 	# Modesetting is required
 	modesetting.enable = true;
 	powerManagement = {
@@ -39,4 +40,5 @@ hardware.nvidia = {
 	};
   };
 
+  services.xserver.videoDrivers = [ "nvidia"];
 }

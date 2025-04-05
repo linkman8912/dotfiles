@@ -8,7 +8,7 @@
 		polarity = "dark";
 		cursor = {
 			size = 30;
-			name = "Banana-Blue";
+			name = "Banana-Catppuccin-Mocha";
 		};
 	};
 }

@@ -1,0 +1,42 @@
+;; Global configuration
+(defcfg
+  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  ;;input (device-file "$KBD_DEV")
+  output (uinput-sink "kmonad")
+  fallthrough true
+)
+
+;; Define the source keys for the home row.
+;; Here we define 11 keys: a, s, d, f, g, h, j, k, l, ;, and '.
+(defsrc
+  a    s    d    f    g    h    j    k    l    ;    '
+)
+
+;; Define mod–tap aliases for the original home row keys.
+(defalias
+  met_a      (tap-hold-next-release 400 a lsft)
+  alt_s      (tap-hold-next-release 400 s lalt)
+  ctl_d      (tap-hold-next-release 400 d lctl)
+  sft_f      (tap-hold-next-release 250 f lmet)
+
+  sft_j      (tap-hold-next-release 250 j rmet)
+  ctl_k      (tap-hold-next-release 400 k rctl)
+  alt_l      (tap-hold-next-release 400 l lalt)
+  met_;      (tap-hold-next-release 400 ; rsft)
+  
+  ;; Define an alias for the layer–tap key on "'".
+  ;; ltap_' (lt numbers ')
+  num_'        (tap-hold-next-release 500 ' (layer-toggle numbers))
+)
+
+;; Base layer: the home row uses mod–tap for keys a through ; and a layer–tap
+;; on the "'" key.
+(deflayer homerowmods
+  @met_a   @alt_s   @ctl_d   @sft_f   g   h   @sft_j   @ctl_k   @alt_l   @met_;  @num_'
+)
+
+;; Numbers layer: the first 10 positions output digits 1–0,
+;; and the 11th (') outputs '.
+(deflayer numbers
+  1   2   3   4   5   6   7   8   9   0   '
+)

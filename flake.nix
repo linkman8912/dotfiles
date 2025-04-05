@@ -19,9 +19,11 @@
       url = "git+https://github.com/Noodlez1232/suyu-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ags.url = "github:Aylur/ags";
+    nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, hyprpanel, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, hyprpanel, nix-flatpak, ... } @ inputs:
   let
 	system = "x86_64-linux";
 	pkgs = nixpkgs.legacyPackages.${system};
@@ -44,6 +46,8 @@
 		  inputs.stylix.nixosModules.stylix
 		  catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+          nix-flatpak.nixosModules.nix-flatpak
+          ./systems/default.nix
 	    ];
 	  };
 	  gtx980 = nixpkgs.lib.nixosSystem {
@@ -61,9 +65,10 @@
 		  inputs.stylix.nixosModules.stylix
 		  catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
-          ./nvidia980.nix
+          nix-flatpak.nixosModules.nix-flatpak
+          ./systems/nvidia980.nix
 	    ];
-	  };
+      };
       gtx1080 = nixpkgs.lib.nixosSystem {
 		specialArgs = {
 		  inherit inputs;
@@ -81,12 +86,80 @@
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
           ./1080ti.nix
 	    ];
+      };
+      hplaptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+        inherit system;
+        modules = [ 
+          ./configuration.nix
+          /etc/nixos/hardware-configuration.nix
+          inputs.stylix.nixosModules.stylix
+          catppuccin.nixosModules.catppuccin
+          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+        nix-flatpak.nixosModules.nix-flatpak
+          ./systems/hplaptop.nix
+        ];
+      };
+
+    };
+
+
+    <<<<<<< HEAD
+  };
+  gtx1080 = nixpkgs.lib.nixosSystem {
+    specialArgs = {
+      inherit inputs;
+      pkgs-stable = import nixpkgs-stable {
+        inherit system;
+			config.allowUnfree = true;
+		  };
+		};
+		inherit system;
+		modules = [ 
+		  ./configuration.nix
+		  /etc/nixos/hardware-configuration.nix
+		  inputs.stylix.nixosModules.stylix
+		  catppuccin.nixosModules.catppuccin
+          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+          ./1080ti.nix
+	    ];
 	  };
 
 	};
+=======
+      };
+      hplaptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+        inherit system;
+        modules = [ 
+          ./configuration.nix
+          /etc/nixos/hardware-configuration.nix
+          inputs.stylix.nixosModules.stylix
+          catppuccin.nixosModules.catppuccin
+          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+        nix-flatpak.nixosModules.nix-flatpak
+          ./systems/hplaptop.nix
+        ];
+      };
+
+    };
+
+>>>>>>> 1f4781d2f0f1a48d5660f57c855272f68914c002
 	homeConfigurations = {
 	  linkman = home-manager.lib.homeManagerConfiguration {
-		inherit pkgs;
+        inherit pkgs;
 		modules = [ 
 		  ./home.nix
 		  stylix.homeManagerModules.stylix 

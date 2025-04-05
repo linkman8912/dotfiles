@@ -1,0 +1,91 @@
+meta:
+  engine: 4.1.0
+units:
+  kx: u
+  ky: U
+  px: kx + 5
+  py: ky + 5
+points: 
+  zones:
+    matrix:
+      key:
+        padding: 1ky
+        spread: 1kx
+      columns:
+        pinky:
+          key:
+            stagger: 17
+        ring:
+          key:
+            stagger: 17
+        middle:
+          key:
+            stagger: 11
+        index:
+          key:
+            stagger: -15
+        inner:
+      rows:
+        bottom:
+        home:
+        top:
+    thumbs:
+      key:
+        padding: 1py
+        spread: 1px
+        splay: -10
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-0.5kx, -1ky - 3] 
+      columns:
+        left:
+        middle:
+        right:
+      rows:
+        cluster:
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [px, py]
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-0.5,ky-0.5]
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_top
+          shift: [-0.5px,0.5py + 23]
+        - ref: matrix_middle_top
+          shift: [-0.5px,0.5py - 5]
+        - ref: matrix_middle_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_middle_top
+          shift: [0.5px,0.5py]
+        - ref: matrix_middle_top
+          shift: [0.5px,0.5py - 5]
+        - ref: matrix_inner_top
+          shift: [0.5px,0.5py + 10]
+        - ref: matrix_inner_bottom
+          shift: [0.5px, -0.5py]
+        - ref: thumbs_right_cluster
+          shift: [-0.5px, 0.5py]
+        - ref: thumbs_right_cluster
+          shift: [0.5px, 0.5py]
+        - ref: thumbs_right_cluster
+          shift: [0.5px, -0.5py]
+        - ref: thumbs_middle_cluster
+          shift: [0.5px, -0.5py]
+        - ref: thumbs_middle_cluster
+          shift: [0.5px, -0.5py]
+        - ref: thumbs_left_cluster
+          shift: [0.5px,-0.5py]
+        - ref: matrix_pinky_bottom
+          shift: [-0.5px,-0.5py - 10.7]
+      fillet: 2
+  combo:
+    - name: board
+    - operation: subtract
+      name: keys
