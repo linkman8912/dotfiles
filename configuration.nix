@@ -224,9 +224,26 @@ services = {
       youtube_dl_package = yt_dlp
         '';
   };
+  /* mpd = {
+    enable = true;
+    musicDirectory = "/home/linkman/Music/";
+    extraConfig = ''
+      db_file		"~/.mpd/database"
+      state_file	"~/.mpd/state"
+      audio_output {
+        type "pulse"
+          name "Music"
+          server "127.0.0.1" # add this line - MPD must connect to the local sound server
+      }
+     '';
+
+# Optional:
+# network.listenAddress = "any"; # if you want to allow non-localhost connections
+# network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
+  }; */
 };
 #programs.ssh.askPassword = "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
-  programs.fish.enable = true;
+programs.fish.enable = true;
 
 # Configure console keymap
   console.keyMap = "dvorak";
@@ -237,6 +254,7 @@ services = {
 
 # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
+  hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
