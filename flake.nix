@@ -64,6 +64,25 @@
           ./nvidia980.nix
 	    ];
 	  };
+      gtx1080 = nixpkgs.lib.nixosSystem {
+		specialArgs = {
+		  inherit inputs;
+		  pkgs-stable = import nixpkgs-stable {
+			inherit system;
+			config.allowUnfree = true;
+		  };
+		};
+		inherit system;
+		modules = [ 
+		  ./configuration.nix
+		  /etc/nixos/hardware-configuration.nix
+		  inputs.stylix.nixosModules.stylix
+		  catppuccin.nixosModules.catppuccin
+          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+          ./1080ti.nix
+	    ];
+	  };
+
 	};
 	homeConfigurations = {
 	  linkman = home-manager.lib.homeManagerConfiguration {
