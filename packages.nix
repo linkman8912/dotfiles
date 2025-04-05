@@ -29,7 +29,6 @@
       pylyzer
       pyright
       lua-language-server
-
 ### CAD ###
       openscad
       pkgs-stable.kicad
@@ -42,8 +41,10 @@
       mpd
       mopidy
       audacity
+      plattenalbum
       # pkgs-stable.spotify
       pkgs-stable.cava
+      yt-dlp
 ### VIDEO ###
       vlc
       handbrake
