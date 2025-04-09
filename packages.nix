@@ -96,6 +96,7 @@
       git
       baobab
       podman
+      xdg-ninja
 ### TERMINAL TOOLS ###
       fzf
       unp
