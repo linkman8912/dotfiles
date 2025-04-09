@@ -57,7 +57,7 @@
         ".config/hypr/mocha.conf".source = ./config/hypr/mocha.conf;
         ".config/hypr/hyprlock.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/hypr/hyprlock.conf;
         ".config/background.png".source = ./config/hypr/hyprpaper/shaded.png;
-        ".face".source = ./config/hypr/hyprpaper/Biden.png;
+        # ".face".source = ./config/hypr/hyprpaper/Biden.png;
         ".config/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
         ".config/btop/themes/catppuccin_mocha.theme".source = ./config/btop_catppuccin_mocha.theme;
 # kanata config
@@ -172,7 +172,7 @@
           size = 12;
         };
       };
-      /*
+      
       spicetify = 
         let
         spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
@@ -199,7 +199,7 @@
         colorScheme = "mocha";
         spotifyPackage = pkgs-stable.spotify;
       };
-      */
+      
       fish = {
         enable = true;
         interactiveShellInit =
@@ -252,7 +252,7 @@
   imports = [
 # ./config/hypr/hyprland.nix
     ./config/stylix.nix
-      ~/.envars.nix
+      # ~/.envars.nix
       inputs.spicetify-nix.homeManagerModules.default
       inputs.ags.homeManagerModules.default
   ];
