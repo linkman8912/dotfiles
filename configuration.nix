@@ -354,6 +354,14 @@ programs.fish.enable = true;
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
+    ANDROID_USER_HOME="$XDG_DATA_HOME/android";
+    HISTFILE="$XDG_STATE_HOME/bash/history";
+    DOCKER_CONFIG="$XDG_CONFIG_HOME/docker";
+    DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet";
+    GNUPGHOME="$XDG_DATA_HOME/gnupg";
+    GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc";
+    NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history";
+    WINEPREFIX="$XDG_DATA_HOME/wine";
   };
 
 # Some programs need SUID wrappers, can be configured further or are
