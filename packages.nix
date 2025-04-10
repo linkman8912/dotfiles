@@ -97,6 +97,8 @@
       baobab
       podman
       xdg-ninja
+      plocate
+      mlocate
 ### TERMINAL TOOLS ###
       fzf
       unp
