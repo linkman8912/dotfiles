@@ -7,6 +7,10 @@
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     stylix.url = "github:danth/stylix/release-24.05";
     nixpkgs-stable.url = "nixpkgs/nixos-24.05";
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
@@ -23,7 +27,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, hyprpanel, nix-flatpak, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, hyprpanel, nix-flatpak, nix-on-droid, ... } @ inputs:
   let
 	system = "x86_64-linux";
 	pkgs = nixpkgs.legacyPackages.${system};
@@ -108,5 +112,8 @@
 		};
 	  };
 	};
+       nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {                               pkgs = import nixpkgs { system = "aarch64-linux"; };
+      modules = [ ./systems/nixOnDroid/nix-on-droid.nix ];
+    }; 
   };
 }
