@@ -362,6 +362,8 @@ programs.fish.enable = true;
     GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc";
     NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history";
     WINEPREFIX="$XDG_DATA_HOME/wine";
+    CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv";
+    _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java";
   };
 
 # Some programs need SUID wrappers, can be configured further or are
