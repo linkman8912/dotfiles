@@ -364,6 +364,11 @@ programs.fish.enable = true;
     WINEPREFIX="$XDG_DATA_HOME/wine";
     CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv";
     _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java";
+# XDG BASE DIRECTORIES
+    XDG_CONFIG_HOME="$HOME/.config";
+    XDG_STATE_HOME="$HOME/.local/state";
+    XDG_CACHE_HOME="$HOME/.cache";
+    XDG_DATA_HOME="$HOME/.local/share";
   };
 
 # Some programs need SUID wrappers, can be configured further or are
