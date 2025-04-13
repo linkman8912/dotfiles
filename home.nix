@@ -220,6 +220,7 @@
           "...." = "z ../../..";
           "v" = "nvim";
           "unpack" = "unp -U";
+          "cat" = "bat";
           # "km" = "~/.dotfiles/config/kToggle.sh";
         };
       };
