@@ -2,6 +2,11 @@
 
 {
   environment.systemPackages = with pkgs; [
+    # a workaround
+    (pkgs.writeShellScriptBin "python" ''
+     export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
+     exec ${pkgs.python3}/bin/python "$@"
+     '')
 ### BROWSERS ###
     firefox
       inputs.zen-browser.packages."${pkgs.system}".default
@@ -26,6 +31,7 @@
       hyprls
       nil
       python312Packages.python-lsp-server
+
       pylyzer
       pyright
       lua-language-server
@@ -70,11 +76,14 @@
       kdePackages.polkit-kde-agent-1
       xwayland
       python3
+      poetry
       flatpak
       node2nix
       gparted
       blueman
       wine
+      python313Packages.pip
+      pipx
       libwebp
       rar
       unrar
@@ -99,6 +108,7 @@
       xdg-ninja
       plocate
       mlocate
+      any-nix-shell
 ### TERMINAL TOOLS ###
       fzf
       unp
