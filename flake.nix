@@ -28,50 +28,50 @@
   };
 
   outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, hyprpanel, nix-flatpak, nix-on-droid, ... } @ inputs:
-  let
-	system = "x86_64-linux";
-	pkgs = nixpkgs.legacyPackages.${system};
-    nur = nur.legacyPackages.${system};
+    let
+    system = "x86_64-linux";
+  pkgs = nixpkgs.legacyPackages.${system};
+  # nur = nur.legacyPackages.${system};
   in
   {
     nixosConfigurations = {
-	  nixos = nixpkgs.lib.nixosSystem {
-		specialArgs = {
-		  inherit inputs;
-		  pkgs-stable = import nixpkgs-stable {
-			inherit system;
-			config.allowUnfree = true;
-		  };
-		};
-		inherit system;
-		modules = [ 
-		  ./configuration.nix
-		  /etc/nixos/hardware-configuration.nix
-		  inputs.stylix.nixosModules.stylix
-		  catppuccin.nixosModules.catppuccin
+      nixos = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+        inherit system;
+        modules = [ 
+          ./configuration.nix
+          /etc/nixos/hardware-configuration.nix
+          inputs.stylix.nixosModules.stylix
+          catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
-          nix-flatpak.nixosModules.nix-flatpak
+        nix-flatpak.nixosModules.nix-flatpak
           ./systems/default.nix
-	    ];
-	  };
-	  gtx980 = nixpkgs.lib.nixosSystem {
-		specialArgs = {
-		  inherit inputs;
-		  pkgs-stable = import nixpkgs-stable {
-			inherit system;
-			config.allowUnfree = true;
-		  };
-		};
-		inherit system;
-		modules = [ 
-		  ./configuration.nix
-		  /etc/nixos/hardware-configuration.nix
-		  inputs.stylix.nixosModules.stylix
-		  catppuccin.nixosModules.catppuccin
+        ];
+      };
+      gtx980 = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+        inherit system;
+        modules = [ 
+          ./configuration.nix
+          /etc/nixos/hardware-configuration.nix
+          inputs.stylix.nixosModules.stylix
+          catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
-          nix-flatpak.nixosModules.nix-flatpak
+        nix-flatpak.nixosModules.nix-flatpak
           ./systems/nvidia980.nix
-	    ];
+        ];
       };
       hplaptop = nixpkgs.lib.nixosSystem {
         specialArgs = {
@@ -95,25 +95,25 @@
 
     };
 
-	homeConfigurations = {
-	  linkman = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations = {
+      linkman = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-		modules = [ 
-		  ./home.nix
-		  stylix.homeManagerModules.stylix 
-		  catppuccin.homeManagerModules.catppuccin
-		];
-		extraSpecialArgs = {
-		  inherit inputs;
-		  pkgs-stable = import nixpkgs-stable {
-			inherit system;
-			config.allowUnfree = true;
-		  };
-		};
-	  };
-	};
-       nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {                               pkgs = import nixpkgs { system = "aarch64-linux"; };
-      modules = [ ./systems/nixOnDroid/nix-on-droid.nix ];
+        modules = [ 
+          ./home.nix
+          stylix.homeManagerModules.stylix 
+          catppuccin.homeManagerModules.catppuccin
+        ];
+        extraSpecialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+      };
+    };
+    nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {                               pkgs = import nixpkgs { system = "aarch64-linux"; };
+      modules = [ ./systems/nixOnDroid/configuration.nix ];
     }; 
   };
 }
