@@ -1,5 +1,5 @@
 # Edit this configuration file to define what should be installed on
-{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, lib, ... }:
+{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, lib, chaotic, ... }:
 
 {
   imports = 
@@ -165,7 +165,7 @@ services = {
       gdm.enable = true;
     };
     desktopManager = {
-# gnome.enable = true;
+      # gnome.enable = true;
     };
     xkb = {
       layout = "us";
@@ -224,9 +224,26 @@ services = {
       youtube_dl_package = yt_dlp
         '';
   };
+  /* mpd = {
+    enable = true;
+    musicDirectory = "/home/linkman/Music/";
+    extraConfig = ''
+      db_file		"~/.mpd/database"
+      state_file	"~/.mpd/state"
+      audio_output {
+        type "pulse"
+          name "Music"
+          server "127.0.0.1" # add this line - MPD must connect to the local sound server
+      }
+     '';
+
+# Optional:
+# network.listenAddress = "any"; # if you want to allow non-localhost connections
+# network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
+  }; */
 };
 #programs.ssh.askPassword = "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
-  programs.fish.enable = true;
+programs.fish.enable = true;
 
 # Configure console keymap
   console.keyMap = "dvorak";
@@ -237,6 +254,7 @@ services = {
 
 # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
+  hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -255,6 +273,10 @@ services = {
   nixpkgs = {
     config = {
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "fluffychat-linux-1.22.1"
+        "olm-3.2.16"
+      ];
     };
     overlays = [
 #			(final: prev: {
@@ -270,18 +292,48 @@ services = {
        inherit (final) system config;
        };
        })
-    ];
+    (self: super: rec {
+# https://github.com/NixOS/nixpkgs/blob/c339c066b893e5683830ba870b1ccd3bbea88ece/nixos/modules/programs/nix-ld.nix#L44
+# > We currently take all libraries from systemd and nix as the default.
+     pythonldlibpath = lib.makeLibraryPath (with super; [
+         zlib zstd stdenv.cc.cc curl openssl attr libssh bzip2 libxml2 acl libsodium util-linux xz systemd
+     ]);
+# here we are overriding python program to add LD_LIBRARY_PATH to it's env
+     python = super.stdenv.mkDerivation {
+     name = "python";
+     buildInputs = [ super.makeWrapper ];
+     src = super.python311;
+     installPhase = ''
+     mkdir -p $out/bin
+     cp -r $src/* $out/
+                  wrapProgram $out/bin/python3 --set LD_LIBRARY_PATH ${pythonldlibpath}
+                  wrapProgram $out/bin/python3.11 --set LD_LIBRARY_PATH ${pythonldlibpath}
+                  '';
+     };
+     poetry = super.stdenv.mkDerivation {
+     name = "poetry";
+     buildInputs = [ super.makeWrapper ];
+     src = super.poetry;
+     installPhase = ''
+     mkdir -p $out/bin
+     cp -r $src/* $out/
+     wrapProgram $out/bin/poetry --set LD_LIBRARY_PATH ${pythonldlibpath}
+     '';
+     };
+     })
+     ];
 
-  };
+                  };
 
-  fonts.packages = with pkgs; [
-    nerdfonts
-      meslo-lgs-nf
-  ];
+                  fonts.packages = with pkgs; [
+                  nerdfonts
+                  meslo-lgs-nf
+                  poppins
+                  ];
 
-  programs = {
-    neovim = {
-      enable = true;
+                  programs = {
+                  neovim = {
+                  enable = true;
       defaultEditor = true;
       /*plugins = with pkgs.vimPlugins; [
         lazy-nvim
@@ -328,16 +380,36 @@ services = {
     };
     nix-ld = {
       enable = true;
+      libraries = with pkgs; [
+        zlib zstd stdenv.cc.cc curl openssl attr libssh bzip2 libxml2 acl libsodium util-linux xz systemd
+      ];
     };
   };
 
-  catppuccin = {
-    enable = true;
+catppuccin = {
+  enable = true;
     flavor = "mocha";
   };
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
+    ANDROID_USER_HOME="$XDG_DATA_HOME/android";
+    HISTFILE="$XDG_STATE_HOME/bash/history";
+    DOCKER_CONFIG="$XDG_CONFIG_HOME/docker";
+    DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet";
+    GNUPGHOME="$XDG_DATA_HOME/gnupg";
+    GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc";
+    NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history";
+    WINEPREFIX="$XDG_DATA_HOME/wine";
+    CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv";
+    _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java";
+    XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose";
+    NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages";
+# XDG BASE DIRECTORIES
+    XDG_CONFIG_HOME="$HOME/.config";
+    XDG_STATE_HOME="$HOME/.local/state";
+    XDG_CACHE_HOME="$HOME/.cache";
+    XDG_DATA_HOME="$HOME/.local/share";
   };
 
 # Some programs need SUID wrappers, can be configured further or are
@@ -370,6 +442,7 @@ services = {
       ];
     };
   };
+
 # Open ports in the firewall.
 # networking.firewall.allowedTCPPorts = [ ... ];
   networking.firewall = {
