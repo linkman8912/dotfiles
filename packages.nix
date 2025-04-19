@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, ... }:
+{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, chaotic, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -109,6 +109,8 @@
       plocate
       mlocate
       any-nix-shell
+      libcap
+      xr-hardware
 ### TERMINAL TOOLS ###
       fzf
       unp
@@ -170,7 +172,8 @@
       itch
       ryujinx
       amidst
-      gamescope
+      # gamescope
+      gamescope_git
       prismlauncher
       bastet
       ninvaders
@@ -197,6 +200,7 @@
 ### COMMUNICATION ###
       vesktop
       hexchat
+      fluffychat
 ### PHOTOGRAPHY/VIDEO EDITING ###
       darktable
       kdePackages.kolourpaint

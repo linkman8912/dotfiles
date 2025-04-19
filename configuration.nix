@@ -1,5 +1,5 @@
 # Edit this configuration file to define what should be installed on
-{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, lib, ... }:
+{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, lib, chaotic, ... }:
 
 {
   imports = 
@@ -165,7 +165,7 @@ services = {
       gdm.enable = true;
     };
     desktopManager = {
-# gnome.enable = true;
+      # gnome.enable = true;
     };
     xkb = {
       layout = "us";
@@ -273,6 +273,10 @@ programs.fish.enable = true;
   nixpkgs = {
     config = {
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "fluffychat-linux-1.22.1"
+        "olm-3.2.16"
+      ];
     };
     overlays = [
 #			(final: prev: {
@@ -436,6 +440,7 @@ catppuccin = {
       ];
     };
   };
+
 # Open ports in the firewall.
 # networking.firewall.allowedTCPPorts = [ ... ];
   networking.firewall = {
