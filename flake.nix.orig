@@ -68,7 +68,8 @@
           nix-flatpak.nixosModules.nix-flatpak
           ./systems/nvidia980.nix
 	    ];
-      };
+<<<<<<< HEAD
+	  };
       gtx1080 = nixpkgs.lib.nixosSystem {
 		specialArgs = {
 		  inherit inputs;
@@ -84,9 +85,12 @@
 		  inputs.stylix.nixosModules.stylix
 		  catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
-        nix-flatpak.nixosModules.nix-flatpak
           ./1080ti.nix
 	    ];
+	  };
+
+	};
+=======
       };
       hplaptop = nixpkgs.lib.nixosSystem {
         specialArgs = {
@@ -107,8 +111,10 @@
           ./systems/hplaptop.nix
         ];
       };
+
     };
 
+>>>>>>> 1f4781d2f0f1a48d5660f57c855272f68914c002
 	homeConfigurations = {
 	  linkman = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
