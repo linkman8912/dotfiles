@@ -25,9 +25,10 @@
     };
     ags.url = "github:Aylur/ags";
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, hyprpanel, nix-flatpak, nix-on-droid, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, hyprpanel, nix-flatpak, nix-on-droid, chaotic, ... } @ inputs:
     let
     system = "x86_64-linux";
   pkgs = nixpkgs.legacyPackages.${system};
@@ -52,6 +53,7 @@
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/default.nix
+          chaotic.nixosModules.default
         ];
       };
       gtx980 = nixpkgs.lib.nixosSystem {
@@ -71,6 +73,7 @@
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/nvidia980.nix
+          chaotic.nixosModules.default
         ];
       };
       hplaptop = nixpkgs.lib.nixosSystem {
@@ -90,6 +93,7 @@
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/hplaptop.nix
+          chaotic.nixosModules.default
         ];
       };
 
