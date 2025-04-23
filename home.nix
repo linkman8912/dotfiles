@@ -39,43 +39,43 @@
 
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
 # plain files is through 'home.file'.
-      file = {
+        file = {
 # # Building this configuration will create a copy of 'dotfiles/screenrc' in
 # # the Nix store. Activating the configuration will then make '~/.screenrc' a
 # # symlink to the Nix store copy.
 # ".screenrc".source = dotfiles/screenrc;
 
-        ".config/waybar/style.css".source = ./config/waybar/style.css;
-        ".config/waybar/config.jsonc".source = ./config/waybar/config.jsonc;
-        ".config/waybar/mocha.css".source = ./config/waybar/mocha.css;
-        ".config/waybar/colors.css".source = ./config/waybar/colors.css;
-        ".icons" = {
-          source = ./config/hypr/hyprcursor;
-          recursive = true;
-        };
-        ".config/hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
-        ".config/hypr/mocha.conf".source = ./config/hypr/mocha.conf;
-        ".config/hypr/hyprlock.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/hypr/hyprlock.conf;
-        ".config/background.png".source = ./config/hypr/hyprpaper/shaded.png;
-        # ".face".source = ./config/hypr/hyprpaper/Biden.png;
-        ".config/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
-        ".config/btop/themes/catppuccin_mocha.theme".source = ./config/btop_catppuccin_mocha.theme;
+          ".config/waybar/style.css".source = ./config/waybar/style.css;
+          ".config/waybar/config.jsonc".source = ./config/waybar/config.jsonc;
+          ".config/waybar/mocha.css".source = ./config/waybar/mocha.css;
+          ".config/waybar/colors.css".source = ./config/waybar/colors.css;
+          ".icons" = {
+            source = ./config/hypr/hyprcursor;
+            recursive = true;
+          };
+          ".config/hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
+          ".config/hypr/mocha.conf".source = ./config/hypr/mocha.conf;
+          ".config/hypr/hyprlock.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/hypr/hyprlock.conf;
+          ".config/background.png".source = ./config/hypr/hyprpaper/shaded.png;
+# ".face".source = ./config/hypr/hyprpaper/Biden.png;
+          ".config/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
+          ".config/btop/themes/catppuccin_mocha.theme".source = ./config/btop_catppuccin_mocha.theme;
 # kanata config
-        ".config/kanata/kanata.kbd".source = ./config/kanata/splitConfigDvorak.kbd;
+          ".config/kanata/kanata.kbd".source = ./config/kanata/splitConfigDvorak.kbd;
 
-        ".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink ./config/starship.toml;
+          ".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink ./config/starship.toml;
 
 # # You can also set the file content immediately.
 # ".gradle/gradle.properties".text = ''
 #   org.gradle.console=verbose
 #   org.gradle.daemon.idletimeout=3600000
 # '';
-        ".config/nvim" = {
-          source = config.lib.file.mkOutOfStoreSymlink "/home/linkman/.dotfiles/config/nvim";
-          recursive = true;
-        };
+          ".config/nvim" = {
+            source = config.lib.file.mkOutOfStoreSymlink "/home/linkman/.dotfiles/config/nvim";
+            recursive = true;
+          };
 
-      };	
+        };	
     };
 
 # nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -172,7 +172,7 @@
           size = 12;
         };
       };
-      
+
       spicetify = 
         let
         spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
@@ -199,7 +199,7 @@
         colorScheme = "mocha";
         spotifyPackage = pkgs-stable.spotify;
       };
-      
+
       fish = {
         enable = true;
         interactiveShellInit =
@@ -222,7 +222,9 @@
           "v" = "nvim";
           "unpack" = "unp -U";
           "cat" = "bat";
-          # "km" = "~/.dotfiles/config/kToggle.sh";
+          "nvidia-settings" = "nvidia-settings --config=\"$XDG_CONFIG_HOME\"/nvidia/settings";
+          "wget" = "wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\"";
+# "km" = "~/.dotfiles/config/kToggle.sh";
         };
       };
       fuzzel = {
@@ -254,7 +256,7 @@
   imports = [
 # ./config/hypr/hyprland.nix
     ./config/stylix.nix
-      # ~/.envars.nix
+# ~/.envars.nix
       inputs.spicetify-nix.homeManagerModules.default
       inputs.ags.homeManagerModules.default
   ];

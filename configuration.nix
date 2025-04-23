@@ -1,5 +1,5 @@
 # Edit this configuration file to define what should be installed on
-{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, lib, ... }:
+{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, lib, chaotic, ... }:
 
 {
   imports = 
@@ -165,7 +165,7 @@ services = {
       gdm.enable = true;
     };
     desktopManager = {
-# gnome.enable = true;
+      # gnome.enable = true;
     };
     xkb = {
       layout = "us";
@@ -189,8 +189,8 @@ services = {
   printing.drivers = [ 
     pkgs.gutenprint # — Drivers for many different printers from many different vendors.
     pkgs.gutenprintBin # — Additional, binary-only drivers for some printers.
-    pkgs.hplip # — Drivers for HP printers.
-    pkgs.hplipWithPlugin # — Drivers for HP printers, with the proprietary plugin. Use NIXPKGS_ALLOW_UNFREE=1 nix-shell -p hplipWithPlugin --run 'sudo -E hp-setup' to add the printer, regular CUPS UI doesn't seem to work.
+    #pkgs.hplip # — Drivers for HP printers.
+    #pkgs.hplipWithPlugin # — Drivers for HP printers, with the proprietary plugin. Use NIXPKGS_ALLOW_UNFREE=1 nix-shell -p hplipWithPlugin --run 'sudo -E hp-setup' to add the printer, regular CUPS UI doesn't seem to work.
     pkgs.postscript-lexmark # — Postscript drivers for Lexmark
     pkgs.samsung-unified-linux-driver # — Proprietary Samsung Drivers
     pkgs.splix # — Drivers for printers supporting SPL (Samsung Printer Language).
@@ -273,6 +273,10 @@ programs.fish.enable = true;
   nixpkgs = {
     config = {
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "fluffychat-linux-1.22.1"
+        "olm-3.2.16"
+      ];
     };
     overlays = [
 #			(final: prev: {
@@ -354,11 +358,13 @@ programs.fish.enable = true;
         '';*/
     };
 
+    
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
     };
+    
 
     hyprland = {
       enable = true;
@@ -397,6 +403,8 @@ catppuccin = {
     WINEPREFIX="$XDG_DATA_HOME/wine";
     CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv";
     _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java";
+    XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose";
+    NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages";
 # XDG BASE DIRECTORIES
     XDG_CONFIG_HOME="$HOME/.config";
     XDG_STATE_HOME="$HOME/.local/state";
@@ -434,6 +442,7 @@ catppuccin = {
       ];
     };
   };
+
 # Open ports in the firewall.
 # networking.firewall.allowedTCPPorts = [ ... ];
   networking.firewall = {
