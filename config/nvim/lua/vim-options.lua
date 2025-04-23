@@ -8,6 +8,7 @@ vim.cmd("set expandtab")
 vim.cmd("set nocompatible")
 vim.cmd("filetype plugin on")
 vim.cmd("syntax on")
+vim.cmd("setlocal spell spelllang=en_us")
 -- Reserve a space in the gutter
 -- This will avoid an annoying layout shift in the screen
 vim.opt.signcolumn = "yes"
