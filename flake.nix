@@ -92,7 +92,7 @@
 		  catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         nix-flatpak.nixosModules.nix-flatpak
-          ./1080ti.nix
+          ./systems/1080ti.nix
 	    ];
       };
       hplaptop = nixpkgs.lib.nixosSystem {
