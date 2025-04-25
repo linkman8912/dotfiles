@@ -68,21 +68,47 @@ sync.enable = true;
 boot.loader.systemd-boot.enable = true;
 boot.loader.efi.canTouchEfiVariables = true;
 
-systemd.user.services.dropbox = {
-  description = "Dropbox";
-  wantedBy = [ "graphical-session.target" ];
-  environment = {
-    QT_PLUGIN_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtPluginPrefix;
-    QML2_IMPORT_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtQmlPrefix;
+systemd = {
+  user.services.dropbox = {
+    description = "Dropbox";
+    wantedBy = [ "graphical-session.target" ];
+    environment = {
+      QT_PLUGIN_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtPluginPrefix;
+      QML2_IMPORT_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtQmlPrefix;
+    };
+    serviceConfig = {
+      ExecStart = "${lib.getBin pkgs.dropbox}/bin/dropbox";
+      ExecReload = "${lib.getBin pkgs.coreutils}/bin/kill -HUP $MAINPID";
+      KillMode = "control-group"; # upstream recommends process
+        Restart = "on-failure";
+      PrivateTmp = true;
+      ProtectSystem = "full";
+      Nice = 10;
+    };
   };
-  serviceConfig = {
-    ExecStart = "${lib.getBin pkgs.dropbox}/bin/dropbox";
-    ExecReload = "${lib.getBin pkgs.coreutils}/bin/kill -HUP $MAINPID";
-    KillMode = "control-group"; # upstream recommends process
-      Restart = "on-failure";
-    PrivateTmp = true;
-    ProtectSystem = "full";
-    Nice = 10;
+  timers = {
+    "updatedb" = {
+      wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnBootSec = "2h";
+        OnUnitActiveSec = "2h";
+# Alternatively, if you prefer to specify an exact timestamp
+# like one does in cron, you can use the `OnCalendar` option
+# to specify a calendar event expression.
+# Run every Monday at 10:00 AM in the Asia/Kolkata timezone.
+#OnCalendar = "Mon *-*-* 10:00:00 Asia/Kolkata";
+        Unit = "updatedb.service";
+      };
+    };
+  };
+  services."updatedb" = {
+    script = ''
+      ${pkgs.plocate}/bin/updatedb
+      '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
+    };
   };
 };
 
