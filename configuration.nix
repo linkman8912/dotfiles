@@ -154,6 +154,7 @@ users = {
     libvirtd = {
       members = [ "linkman" ];
     };
+    plocate.members = [ "linkman" ];
   };
 
 };
