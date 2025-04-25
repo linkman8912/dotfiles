@@ -213,9 +213,9 @@
           any-nix-shell fish --info-right | source
           '';
         shellAliases = {
-          "ls" = "eza -A";
-          "ll" = "eza -lA";
-          "l" = "ls -A --color=auto";
+          "ls" = "eza -A --icons";
+          "ll" = "eza -lA --icons";
+          "l" = "ls -A --icons";
           ".." = "z ..";
           "..." = "z ../..";
           "...." = "z ../../..";
