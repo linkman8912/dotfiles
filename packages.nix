@@ -77,6 +77,7 @@
       kdePackages.polkit-kde-agent-1
       xwayland
       python3
+      usbutils
       poetry
       flatpak
       node2nix
@@ -173,8 +174,8 @@
       itch
       ryujinx
       amidst
-      # gamescope
-      gamescope_git
+      gamescope
+      # gamescope_git
       prismlauncher
       bastet
       ninvaders
