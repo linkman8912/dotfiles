@@ -45,32 +45,32 @@
 # # symlink to the Nix store copy.
 # ".screenrc".source = dotfiles/screenrc;
 
-          ".config/waybar/style.css".source = ./config/waybar/style.css;
-          ".config/waybar/config.jsonc".source = ./config/waybar/config.jsonc;
-          ".config/waybar/mocha.css".source = ./config/waybar/mocha.css;
-          ".config/waybar/colors.css".source = ./config/waybar/colors.css;
+          "${config.xdg.configHome}/waybar/style.css".source = ./config/waybar/style.css;
+          "${config.xdg.configHome}/waybar/config.jsonc".source = ./config/waybar/config.jsonc;
+          "${config.xdg.configHome}/waybar/mocha.css".source = ./config/waybar/mocha.css;
+          "${config.xdg.configHome}/waybar/colors.css".source = ./config/waybar/colors.css;
           ".icons" = {
             source = ./config/hypr/hyprcursor;
             recursive = true;
           };
-          ".config/hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
-          ".config/hypr/mocha.conf".source = ./config/hypr/mocha.conf;
-          ".config/hypr/hyprlock.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/hypr/hyprlock.conf;
-          ".config/background.png".source = ./config/hypr/hyprpaper/shaded.png;
+          "${config.xdg.configHome}/hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
+          "${config.xdg.configHome}/hypr/mocha.conf".source = ./config/hypr/mocha.conf;
+          "${config.xdg.configHome}/hypr/hyprlock.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/hypr/hyprlock.conf;
+          "${config.xdg.configHome}/background.png".source = ./config/hypr/hyprpaper/shaded.png;
 # ".face".source = ./config/hypr/hyprpaper/Biden.png;
-          ".config/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
-          ".config/btop/themes/catppuccin_mocha.theme".source = ./config/btop_catppuccin_mocha.theme;
+          "${config.xdg.configHome}/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
+          "${config.xdg.configHome}/btop/themes/catppuccin_mocha.theme".source = ./config/btop/themes/catppuccin_mocha.theme;
 # kanata config
-          ".config/kanata/kanata.kbd".source = ./config/kanata/splitConfigDvorak.kbd;
+          "${config.xdg.configHome}/kanata/kanata.kbd".source = ./config/kanata/splitConfigDvorak.kbd;
 
-          ".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink ./config/starship.toml;
+          "${config.xdg.configHome}/starship.toml".source = config.lib.file.mkOutOfStoreSymlink ./config/starship.toml;
 
 # # You can also set the file content immediately.
 # ".gradle/gradle.properties".text = ''
 #   org.gradle.console=verbose
 #   org.gradle.daemon.idletimeout=3600000
 # '';
-          ".config/nvim" = {
+          "${config.xdg.configHome}/nvim" = {
             source = config.lib.file.mkOutOfStoreSymlink "/home/linkman/.dotfiles/config/nvim";
             recursive = true;
           };
@@ -213,9 +213,9 @@
           any-nix-shell fish --info-right | source
           '';
         shellAliases = {
-          "ls" = "eza -A";
-          "ll" = "eza -lA";
-          "l" = "ls -A --color=auto";
+          "ls" = "eza -A --icons";
+          "ll" = "eza -lA --icons";
+          "l" = "ls -A --icons";
           ".." = "z ..";
           "..." = "z ../..";
           "...." = "z ../../..";

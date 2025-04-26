@@ -57,6 +57,7 @@
       mpv
 ### SYSTEM ###
       wl-clipboard
+      toybox
       git-lfs
       exfatprogs
       zip

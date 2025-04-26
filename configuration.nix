@@ -68,21 +68,47 @@ sync.enable = true;
 boot.loader.systemd-boot.enable = true;
 boot.loader.efi.canTouchEfiVariables = true;
 
-systemd.user.services.dropbox = {
-  description = "Dropbox";
-  wantedBy = [ "graphical-session.target" ];
-  environment = {
-    QT_PLUGIN_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtPluginPrefix;
-    QML2_IMPORT_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtQmlPrefix;
+systemd = {
+  user.services.dropbox = {
+    description = "Dropbox";
+    wantedBy = [ "graphical-session.target" ];
+    environment = {
+      QT_PLUGIN_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtPluginPrefix;
+      QML2_IMPORT_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtQmlPrefix;
+    };
+    serviceConfig = {
+      ExecStart = "${lib.getBin pkgs.dropbox}/bin/dropbox";
+      ExecReload = "${lib.getBin pkgs.coreutils}/bin/kill -HUP $MAINPID";
+      KillMode = "control-group"; # upstream recommends process
+        Restart = "on-failure";
+      PrivateTmp = true;
+      ProtectSystem = "full";
+      Nice = 10;
+    };
   };
-  serviceConfig = {
-    ExecStart = "${lib.getBin pkgs.dropbox}/bin/dropbox";
-    ExecReload = "${lib.getBin pkgs.coreutils}/bin/kill -HUP $MAINPID";
-    KillMode = "control-group"; # upstream recommends process
-      Restart = "on-failure";
-    PrivateTmp = true;
-    ProtectSystem = "full";
-    Nice = 10;
+  timers = {
+    "updatedb" = {
+      wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnBootSec = "2h";
+        OnUnitActiveSec = "2h";
+# Alternatively, if you prefer to specify an exact timestamp
+# like one does in cron, you can use the `OnCalendar` option
+# to specify a calendar event expression.
+# Run every Monday at 10:00 AM in the Asia/Kolkata timezone.
+#OnCalendar = "Mon *-*-* 10:00:00 Asia/Kolkata";
+        Unit = "updatedb.service";
+      };
+    };
+  };
+  services."updatedb" = {
+    script = ''
+      ${pkgs.plocate}/bin/updatedb
+      '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
+    };
   };
 };
 
@@ -154,6 +180,7 @@ users = {
     libvirtd = {
       members = [ "linkman" ];
     };
+    plocate.members = [ "linkman" ];
   };
 
 };
@@ -189,8 +216,8 @@ services = {
   printing.drivers = [ 
     pkgs.gutenprint # — Drivers for many different printers from many different vendors.
     pkgs.gutenprintBin # — Additional, binary-only drivers for some printers.
-    pkgs.hplip # — Drivers for HP printers.
-    pkgs.hplipWithPlugin # — Drivers for HP printers, with the proprietary plugin. Use NIXPKGS_ALLOW_UNFREE=1 nix-shell -p hplipWithPlugin --run 'sudo -E hp-setup' to add the printer, regular CUPS UI doesn't seem to work.
+    #pkgs.hplip # — Drivers for HP printers.
+    #pkgs.hplipWithPlugin # — Drivers for HP printers, with the proprietary plugin. Use NIXPKGS_ALLOW_UNFREE=1 nix-shell -p hplipWithPlugin --run 'sudo -E hp-setup' to add the printer, regular CUPS UI doesn't seem to work.
     pkgs.postscript-lexmark # — Postscript drivers for Lexmark
     pkgs.samsung-unified-linux-driver # — Proprietary Samsung Drivers
     pkgs.splix # — Drivers for printers supporting SPL (Samsung Printer Language).
@@ -358,11 +385,13 @@ programs.fish.enable = true;
         '';*/
     };
 
+    
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
     };
+    
 
     hyprland = {
       enable = true;
@@ -462,6 +491,7 @@ catppuccin = {
       experimental-features = [ "nix-command" "flakes" ];
       substituters = ["https://hyprland.cachix.org"];
       trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+      use-xdg-base-directories = true;
     };
 
   nix.optimise.automatic = true;
