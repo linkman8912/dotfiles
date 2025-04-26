@@ -179,7 +179,7 @@
       bastet
       ninvaders
       nsnake
-      bsdgames
+      #bsdgames
       moon-buggy
       superTux
       superTuxKart
