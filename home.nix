@@ -210,7 +210,6 @@
           fzf --fish | source
           starship init fish | source
           enable_transience
-          any-nix-shell fish --info-right | source
           '';
         shellAliases = {
           "ls" = "eza -A --icons";
