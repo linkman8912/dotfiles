@@ -114,48 +114,15 @@
 
       };
 
-      neovim = { /*
-                    enable = true;
-                    vimAlias = true;
-                    defaultEditor = true;
-                    plugins = with pkgs.vimPlugins; [
-                    lazy-nvim
-                    ];
-                    catppuccin.enable = true;
-                    extraConfig =
-                    ''
-                    set mouse =
-                    set tabstop=4
-                    set shiftwidth=2
-                    set autoindent
-                    set expandtab
-                    '';
-        /*
-        extraLuaConfig = ''
-        vim.g.mapleader = " " -- Need to set leader before lazy for correct keybindings
-        require("lazy").setup({
-        performance = {
-        reset_packpath = false,
-        rtp = {
-        reset = false,
-        }
-        },
-        dev = {
-        path = "${pkgs.vimUtils.packDir config.home-manager.users.linkman.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start",
-        },
-        install = {
-        -- Safeguard in case we forget to install a plugin with Nix
-        missing = false,
-        },
-        })
-        '';
-                  */
-      };
-
       git = {
         enable = true;
         userName  = "linkman";
         userEmail = "linkman8912@proton.me";
+        extraConfig = {
+          init = {
+            defaultBranch = "main";
+          };
+        };
       };
 
       kitty = {
