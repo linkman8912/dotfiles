@@ -26,6 +26,7 @@
     ags.url = "github:Aylur/ags";
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, hyprpanel, nix-flatpak, nix-on-droid, chaotic, ... } @ inputs:

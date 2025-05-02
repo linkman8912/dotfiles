@@ -17,6 +17,7 @@
 ### EDITORS ###
       vim
       emacs
+      # inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
   ## NEOVIM THINGS ##
     # linters/stylers
       eslint
