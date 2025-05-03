@@ -192,7 +192,7 @@ services = {
       gdm.enable = true;
     };
     desktopManager = {
-      # gnome.enable = true;
+# gnome.enable = true;
     };
     xkb = {
       layout = "us";
@@ -216,8 +216,8 @@ services = {
   printing.drivers = [ 
     pkgs.gutenprint # — Drivers for many different printers from many different vendors.
     pkgs.gutenprintBin # — Additional, binary-only drivers for some printers.
-    #pkgs.hplip # — Drivers for HP printers.
-    #pkgs.hplipWithPlugin # — Drivers for HP printers, with the proprietary plugin. Use NIXPKGS_ALLOW_UNFREE=1 nix-shell -p hplipWithPlugin --run 'sudo -E hp-setup' to add the printer, regular CUPS UI doesn't seem to work.
+#pkgs.hplip # — Drivers for HP printers.
+#pkgs.hplipWithPlugin # — Drivers for HP printers, with the proprietary plugin. Use NIXPKGS_ALLOW_UNFREE=1 nix-shell -p hplipWithPlugin --run 'sudo -E hp-setup' to add the printer, regular CUPS UI doesn't seem to work.
     pkgs.postscript-lexmark # — Postscript drivers for Lexmark
     pkgs.samsung-unified-linux-driver # — Proprietary Samsung Drivers
     pkgs.splix # — Drivers for printers supporting SPL (Samsung Printer Language).
@@ -241,10 +241,10 @@ services = {
   in {
     extensionPackages = with mopidyPackagesOverride; [
       mopidy-youtube
-      mopidy-mpd
-      mopidy-mopify
-      mopidy-iris
-      mopidy-local
+        mopidy-mpd
+        mopidy-mopify
+        mopidy-iris
+        mopidy-local
     ];
     configuration = ''
       [youtube]
@@ -252,60 +252,62 @@ services = {
         '';
   };
   /* mpd = {
-    enable = true;
-    musicDirectory = "/home/linkman/Music/";
-    extraConfig = ''
-      db_file		"~/.mpd/database"
-      state_file	"~/.mpd/state"
-      audio_output {
-        type "pulse"
-          name "Music"
-          server "127.0.0.1" # add this line - MPD must connect to the local sound server
-      }
+     enable = true;
+     musicDirectory = "/home/linkman/Music/";
+     extraConfig = ''
+     db_file		"~/.mpd/database"
+     state_file	"~/.mpd/state"
+     audio_output {
+     type "pulse"
+     name "Music"
+     server "127.0.0.1" # add this line - MPD must connect to the local sound server
+     }
      '';
 
 # Optional:
 # network.listenAddress = "any"; # if you want to allow non-localhost connections
 # network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
-  }; */
+}; */
 };
 #programs.ssh.askPassword = "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
 programs.fish.enable = true;
 
 # Configure console keymap
-  console.keyMap = "dvorak";
+console.keyMap = "dvorak";
 
 # Enable CUPS to print documents.
-  services.printing.enable = true;
+services.printing.enable = true;
 
 
 # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-  hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
+services.pulseaudio = {
+  enable = false;
+  extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
+};
+security.rtkit.enable = true;
+services.pipewire = {
+  enable = true;
+  alsa.enable = true;
+  alsa.support32Bit = true;
+  pulse.enable = true;
 # If you want to use JACK applications, uncomment this
 #jack.enable = true;
 
 # use the example session manager (no others are packaged yet so this is enabled by default,
 # no need to redefine it in your config for now)
 #media-session.enable = true;
-  };
+};
 
 # Allow unfree packages
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      permittedInsecurePackages = [
-        "fluffychat-linux-1.22.1"
+nixpkgs = {
+  config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "fluffychat-linux-1.26.0"
         "olm-3.2.16"
-      ];
-    };
-    overlays = [
+    ];
+  };
+  overlays = [
 #			(final: prev: {
 #    				gnome.gnome-backgrounds = final.gnome-backgrounds;
 #  			})
@@ -314,110 +316,80 @@ programs.fish.enable = true;
 #	gnome._gdkPixbufCacheBuilder_DO_NOT_USE = final._gdkPixbufCacheBuilder_DO_NOT_USE;
 #})
 
-      (final: _prev: {
-       stable = import pkgs-stable {
-       inherit (final) system config;
-       };
-       })
-    (self: super: rec {
-# https://github.com/NixOS/nixpkgs/blob/c339c066b893e5683830ba870b1ccd3bbea88ece/nixos/modules/programs/nix-ld.nix#L44
-# > We currently take all libraries from systemd and nix as the default.
-     pythonldlibpath = lib.makeLibraryPath (with super; [
-         zlib zstd stdenv.cc.cc curl openssl attr libssh bzip2 libxml2 acl libsodium util-linux xz systemd
-     ]);
-# here we are overriding python program to add LD_LIBRARY_PATH to it's env
-     python = super.stdenv.mkDerivation {
-     name = "python";
-     buildInputs = [ super.makeWrapper ];
-     src = super.python311;
-     installPhase = ''
-     mkdir -p $out/bin
-     cp -r $src/* $out/
-                  wrapProgram $out/bin/python3 --set LD_LIBRARY_PATH ${pythonldlibpath}
-                  wrapProgram $out/bin/python3.11 --set LD_LIBRARY_PATH ${pythonldlibpath}
-                  '';
-     };
-     poetry = super.stdenv.mkDerivation {
-     name = "poetry";
-     buildInputs = [ super.makeWrapper ];
-     src = super.poetry;
-     installPhase = ''
-     mkdir -p $out/bin
-     cp -r $src/* $out/
-     wrapProgram $out/bin/poetry --set LD_LIBRARY_PATH ${pythonldlibpath}
-     '';
+    (final: _prev: {
+     stable = import pkgs-stable {
+     inherit (final) system config;
      };
      })
-     ];
+  ];
 
-                  };
+};
 
-                  fonts.packages = with pkgs; [
-                  nerdfonts
-                  meslo-lgs-nf
-                  poppins
-                  ];
+fonts.packages = with pkgs; [
+  nerd-fonts.sauce-code-pro
+  meslo-lgs-nf
+  poppins
+];
 
-    programs = {
-      neovim = {
-        enable = true;
-        defaultEditor = true;
-        # package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
-      };
-
-    
-    steam = {
-      enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-    };
-    
-
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-      withUWSM  = true;
-    };
-    virt-manager = {
-      enable = true;
-    };
-    uwsm = {
-      enable = true;
-    };
-    nix-ld = {
-      enable = true;
-      libraries = with pkgs; [
-        zlib zstd stdenv.cc.cc curl openssl attr libssh bzip2 libxml2 acl libsodium util-linux xz systemd
-      ];
-    };
+programs = {
+  neovim = {
+    enable = true;
+    defaultEditor = true;
   };
+
+
+  steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+
+
+  hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    withUWSM  = true;
+  };
+  virt-manager = {
+    enable = true;
+  };
+  uwsm = {
+    enable = true;
+  };
+  nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      zlib zstd stdenv.cc.cc curl openssl attr libssh bzip2 libxml2 acl libsodium util-linux xz systemd
+    ];
+  };
+};
 
 catppuccin = {
   enable = true;
-    flavor = "mocha";
-  };
+  flavor = "mocha";
+};
 
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-    ANDROID_USER_HOME="$XDG_DATA_HOME/android";
-    HISTFILE="$XDG_STATE_HOME/bash/history";
-    DOCKER_CONFIG="$XDG_CONFIG_HOME/docker";
-    DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet";
-    GNUPGHOME="$XDG_DATA_HOME/gnupg";
-    GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc";
-    NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history";
-    WINEPREFIX="$XDG_DATA_HOME/wine";
-    CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv";
-    _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java";
-    XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose";
-    NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages";
+environment.sessionVariables = {
+  NIXOS_OZONE_WL = "1";
+  ANDROID_USER_HOME="$XDG_DATA_HOME/android";
+  HISTFILE="$XDG_STATE_HOME/bash/history";
+  DOCKER_CONFIG="$XDG_CONFIG_HOME/docker";
+  DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet";
+  GNUPGHOME="$XDG_DATA_HOME/gnupg";
+  GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc";
+  NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history";
+  WINEPREFIX="$XDG_DATA_HOME/wine";
+  CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv";
+  _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java";
+  XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose";
+  NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages";
 # XDG BASE DIRECTORIES
-    XDG_CONFIG_HOME="$HOME/.config";
-    XDG_STATE_HOME="$HOME/.local/state";
-    XDG_CACHE_HOME="$HOME/.cache";
-    XDG_DATA_HOME="$HOME/.local/share";
-  };
+  XDG_CONFIG_HOME="$HOME/.config";
+  XDG_STATE_HOME="$HOME/.local/state";
+  XDG_CACHE_HOME="$HOME/.cache";
+  XDG_DATA_HOME="$HOME/.local/share";
+};
 
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.
@@ -430,32 +402,32 @@ catppuccin = {
 # List services that you want to enable:
 
 # Enable the OpenSSH daemon.
-  services = {
-    openssh.enable = true;
-    blueman.enable = true;
-    sunshine = {
-      enable = true;
-      autoStart = true;
-      capSysAdmin = true;
-      openFirewall = true;
-    };
-    tailscale.enable = true;
-    flatpak = { 
-      enable = true;
-      packages = [
-      { appId = "io.github.everestapi.Olympus"; origin = "flathub";  }
-      "app.zen_browser.zen"
-        "com.spotify.Client"
-      ];
-    };
+services = {
+  openssh.enable = true;
+  blueman.enable = true;
+  sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
   };
+  tailscale.enable = true;
+  flatpak = { 
+    enable = true;
+    packages = [
+    { appId = "io.github.everestapi.Olympus"; origin = "flathub";  }
+    "app.zen_browser.zen"
+      "com.spotify.Client"
+    ];
+  };
+};
 
 # Open ports in the firewall.
 # networking.firewall.allowedTCPPorts = [ ... ];
-  networking.firewall = {
-    allowedUDPPorts = [ 57621 17500 ];
-    allowedTCPPorts = [ 17500 ];
-  };
+networking.firewall = {
+  allowedUDPPorts = [ 57621 17500 ];
+  allowedTCPPorts = [ 17500 ];
+};
 # Or disable the firewall altogether.
 # networking.firewall.enable = false;
 
@@ -465,20 +437,26 @@ catppuccin = {
 # this value at the release version of the first install of this system.
 # Before changing this value read the documentation for this option
 # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+system.stateVersion = "23.11"; # Did you read the comment?
 
-    nix.settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      substituters = ["https://hyprland.cachix.org"];
-      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-      use-xdg-base-directories = true;
-    };
+nix.settings = {
+  experimental-features = [ "nix-command" "flakes" ];
+  substituters = [
+    "https://hyprland.cachix.org"
+      "https://nix-community.cachix.org"
+  ];
+  trusted-public-keys = [
+    "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  ];
+  use-xdg-base-directories = true;
+};
 
-  nix.optimise.automatic = true;
+nix.optimise.automatic = true;
 
-  swapDevices = [ {
-    device = "/var/lib/swapfile";
-    size = 16*1024;
-  } ];
+swapDevices = [ {
+  device = "/var/lib/swapfile";
+  size = 8*1024;
+} ];
 
 }

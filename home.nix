@@ -127,7 +127,6 @@
 
       kitty = {
         enable = true;
-        catppuccin.enable = true;
         extraConfig =
           ''
           window_title_format {title}
@@ -195,7 +194,6 @@
       };
       fuzzel = {
         enable = true;
-        catppuccin.enable = true;
       };
       home-manager.enable = true;
     };
@@ -216,6 +214,8 @@
     catppuccin = {
       enable = true;
       flavor = "mocha";
+      kitty.enable = true;
+      fuzzel.enable = true;
     };
   };
 

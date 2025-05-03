@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, chaotic, ... }:
+{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, chaotic, neovim-nightly-overlay, ... }:
 
 {
   environment.systemPackages = with pkgs; [
