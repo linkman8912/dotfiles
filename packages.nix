@@ -185,7 +185,7 @@
       superTux
       superTuxKart
       gamemode
-      playonlinux
+      #playonlinux
       lutris
       protonup-qt
       protontricks

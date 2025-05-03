@@ -437,6 +437,7 @@ catppuccin = {
     XDG_STATE_HOME="$HOME/.local/state";
     XDG_CACHE_HOME="$HOME/.cache";
     XDG_DATA_HOME="$HOME/.local/share";
+    OLLAMA_HOME="$XDG_DATA_HOME/ollama/models";
   };
 
 # Some programs need SUID wrappers, can be configured further or are
