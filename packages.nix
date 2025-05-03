@@ -100,7 +100,7 @@
       wev
       libnotify
       xautoclick
-      meteor
+      # meteor
       gcc
       dotnetCorePackages.sdk_8_0_3xx
       p7zip
