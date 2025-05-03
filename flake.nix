@@ -26,6 +26,7 @@
     ags.url = "github:Aylur/ags";
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, hyprpanel, nix-flatpak, nix-on-droid, chaotic, ... } @ inputs:
@@ -50,7 +51,10 @@
           /etc/nixos/hardware-configuration.nix
           inputs.stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
-          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+          {nixpkgs.overlays = [
+            inputs.hyprpanel.overlay
+            inputs.neovim-nightly-overlay.overlays.default
+          ];}
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/default.nix
           chaotic.nixosModules.default
@@ -72,7 +76,7 @@
           catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         nix-flatpak.nixosModules.nix-flatpak
-          ./systems/nvidia980.nix
+          ./systems/gtx980.nix
           chaotic.nixosModules.default
         ];
       };
@@ -92,7 +96,7 @@
 		  catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         nix-flatpak.nixosModules.nix-flatpak
-          ./systems/1080ti.nix
+          ./systems/gtx1080.nix
 	    ];
       };
       hplaptop = nixpkgs.lib.nixosSystem {
@@ -123,7 +127,7 @@
         modules = [ 
           ./home.nix
           stylix.homeManagerModules.stylix 
-          catppuccin.homeManagerModules.catppuccin
+          catppuccin.homeModules.catppuccin
         ];
         extraSpecialArgs = {
           inherit inputs;

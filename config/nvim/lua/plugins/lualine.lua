@@ -6,6 +6,11 @@ return {
       options = {
         theme = "dracula",
       },
+      sections = {
+        lualine_x = {
+          require("music-controls")._statusline,
+        }
+      }
     })
   end,
 }

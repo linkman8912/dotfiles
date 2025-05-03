@@ -252,16 +252,16 @@ services = {
         '';
   };
   /* mpd = {
-    enable = true;
-    musicDirectory = "/home/linkman/Music/";
-    extraConfig = ''
-      db_file		"~/.mpd/database"
-      state_file	"~/.mpd/state"
-      audio_output {
-        type "pulse"
-          name "Music"
-          server "127.0.0.1" # add this line - MPD must connect to the local sound server
-      }
+     enable = true;
+     musicDirectory = "/home/linkman/Music/";
+     extraConfig = ''
+     db_file		"~/.mpd/database"
+     state_file	"~/.mpd/state"
+     audio_output {
+     type "pulse"
+     name "Music"
+     server "127.0.0.1" # add this line - MPD must connect to the local sound server
+     }
      '';
 
 # Optional:
@@ -385,12 +385,20 @@ environment.sessionVariables = {
   XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose";
   NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages";
 # XDG BASE DIRECTORIES
+<<<<<<< HEAD
     XDG_CONFIG_HOME="$HOME/.config";
     XDG_STATE_HOME="$HOME/.local/state";
     XDG_CACHE_HOME="$HOME/.cache";
     XDG_DATA_HOME="$HOME/.local/share";
     OLLAMA_HOME="$XDG_DATA_HOME/ollama/models";
   };
+=======
+  XDG_CONFIG_HOME="$HOME/.config";
+  XDG_STATE_HOME="$HOME/.local/state";
+  XDG_CACHE_HOME="$HOME/.cache";
+  XDG_DATA_HOME="$HOME/.local/share";
+};
+>>>>>>> 0e9c90e66a64a85758d0269c70c0a16ecc6365ec
 
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.
@@ -412,6 +420,7 @@ services = {
     capSysAdmin = true;
     openFirewall = true;
   };
+  tailscale.enable = true;
   flatpak = { 
     enable = true;
     packages = [
@@ -420,7 +429,6 @@ services = {
       "com.spotify.Client"
     ];
   };
-  tailscale.enable = true;
 };
 
 # Open ports in the firewall.

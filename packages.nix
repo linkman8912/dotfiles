@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, chaotic, ... }:
+{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, chaotic, neovim-nightly-overlay, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -17,6 +17,7 @@
 ### EDITORS ###
       vim
       emacs
+      # inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
   ## NEOVIM THINGS ##
     # linters/stylers
       eslint
