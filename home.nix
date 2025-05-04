@@ -161,8 +161,8 @@
             marketplace
             localFiles
         ];
-        theme = spicePkgs.themes.catppuccin;
-        colorScheme = "mocha";
+        theme = lib.mkForce spicePkgs.themes.catppuccin;
+        colorScheme = lib.mkForce "mocha";
         spotifyPackage = pkgs-stable.spotify;
       };
 
@@ -176,6 +176,7 @@
           fzf --fish | source
           starship init fish | source
           enable_transience
+          fish_vi_key_bindings
           '';
         shellAliases = {
           "ls" = "eza -A --icons";
@@ -189,6 +190,7 @@
           "cat" = "bat";
           "nvidia-settings" = "nvidia-settings --config=\"$XDG_CONFIG_HOME\"/nvidia/settings";
           "wget" = "wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\"";
+          "rb" = "sudo -D ~/.dotfiles -- sh -c 'nix flake update; nixos-rebuild switch --flake . --impure' && home-manager switch --flake ~/.dotfiles -b backup";
 # "km" = "~/.dotfiles/config/kToggle.sh";
         };
       };
@@ -216,6 +218,7 @@
       flavor = "mocha";
       kitty.enable = true;
       fuzzel.enable = true;
+      mako.enable = false;
     };
   };
 
