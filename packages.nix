@@ -11,9 +11,9 @@
     firefox
       inputs.zen-browser.packages."${pkgs.system}".default
       brave
-      browsh
+      #browsh
       floorp
-      lynx
+      #lynx
 ### EDITORS ###
       vim
       emacs
@@ -32,7 +32,6 @@
       hyprls
       nil
       python312Packages.python-lsp-server
-
       pylyzer
       pyright
       lua-language-server
@@ -40,7 +39,7 @@
       openscad
       pkgs-stable.kicad
       blender
-      logisim
+      #logisim
       prusa-slicer
 ### MUSIC ###
       flac2all
@@ -100,7 +99,7 @@
       wev
       libnotify
       xautoclick
-      meteor
+      #meteor
       gcc
       dotnetCorePackages.sdk_8_0_3xx
       p7zip
@@ -113,7 +112,7 @@
       mlocate
       any-nix-shell
       libcap
-      xr-hardware
+      #xr-hardware
 ### TERMINAL TOOLS ###
       fzf
       unp
@@ -122,7 +121,7 @@
       git-filter-repo
       bfg-repo-cleaner
       tldr
-      brillo
+      #brillo
       bat
       brightnessctl
       ripgrep
@@ -135,15 +134,15 @@
 ### SECURITY ###
       tor
       tor-browser
-      protonvpn-gui
+      #protonvpn-gui
       wireguard-ui
       wireguard-tools
       qbittorrent
 ### PROGRAMMING ###
       hugo
 ### KEYBOARD ###
-      vial
-      via
+      #vial
+      #via
       kmonad
       kanata
       input-remapper
@@ -151,7 +150,7 @@
       grimblast
       hyprpolkitagent
       hyprland
-      hyprpanel
+      # hyprpanel
       hypridle
       catppuccin
       mpvpaper
@@ -170,25 +169,25 @@
       wofi
       starship
 ### GAMES ###
-      everest-mons
+      #everest-mons
       dolphin-emu
       itch
       ryujinx
-      amidst
+      #amidst
       gamescope
       # gamescope_git
       prismlauncher
-      bastet
-      ninvaders
-      nsnake
+      #bastet
+      #ninvaders
+      #nsnake
       #bsdgames
-      moon-buggy
+      #moon-buggy
       superTux
       superTuxKart
       gamemode
       #playonlinux
       lutris
-      protonup-qt
+      #protonup-qt
       protontricks
       samrewritten
 # GAMEDEV #
@@ -212,7 +211,7 @@
       obs-studio
       inkscape
 ### BACKUPS ###
-      maestral
+      #maestral
       celeste
       dropbox
       dropbox-cli
@@ -220,7 +219,6 @@
       moonlight-qt
       ollama
       waydroid
-      motrix
+      #motrix
       ];
 }
-

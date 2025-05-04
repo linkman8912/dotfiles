@@ -18,7 +18,7 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    #hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     suyu = {
       url = "git+https://github.com/Noodlez1232/suyu-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,7 +29,7 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, hyprpanel, nix-flatpak, nix-on-droid, chaotic, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, nix-flatpak, nix-on-droid, chaotic, ... } @ inputs:
     let
     system = "x86_64-linux";
   pkgs = nixpkgs.legacyPackages.${system};
@@ -52,7 +52,7 @@
           inputs.stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [
-            inputs.hyprpanel.overlay
+            # inputs.hyprpanel.overlay
             inputs.neovim-nightly-overlay.overlays.default
           ];}
         nix-flatpak.nixosModules.nix-flatpak
@@ -74,7 +74,10 @@
           /etc/nixos/hardware-configuration.nix
           inputs.stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
-          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+          {nixpkgs.overlays = [
+            #inputs.hyprpanel.overlay
+            inputs.neovim-nightly-overlay.overlays.default
+          ];}
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/gtx980.nix
           chaotic.nixosModules.default
@@ -94,7 +97,10 @@
 		  /etc/nixos/hardware-configuration.nix
 		  inputs.stylix.nixosModules.stylix
 		  catppuccin.nixosModules.catppuccin
-          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+          {nixpkgs.overlays = [
+            #inputs.hyprpanel.overlay
+            inputs.neovim-nightly-overlay.overlays.default
+          ];}
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/gtx1080.nix
 	    ];
@@ -113,7 +119,10 @@
           /etc/nixos/hardware-configuration.nix
           inputs.stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
-          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+          {nixpkgs.overlays = [
+            #inputs.hyprpanel.overlay
+            inputs.neovim-nightly-overlay.overlays.default
+          ];}
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/hplaptop.nix
           chaotic.nixosModules.default
