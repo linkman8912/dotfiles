@@ -53,7 +53,7 @@
           catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [
             # inputs.hyprpanel.overlay
-            inputs.neovim-nightly-overlay.overlays.default
+            #inputs.neovim-nightly-overlay.overlays.default
           ];}
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/default.nix
