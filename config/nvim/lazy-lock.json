@@ -1,6 +1,7 @@
 {
   "alpha-nvim": { "branch": "main", "commit": "de72250e054e5e691b9736ee30db72c65d560771" },
   "apc.nvim": { "branch": "main", "commit": "57bf9b3798547b6cbb3ffcb12bcdd0a3f41769ba" },
+  "bad-practices.nvim": { "branch": "main", "commit": "36a1a504ef83b36795ad6a6cd7a3f675a36365e9" },
   "catppuccin": { "branch": "main", "commit": "1bf070129c0b6f77cc23f6a2212dcdc868308c52" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "a8912b88ce488f411177fc8aed358b04dc246d7b" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
