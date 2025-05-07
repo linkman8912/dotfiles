@@ -73,7 +73,7 @@
       winetricks
       jdk17
       openjdk17
-      nodejs_23
+      nodejs_latest
       kdePackages.polkit-kde-agent-1
       xwayland
       python3
