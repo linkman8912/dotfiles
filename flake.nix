@@ -60,7 +60,7 @@
           chaotic.nixosModules.default
         ];
       };
-      gtx980 = nixpkgs.lib.nixosSystem {
+      smartandgay = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
           pkgs-stable = import nixpkgs-stable {
@@ -105,7 +105,7 @@
           ./systems/gtx1080.nix
 	    ];
       };
-      hplaptop = nixpkgs.lib.nixosSystem {
+      dumbandgay = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
           pkgs-stable = import nixpkgs-stable {
