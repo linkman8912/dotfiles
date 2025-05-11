@@ -8,7 +8,7 @@ return {
       },
       sections = {
         lualine_x = {
-          require("music-controls")._statusline,
+          --require("music-controls")._statusline,
         }
       }
     })
