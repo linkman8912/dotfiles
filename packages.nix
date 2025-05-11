@@ -84,6 +84,8 @@
       gparted
       blueman
       wine
+      wine-wayland
+      wine64
       python313Packages.pip
       pipx
       libwebp
@@ -174,8 +176,8 @@
       itch
       ryujinx
       #amidst
-      gamescope
-      # gamescope_git
+      # gamescope
+      gamescope_git
       prismlauncher
       #bastet
       #ninvaders
