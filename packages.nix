@@ -57,7 +57,7 @@
       mpv
 ### SYSTEM ###
       wl-clipboard
-      toybox
+      #toybox
       git-lfs
       exfatprogs
       zip
@@ -68,7 +68,7 @@
       litemdview
       killall
       btop
-      ventoy-full
+      #ventoy-full
       wget
       winetricks
       jdk17
@@ -168,6 +168,7 @@
       fastfetch
       wofi
       starship
+      eww
 ### GAMES ###
       #everest-mons
       dolphin-emu
