@@ -185,6 +185,7 @@
           fish_vi_key_bindings
           '';
         shellAliases = {
+          "cd" = "z";
           "ls" = "eza -A --icons";
           "ll" = "eza -lA --icons";
           "l" = "ls -A --icons";
