@@ -40,5 +40,14 @@
 	};
   };
 
+  fileSystems."/home" = {
+    device = "dev/disk/by-uuid/69563580-798b-4be0-bd1d-b3e1cbb1903b";
+    fsType = "btrfs";
+    options = [ # If you don't have this options attribute, it'll default to "defaults" 
+# boot options for fstab. Search up fstab mount options you can use
+      "nofail" # Prevent system from failing if this drive doesn't mount
+    ];
+  };
+
   services.xserver.videoDrivers = [ "nvidia"];
 }
