@@ -64,6 +64,12 @@
           "${config.xdg.configHome}/kanata/kanata.kbd".source = ./config/kanata/splitConfigDvorak.kbd;
 
           "${config.xdg.configHome}/starship.toml".source = config.lib.file.mkOutOfStoreSymlink ./config/starship.toml;
+          "${config.xdg.configHome}/eww" = {
+            source = config.lib.file.mkOutOfStoreSymlink "/home/linkman/.dotfiles/config/eww";
+            recursive = true;
+          };
+
+
 
 # # You can also set the file content immediately.
 # ".gradle/gradle.properties".text = ''
@@ -211,6 +217,7 @@
             "~/.dotfiles/config/hypr/hyprpaper/shaded.png"
           ];
         wallpaper = [ ", ~/.dotfiles/config/hypr/hyprpaper/shaded.png" ];
+        splash = true;
       };
     };
     catppuccin = {

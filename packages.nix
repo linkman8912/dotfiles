@@ -57,7 +57,7 @@
       mpv
 ### SYSTEM ###
       wl-clipboard
-      toybox
+      #toybox
       git-lfs
       exfatprogs
       zip
@@ -170,6 +170,7 @@
       fastfetch
       wofi
       starship
+      eww
 ### GAMES ###
       #everest-mons
       dolphin-emu
