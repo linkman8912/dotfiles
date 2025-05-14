@@ -68,7 +68,7 @@
       litemdview
       killall
       btop
-      ventoy-full
+      #ventoy-full
       wget
       winetricks
       jdk17
