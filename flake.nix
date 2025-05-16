@@ -135,7 +135,7 @@
         inherit pkgs;
         modules = [ 
           ./home.nix
-          stylix.homeManagerModules.stylix 
+          stylix.homeModules.stylix 
           catppuccin.homeModules.catppuccin
         ];
         extraSpecialArgs = {
