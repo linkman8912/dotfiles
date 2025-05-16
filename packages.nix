@@ -35,6 +35,7 @@
       pylyzer
       pyright
       lua-language-server
+      astyle
 ### CAD ###
       openscad
       pkgs-stable.kicad
@@ -57,6 +58,8 @@
       mpv
 ### SYSTEM ###
       wl-clipboard
+      rustc
+      cargo
       #toybox
       git-lfs
       exfatprogs
