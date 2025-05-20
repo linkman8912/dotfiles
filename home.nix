@@ -235,6 +235,6 @@
     ./config/stylix.nix
 # ~/.envars.nix
       inputs.spicetify-nix.homeManagerModules.default
-      inputs.ags.homeManagerModules.default
+      #inputs.ags.homeManagerModules.default
   ];
 }

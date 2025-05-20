@@ -174,6 +174,7 @@
       wofi
       starship
       eww
+      ags
 ### GAMES ###
       #everest-mons
       dolphin-emu
