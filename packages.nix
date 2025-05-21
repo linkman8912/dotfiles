@@ -175,6 +175,7 @@
       starship
       eww
       pywal16
+      ags
 ### GAMES ###
       #everest-mons
       dolphin-emu

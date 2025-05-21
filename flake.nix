@@ -23,7 +23,7 @@
       url = "git+https://github.com/Noodlez1232/suyu-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ags.url = "github:Aylur/ags";
+    #ags.url = "github:Aylur/ags";
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
