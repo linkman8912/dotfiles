@@ -174,6 +174,7 @@
       wofi
       starship
       eww
+      pywal16
 ### GAMES ###
       #everest-mons
       dolphin-emu

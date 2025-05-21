@@ -12,6 +12,8 @@ vim.cmd("set termguicolors")
 vim.cmd("filetype plugin on")
 vim.cmd("syntax on")
 vim.cmd("setlocal spell spelllang=en_us")
+vim.cmd("set ignorecase")
+vim.cmd("set smartcase")
 -- Reserve a space in the gutter
 -- This will avoid an annoying layout shift in the screen
 vim.opt.signcolumn = "yes"
