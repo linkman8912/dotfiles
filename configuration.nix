@@ -252,16 +252,16 @@ services = {
         '';
   };
   /* mpd = {
-    enable = true;
-    musicDirectory = "/home/linkman/Music/";
-    extraConfig = ''
-      db_file		"~/.mpd/database"
-      state_file	"~/.mpd/state"
-      audio_output {
-        type "pulse"
-          name "Music"
-          server "127.0.0.1" # add this line - MPD must connect to the local sound server
-      }
+     enable = true;
+     musicDirectory = "/home/linkman/Music/";
+     extraConfig = ''
+     db_file		"~/.mpd/database"
+     state_file	"~/.mpd/state"
+     audio_output {
+     type "pulse"
+     name "Music"
+     server "127.0.0.1" # add this line - MPD must connect to the local sound server
+     }
      '';
 
 # Optional:
@@ -303,7 +303,7 @@ nixpkgs = {
   config = {
     allowUnfree = true;
     permittedInsecurePackages = [
-      "fluffychat-linux-1.26.0"
+      "fluffychat-linux-1.26.1"
         "olm-3.2.16"
     ];
   };
@@ -348,7 +348,7 @@ programs = {
   hyprland = {
     enable = true;
     xwayland.enable = true;
-    #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+#package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     withUWSM  = true;
   };
   virt-manager = {
@@ -385,12 +385,12 @@ environment.sessionVariables = {
   XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose";
   NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages";
 # XDG BASE DIRECTORIES
-    XDG_CONFIG_HOME="$HOME/.config";
-    XDG_STATE_HOME="$HOME/.local/state";
-    XDG_CACHE_HOME="$HOME/.cache";
-    XDG_DATA_HOME="$HOME/.local/share";
-    OLLAMA_HOME="$XDG_DATA_HOME/ollama/models";
-  };
+  XDG_CONFIG_HOME="$HOME/.config";
+  XDG_STATE_HOME="$HOME/.local/state";
+  XDG_CACHE_HOME="$HOME/.cache";
+  XDG_DATA_HOME="$HOME/.local/share";
+  OLLAMA_HOME="$XDG_DATA_HOME/ollama/models";
+};
 
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.
@@ -421,6 +421,10 @@ services = {
     ];
   };
   tailscale.enable = true;
+};
+
+chaotic = {
+  nyx.cache.enable = true;
 };
 
 # Open ports in the firewall.
