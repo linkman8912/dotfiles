@@ -60,6 +60,7 @@
       wl-clipboard
       rustc
       cargo
+      fd
       #toybox
       git-lfs
       exfatprogs
