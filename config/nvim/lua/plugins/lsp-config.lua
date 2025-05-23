@@ -2,7 +2,10 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require("lspconfig")
+      vim.lsp.enable("hyprls")
+      vim.lsp.enable("lua_ls")
+      vim.lsp.enable("pyright")
+      --[[local lspconfig = require("lspconfig")
       local lspconfig_defaults = require("lspconfig").util.default_config
 
       lspconfig_defaults.capabilities = vim.tbl_deep_extend(
@@ -41,7 +44,7 @@ return {
           vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
           vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
         end,
-      })
+      })*/]]
     end,
   },
   {
