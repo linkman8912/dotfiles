@@ -32,10 +32,10 @@
   ret    (tap-hold 0 $tap-timeout ret (layer-toggle num))
 
   ;; num layer homerow keys
-  {      (tap-hold $hold-timeout $tap-timeout { lsft)
-  }      (tap-hold $hold-timeout $tap-timeout } lalt)
-  [      (tap-hold $hold-timeout $tap-timeout [ lctl)
-  ]      (tap-hold $hold-timeout $tap-timeout ] lmet)
+  {      (tap-hold $hold-timeout $tap-timeout [ lsft)
+  }      (tap-hold $hold-timeout $tap-timeout ] lalt)
+  [      (tap-hold $hold-timeout $tap-timeout S-[ lctl)
+  ]      (tap-hold $hold-timeout $tap-timeout S-] lmet)
 
   S9      (tap-hold $hold-timeout $tap-timeout S-9 rmet)
   S0      (tap-hold $hold-timeout $tap-timeout S-0 rctl)
