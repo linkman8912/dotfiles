@@ -1,0 +1,5 @@
+vim.keymap.set('n', '<leader>tl', ":tabnext<CR>")
+vim.keymap.set('n', '<leader>th', ":-tabnext<CR>")
+vim.keymap.set('n', '<leader>tn', ":tab new<CR>")
+vim.keymap.set('n', '<leader>tc', ":tabclose<CR>")
+--vim.keymap.set("n", "<leader>n", ":Neotree filesystem toggle left<CR>", {})
