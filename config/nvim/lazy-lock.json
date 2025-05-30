@@ -1,4 +1,5 @@
 {
+  "LuaSnip": { "branch": "master", "commit": "458560534a73f7f8d7a11a146c801db00b081df0" },
   "alpha-nvim": { "branch": "main", "commit": "a35468cd72645dbd52c0624ceead5f301c566dff" },
   "apc.nvim": { "branch": "main", "commit": "57bf9b3798547b6cbb3ffcb12bcdd0a3f41769ba" },
   "bad-practices.nvim": { "branch": "main", "commit": "36a1a504ef83b36795ad6a6cd7a3f675a36365e9" },
