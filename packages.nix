@@ -111,6 +111,7 @@
       p7zip
       appimage-run
       git
+      github-cli
       baobab
       podman
       xdg-ninja
