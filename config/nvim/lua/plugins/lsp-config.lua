@@ -5,7 +5,10 @@ return {
       vim.lsp.enable("hyprls")
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("pyright")
-      vim.lsp.enable("ast_grep")
+      --vim.lsp.enable("csharp_ls")
+      vim.lsp.enable("omnisharp")
+      --vim.lsp.enable("csh
+
       --[[local lspconfig = require("lspconfig")
       local lspconfig_defaults = require("lspconfig").util.default_config
 

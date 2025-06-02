@@ -128,6 +128,13 @@
           init = {
             defaultBranch = "main";
           };
+          merge = {
+            tool = "unityyamlmerge";
+          };
+          mergetool."unityyamlmerge" = {
+            trustExitCode = false;
+            cmd = "~/Unity/Hub/Editor/2022.3.57f1/Editor/Data/Tools/UnityYAMLMerge merge -p '$BASE' '$REMOTE' '$LOCAL' '$MERGED'";
+          };
         };
       };
 

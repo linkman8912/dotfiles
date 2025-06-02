@@ -2,6 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
+    # shell scripts
+    (import scripts/gifconvert.nix)
     # a workaround
     (pkgs.writeShellScriptBin "python" ''
      export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
@@ -30,12 +32,16 @@
       ast-grep
       superhtml
       hyprls
+      csharp-ls
+      omnisharp-roslyn
       nil
       python312Packages.python-lsp-server
       pylyzer
       pyright
       lua-language-server
       astyle
+      rust-analyzer
+      ccls
 ### CAD ###
       openscad
       pkgs-stable.kicad
@@ -107,7 +113,11 @@
       xautoclick
       #meteor
       gcc
-      dotnetCorePackages.sdk_8_0_3xx
+      #dotnetCorePackages.sdk_8_0_3xx
+      dotnet-runtime_9
+      dotnetCorePackages.runtime_9_0-bin
+      dotnetCorePackages.sdk_9_0-bin
+      dotnetCorePackages.dotnet_9.sdk
       p7zip
       appimage-run
       git
