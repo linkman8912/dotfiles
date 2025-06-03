@@ -101,13 +101,23 @@ systemd = {
       };
     };
   };
-  services."updatedb" = {
-    script = ''
-      ${pkgs.plocate}/bin/updatedb
+  services = {
+    "updatedb" = {
+      script = ''
+        ${pkgs.plocate}/bin/updatedb
+        '';
+      serviceConfig = {
+        Type = "oneshot";
+        User = "root";
+      };
+    };
+    "mpd" = {
+      script = ''
+        mpd
       '';
-    serviceConfig = {
-      Type = "oneshot";
-      User = "root";
+      serviceConfig = {
+        User = "linkman";
+      };
     };
   };
 };
@@ -234,7 +244,7 @@ services = {
     nssmdns4 = true;
     openFirewall = true;
   };
-  mopidy = let
+  /*mopidy = let
     mopidyPackagesOverride = pkgs.mopidyPackages.overrideScope (prev: final: {
         extraPkgs = pkgs: [ pkgs.yt-dlp ];
         });
@@ -250,24 +260,22 @@ services = {
       [youtube]
       youtube_dl_package = yt_dlp
         '';
-  };
-  /* mpd = {
-     enable = true;
-     musicDirectory = "/home/linkman/Music/";
-     extraConfig = ''
-     db_file		"~/.mpd/database"
-     state_file	"~/.mpd/state"
-     audio_output {
-     type "pulse"
-     name "Music"
-     server "127.0.0.1" # add this line - MPD must connect to the local sound server
-     }
-     '';
+  };*/
+  /*mpd = {
+    enable = true;
+    musicDirectory = "/home/linkman/Music/";
+    /*extraConfig = ''
+      audio_output {
+        type "pulse"
+        name "Music"
+        server "127.0.0.1" # add this line - MPD must connect to the local sound server
+      }
+    '';
 
 # Optional:
 # network.listenAddress = "any"; # if you want to allow non-localhost connections
 # network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
-}; */
+  }; */
 };
 #programs.ssh.askPassword = "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
 programs.fish.enable = true;
@@ -283,6 +291,7 @@ services.printing.enable = true;
 services.pulseaudio = {
   enable = false;
   extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
+  systemWide = true;
 };
 security.rtkit.enable = true;
 services.pipewire = {
@@ -370,26 +379,29 @@ catppuccin = {
   flavor = "mocha";
 };
 
-environment.sessionVariables = {
-  NIXOS_OZONE_WL = "1";
-  ANDROID_USER_HOME="$XDG_DATA_HOME/android";
-  HISTFILE="$XDG_STATE_HOME/bash/history";
-  DOCKER_CONFIG="$XDG_CONFIG_HOME/docker";
-  DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet";
-  GNUPGHOME="$XDG_DATA_HOME/gnupg";
-  GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc";
-  NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history";
-  WINEPREFIX="$XDG_DATA_HOME/wine";
-  CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv";
-  _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java";
-  XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose";
-  NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages";
+environment = {
+  sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    ANDROID_USER_HOME="$XDG_DATA_HOME/android";
+    HISTFILE="$XDG_STATE_HOME/bash/history";
+    DOCKER_CONFIG="$XDG_CONFIG_HOME/docker";
+    DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet";
+    GNUPGHOME="$XDG_DATA_HOME/gnupg";
+    GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc";
+    NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history";
+    WINEPREFIX="$XDG_DATA_HOME/wine";
+    CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv";
+    _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java";
+    XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose";
+    NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages";
 # XDG BASE DIRECTORIES
-  XDG_CONFIG_HOME="$HOME/.config";
-  XDG_STATE_HOME="$HOME/.local/state";
-  XDG_CACHE_HOME="$HOME/.cache";
-  XDG_DATA_HOME="$HOME/.local/share";
-  OLLAMA_HOME="$XDG_DATA_HOME/ollama/models";
+    XDG_CONFIG_HOME="$HOME/.config";
+    XDG_STATE_HOME="$HOME/.local/state";
+    XDG_CACHE_HOME="$HOME/.cache";
+    XDG_DATA_HOME="$HOME/.local/share";
+    OLLAMA_HOME="$XDG_DATA_HOME/ollama/models";
+  };
+
 };
 
 # Some programs need SUID wrappers, can be configured further or are

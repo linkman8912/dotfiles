@@ -62,6 +62,7 @@
           "${config.xdg.configHome}/btop/themes/catppuccin_mocha.theme".source = ./config/btop/themes/catppuccin_mocha.theme;
 # kanata config
           "${config.xdg.configHome}/kanata/kanata.kbd".source = ./config/kanata/splitConfigDvorak.kbd;
+          "${config.xdg.configHome}/mpd/mpd.conf".source = ./config/mpd/mpd.conf;
 
           "${config.xdg.configHome}/starship.toml".source = config.lib.file.mkOutOfStoreSymlink ./config/starship.toml;
           "${config.xdg.configHome}/eww" = {

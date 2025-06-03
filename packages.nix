@@ -52,12 +52,14 @@
       flac2all
       playerctl
       mpd
+      mpc
       mopidy
       audacity
       plattenalbum
       # pkgs-stable.spotify
       pkgs-stable.cava
       yt-dlp
+      rmpc
 ### VIDEO ###
       vlc
       handbrake
@@ -69,6 +71,8 @@
       fd
       #toybox
       git-lfs
+      wf-recorder
+      slurp
       exfatprogs
       zip
       unzip
