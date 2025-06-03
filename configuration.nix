@@ -113,7 +113,7 @@ systemd = {
     };
     "mpd" = {
       script = ''
-        mpd
+         XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.linkman.uid}" mpd /home/linkman/.config/mpd/mpd.conf
       '';
       serviceConfig = {
         User = "linkman";
@@ -291,7 +291,7 @@ services.printing.enable = true;
 services.pulseaudio = {
   enable = false;
   extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
-  systemWide = true;
+  #systemWide = true;
 };
 security.rtkit.enable = true;
 services.pipewire = {
