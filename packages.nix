@@ -53,13 +53,14 @@
       playerctl
       mpd
       mpc
-      mopidy
       audacity
       plattenalbum
       # pkgs-stable.spotify
       pkgs-stable.cava
       yt-dlp
       rmpc
+      sacad
+      beets
 ### VIDEO ###
       vlc
       handbrake
@@ -235,7 +236,8 @@
       obs-studio
       inkscape
 ### BACKUPS ###
-      #maestral
+      maestral
+      maestral-gui
       celeste
       dropbox
       dropbox-cli
