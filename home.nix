@@ -136,6 +136,13 @@
             trustExitCode = false;
             cmd = "~/Unity/Hub/Editor/2022.3.57f1/Editor/Data/Tools/UnityYAMLMerge merge -p '$BASE' '$REMOTE' '$LOCAL' '$MERGED'";
           };
+          checkout = {
+            defaultRemote = "origin";
+          };
+          branch."main" = {
+            remote = "origin";
+            merge = "refs/heads/main";
+          };
         };
       };
 
@@ -207,6 +214,7 @@
           "wget" = "wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\"";
           "rb" = "sudo -E -- sh -c 'nix flake update --flake ~/.dotfiles; nixos-rebuild switch --flake ~/.dotfiles --impure' && home-manager switch --flake ~/.dotfiles -b backup";
 # "km" = "~/.dotfiles/config/kToggle.sh";
+          "yt-dlpa" = "yt-dlp -x --audio-format flac";
         };
       };
       fuzzel = {
