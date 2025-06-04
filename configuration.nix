@@ -69,7 +69,7 @@ boot.loader.systemd-boot.enable = true;
 boot.loader.efi.canTouchEfiVariables = true;
 
 systemd = {
-  user.services.dropbox = {
+  /*user.services.dropbox = {
     description = "Dropbox";
     wantedBy = [ "graphical-session.target" ];
     environment = {
@@ -85,7 +85,7 @@ systemd = {
       ProtectSystem = "full";
       Nice = 10;
     };
-  };
+  };*/
   timers = {
     "updatedb" = {
       wantedBy = [ "timers.target" ];
