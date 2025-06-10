@@ -241,6 +241,8 @@
       celeste
       dropbox
       dropbox-cli
+      syncthing
+      syncthingtray
 ### OTHER ###
       moonlight-qt
       ollama
