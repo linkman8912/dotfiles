@@ -63,6 +63,7 @@
 # kanata config
           "${config.xdg.configHome}/kanata/kanata.kbd".source = ./config/kanata/splitConfigDvorak.kbd;
           "${config.xdg.configHome}/mpd/mpd.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/mpd/mpd.conf;
+          "${config.xdg.dataHome}/spotdl/config.json".source = ./config/spotdl/config.json;
 
           "${config.xdg.configHome}/starship.toml".source = config.lib.file.mkOutOfStoreSymlink ./config/starship.toml;
           "${config.xdg.configHome}/eww" = {

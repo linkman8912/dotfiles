@@ -58,6 +58,7 @@
       # pkgs-stable.spotify
       pkgs-stable.cava
       yt-dlp
+      spotdl
       rmpc
       sacad
       beets
