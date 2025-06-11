@@ -5,7 +5,8 @@
     # shell scripts
     (import scripts/gifconvert.nix)
     # rmpc (a specific git version)
-    (import config/rmpc/default.nix)
+    #(import config/rmpc/default.nix)
+    (pkgs.callPackage ./config/rmpc/package.nix { })
     # a workaround
     (pkgs.writeShellScriptBin "python" ''
      export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
@@ -243,8 +244,8 @@
       maestral
       maestral-gui
       celeste
-      dropbox
-      dropbox-cli
+      #dropbox
+      #dropbox-cli
       syncthing
       syncthingtray
 ### OTHER ###
