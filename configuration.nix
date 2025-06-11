@@ -196,11 +196,12 @@ users = {
 };
 
 services = {
+  displayManager = {
+    gdm.enable = true;
+  };
+
   xserver = {
     enable = true;
-    displayManager = {
-      gdm.enable = true;
-    };
     desktopManager = {
 # gnome.enable = true;
     };

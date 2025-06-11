@@ -27,7 +27,7 @@
     "ffmpeg": "ffmpeg",
     "bitrate": "128k",
     "ffmpeg_args": null,
-    "format": "flac",
+    "format": "opus",
     "save_file": null,
     "filter_results": true,
     "album_type": null,

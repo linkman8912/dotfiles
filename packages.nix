@@ -4,6 +4,8 @@
   environment.systemPackages = with pkgs; [
     # shell scripts
     (import scripts/gifconvert.nix)
+    # rmpc (a specific git version)
+    (import config/rmpc/default.nix)
     # a workaround
     (pkgs.writeShellScriptBin "python" ''
      export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
@@ -52,6 +54,7 @@
       flac2all
       playerctl
       mpd
+      mpdris2
       mpc
       audacity
       plattenalbum
