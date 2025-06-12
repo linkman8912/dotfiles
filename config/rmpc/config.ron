@@ -148,8 +148,8 @@ tabs: [
     (size: "40%", pane: Split(
       direction: Vertical,
       panes: [
-        (size: "12%", pane: Pane(Lyrics)),
-        (size: "88%", pane: Pane(AlbumArt)), 
+        (size: "6", borders: "ALL", pane: Pane(Lyrics)),
+        (size: "100%", pane: Pane(AlbumArt)), 
       ],
     ),
     ),
