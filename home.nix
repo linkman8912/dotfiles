@@ -221,6 +221,7 @@
           "hm" = "home-manager switch --flake ~/.dotfiles -b backup";
 # "km" = "~/.dotfiles/config/kToggle.sh";
           "yt-dlpa" = "yt-dlp -x --audio-format flac";
+          "spot" = "spotdl --lyrics synced --generate-lrc";
         };
       };
       fuzzel = {
