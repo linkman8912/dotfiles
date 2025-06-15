@@ -45,6 +45,7 @@
       astyle
       rust-analyzer
       ccls
+      roslyn-ls
 ### CAD ###
       openscad
       pkgs-stable.kicad
@@ -56,6 +57,7 @@
       playerctl
       mpd
       mpdris2
+      yams
       mpc
       audacity
       plattenalbum
@@ -77,6 +79,7 @@
       fd
       #toybox
       git-lfs
+      lazygit
       wf-recorder
       slurp
       exfatprogs

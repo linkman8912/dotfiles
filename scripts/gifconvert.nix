@@ -1,6 +1,6 @@
 with import <nixpkgs> {};
 
-writeShellScriptBin "gifconvert" ''
+/*writeShellScriptBin "gifconvert" ''
 palette="/tmp/palette.png"
 filters="fps=15,scale=1920:-1:flags=lanczos"
 if [$3 && $4]; then
@@ -18,4 +18,6 @@ else
     -vf "$filters,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" \
     -loop 0 $2
 fi
-''
+''*/
+
+writeShellScriptBin "gifconvert" ./gifconvert.sh

@@ -100,7 +100,7 @@
 			"default": [
 				"",
 				"",
-				" "
+				""
 			]
 		},
 		"on-click": "pavucontrol"

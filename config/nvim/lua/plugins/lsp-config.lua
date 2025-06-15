@@ -6,8 +6,10 @@ return {
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("pyright")
       --vim.lsp.enable("csharp_ls")
-      vim.lsp.enable("omnisharp")
+      --vim.lsp.enable("omnisharp")
       --vim.lsp.enable("csh
+      vim.lsp.enable("roslyn");
+      vim.lsp.enable("rust-analyzer");
 
       --[[local lspconfig = require("lspconfig")
       local lspconfig_defaults = require("lspconfig").util.default_config
