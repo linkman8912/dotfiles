@@ -49,7 +49,20 @@
     ];
   };
 
-  services.xserver.videoDrivers = [ "nvidia"];
+  fileSystems."/mnt/share" = {
+    device = "homeserver.local:/";
+    fsType = "nfs";
+    options = [ # If you don't have this options attribute, it'll default to "defaults" 
+    "x-systemd.automount" # lazy-mount
+    "noauto"
+# boot options for fstab. Search up fstab mount options you can use
+      "nofail" # Prevent system from failing if this drive doesn't mount
+    ];
+  };
+
+
+
+  services.xserver.videoDrivers = [ "nvidia" ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
