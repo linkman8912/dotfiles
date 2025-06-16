@@ -217,7 +217,8 @@
           "cat" = "bat";
           "nvidia-settings" = "nvidia-settings --config=\"$XDG_CONFIG_HOME\"/nvidia/settings";
           "wget" = "wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\"";
-          "rb" = "sudo -E -- sh -c 'nix flake update --flake ~/.dotfiles; nixos-rebuild switch --flake ~/.dotfiles --impure' && home-manager switch --flake ~/.dotfiles -b backup";
+          "rb" = "sudo -E -- sh -c 'nixos-rebuild switch --flake ~/.dotfiles --impure'";
+          "ud" = "sudo -E -- sh -c 'nix flake update --flake ~/.dotfiles; nixos-rebuild switch --flake ~/.dotfiles --impure'";
           "hm" = "home-manager switch --flake ~/.dotfiles -b backup";
 # "km" = "~/.dotfiles/config/kToggle.sh";
           "yt-dlpa" = "yt-dlp -x --audio-format flac";
