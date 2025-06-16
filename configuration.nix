@@ -65,8 +65,8 @@ sync.enable = true;
    */
 
 # Bootloader.
-boot.loader.systemd-boot.enable = true;
-boot.loader.efi.canTouchEfiVariables = true;
+#boot.loader.systemd-boot.enable = lib.mkDefault true;
+#boot.loader.efi.canTouchEfiVariables = lib.mkDefault true;
 
 systemd = {
   /*user.services.dropbox = {
@@ -378,6 +378,7 @@ programs = {
 catppuccin = {
   enable = true;
   flavor = "mocha";
+  grub.enable = false;
 };
 
 environment = {

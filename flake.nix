@@ -1,3 +1,4 @@
+
 {
   description = "flake";
   inputs = {
@@ -125,6 +126,29 @@
           ];}
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/hplaptop.nix
+          chaotic.nixosModules.default
+        ];
+      };
+    homeserver = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+        inherit system;
+        modules = [ 
+          ./configuration.nix
+          /etc/nixos/hardware-configuration.nix
+          inputs.stylix.nixosModules.stylix
+          catppuccin.nixosModules.catppuccin
+          {nixpkgs.overlays = [
+            #inputs.hyprpanel.overlay
+            inputs.neovim-nightly-overlay.overlays.default
+          ];}
+        nix-flatpak.nixosModules.nix-flatpak
+          ./systems/homeserver.nix
           chaotic.nixosModules.default
         ];
       };
