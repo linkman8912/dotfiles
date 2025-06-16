@@ -251,6 +251,8 @@
       #dropbox-cli
       syncthing
       syncthingtray
+### NAS ###
+      nfs-utils
 ### OTHER ###
       moonlight-qt
       ollama

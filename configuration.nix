@@ -444,8 +444,8 @@ chaotic = {
 # Open ports in the firewall.
 # networking.firewall.allowedTCPPorts = [ ... ];
 networking.firewall = {
-  allowedUDPPorts = [ 57621 17500 ];
-  allowedTCPPorts = [ 17500 ];
+  allowedUDPPorts = [ 57621 17500 /* for nfsv3 */ 111 2049 4000 4001 4002 20048];
+  allowedTCPPorts = [ 57621 17500 /* for nfsv3 */ 111 2049 4000 4001 4002 20048];
 };
 # Or disable the firewall altogether.
 # networking.firewall.enable = false;
