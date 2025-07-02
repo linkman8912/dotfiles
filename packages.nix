@@ -228,7 +228,7 @@
       samrewritten
 # GAMEDEV #
       godot_4
-      unityhub
+      pkgs-stable.unityhub
 ### VMs ###
       vmware-workstation
 ### BORING (SCHOOL/PRODUCTIVITY) ###
