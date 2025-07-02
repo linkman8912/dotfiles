@@ -110,6 +110,7 @@
       wine-wayland
       wine64
       python313Packages.pip
+      python313Packages.tkinter
       pipx
       libwebp
       rar
@@ -176,6 +177,8 @@
       kmonad
       kanata
       input-remapper
+      ydotool
+      xdotool
 ### HYPR/PRETTY THINGS ###
       grimblast
       hyprpolkitagent
@@ -207,8 +210,8 @@
       itch
       ryujinx
       #amidst
-      # gamescope
-      gamescope_git
+      pkgs-stable.gamescope
+      # gamescope_git
       prismlauncher
       #bastet
       #ninvaders
