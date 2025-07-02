@@ -148,6 +148,9 @@
             remote = "origin";
             merge = "refs/heads/main";
           };
+          advice = {
+            addEmptyPathspec = false;
+          };
         };
       };
 
