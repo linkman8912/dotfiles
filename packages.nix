@@ -56,7 +56,8 @@
       flac2all
       playerctl
       mpd
-      mpdris2
+      pkgs-stable.mpdris2
+      #mpdris2
       yams
       mpc
       audacity
@@ -212,7 +213,7 @@
       #amidst
       pkgs-stable.gamescope
       # gamescope_git
-      prismlauncher
+      pkgs-stable.prismlauncher
       #bastet
       #ninvaders
       #nsnake
@@ -226,6 +227,7 @@
       #protonup-qt
       protontricks
       samrewritten
+      celeste64
 # GAMEDEV #
       godot_4
       pkgs-stable.unityhub
@@ -240,9 +242,9 @@
       hexchat
       fluffychat
 ### PHOTOGRAPHY/VIDEO EDITING ###
-      darktable
+      #darktable
       kdePackages.kolourpaint
-      gimp-with-plugins
+      pkgs-stable.gimp
       kdePackages.kdenlive
       obs-studio
       inkscape

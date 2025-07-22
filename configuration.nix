@@ -1,12 +1,12 @@
 # Edit this configuration file to define what should be installed on
-{ config, pkgs, inputs, pkgs-stable, home-manager, spicetify-nix, lib, chaotic, ... }:
+{ config, pkgs, inputs, pkgs-stable, home-manager, /*spicetify-nix,*/ lib, chaotic, ... }:
 
 {
   imports = 
     [ 
     ./config/stylix.nix
 # ./config/udev/udev.nix
-      inputs.spicetify-nix.nixosModules.default
+      #inputs.spicetify-nix.nixosModules.default
       ./packages.nix
     ];
 
@@ -155,6 +155,7 @@ virtualisation = {
     host = {
       enable = true;
       enableExtensionPack = true;
+      #package = pkgs-stable.virtualbox;
     };
   };
   vmware = {
@@ -224,7 +225,7 @@ services = {
       KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
       '';
   };
-  printing.drivers = [ 
+  /*printing.drivers = [ 
     pkgs.gutenprint # — Drivers for many different printers from many different vendors.
     pkgs.gutenprintBin # — Additional, binary-only drivers for some printers.
 #pkgs.hplip # — Drivers for HP printers.
@@ -238,7 +239,7 @@ services = {
     pkgs.cnijfilter2 # — Drivers for some Canon Pixma devices (Proprietary driver)
     pkgs.canon-cups-ufr2
     pkgs.cups-bjnp
-  ]; 
+  ];*/ 
 
   avahi = {
     enable = true;
@@ -318,6 +319,15 @@ nixpkgs = {
     ];
   };
   overlays = [
+    /*(final: prev: {
+     jdk8 = final.openjdk8-bootstrap;
+    })*/
+    (final: prev: {
+     jdk8 = prev.jdk8.overrideAttrs {
+     separateDebugInfo = false;
+     __structuredAttrs = false;
+    };
+    })
 #			(final: prev: {
 #    				gnome.gnome-backgrounds = final.gnome-backgrounds;
 #  			})

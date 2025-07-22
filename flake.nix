@@ -15,10 +15,10 @@
     zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
-    spicetify-nix = {
+    /*spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
+    };*/
     #hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     suyu = {
       url = "git+https://github.com/Noodlez1232/suyu-flake";
@@ -30,11 +30,10 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, spicetify-nix, nix-flatpak, nix-on-droid, chaotic, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, /*spicetify-nix,*/ nix-flatpak, nix-on-droid, chaotic, ... } @ inputs:
     let
     system = "x86_64-linux";
   pkgs = nixpkgs.legacyPackages.${system};
-  # nur = nur.legacyPackages.${system};
   in
   {
     nixosConfigurations = {

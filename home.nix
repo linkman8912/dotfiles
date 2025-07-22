@@ -151,6 +151,9 @@
           advice = {
             addEmptyPathspec = false;
           };
+          pull = {
+            rebase = false;
+          };
         };
       };
 
@@ -168,7 +171,7 @@
         };
       };
 
-      spicetify = 
+      /*spicetify = 
         let
         spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
       in
@@ -193,7 +196,7 @@
         theme = lib.mkForce spicePkgs.themes.catppuccin;
         colorScheme = lib.mkForce "mocha";
         spotifyPackage = pkgs-stable.spotify;
-      };
+      };*/
 
       fish = {
         enable = true;
@@ -261,7 +264,7 @@
 # ./config/hypr/hyprland.nix
     ./config/stylix.nix
 # ~/.envars.nix
-      inputs.spicetify-nix.homeManagerModules.default
+      #inputs.spicetify-nix.homeManagerModules.default
       #inputs.ags.homeManagerModules.default
   ];
 }
