@@ -69,6 +69,8 @@
       rmpc
       sacad
       beets
+      id3v2
+      streamrip
 ### VIDEO ###
       vlc
       handbrake
