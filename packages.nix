@@ -246,7 +246,8 @@
 ### PHOTOGRAPHY/VIDEO EDITING ###
       #darktable
       kdePackages.kolourpaint
-      pkgs-stable.gimp
+      #pkgs-stable.gimp
+      gimp3
       kdePackages.kdenlive
       obs-studio
       inkscape
