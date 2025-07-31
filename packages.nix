@@ -60,7 +60,7 @@
       #mpdris2
       yams
       mpc
-      audacity
+      pkgs-stable.audacity
       plattenalbum
       # pkgs-stable.spotify
       pkgs-stable.cava
