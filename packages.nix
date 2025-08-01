@@ -70,7 +70,9 @@
       sacad
       beets
       id3v2
+      flac
       streamrip
+      python313Packages.syncedlyrics
 ### VIDEO ###
       vlc
       handbrake
