@@ -71,6 +71,7 @@
       beets
       id3v2
       streamrip
+      python313Packages.syncedlyrics
 ### VIDEO ###
       vlc
       handbrake
