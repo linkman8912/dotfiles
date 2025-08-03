@@ -70,6 +70,7 @@
             source = config.lib.file.mkOutOfStoreSymlink "/home/linkman/.dotfiles/config/eww";
             recursive = true;
           };
+          "${config.xdg.configHome}/hyfetch.json".source = ./config/hyfetch/hyfetch.json;
           "${config.xdg.configHome}/rmpc" = {
             source = config.lib.file.mkOutOfStoreSymlink "/home/linkman/.dotfiles/config/rmpc";
             recursive = true;
