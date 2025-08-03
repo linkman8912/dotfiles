@@ -454,8 +454,8 @@ chaotic = {
 # Open ports in the firewall.
 # networking.firewall.allowedTCPPorts = [ ... ];
 networking.firewall = {
-  allowedUDPPorts = [ 57621 17500 /* for nfsv3 */ 111 2049 4000 4001 4002 20048];
-  allowedTCPPorts = [ 57621 17500 /* for nfsv3 */ 111 2049 4000 4001 4002 20048];
+  allowedUDPPorts = [ 57621 17500 /* for nfsv3 */ 111 2049 4000 4001 4002 20048 /* for mpd satellite setup */ 8000 6600 9999];
+  allowedTCPPorts = [ 57621 17500 /* for nfsv3 */ 111 2049 4000 4001 4002 20048 /* for mpd satellite setup */ 8000 6600 9999];
 };
 # Or disable the firewall altogether.
 # networking.firewall.enable = false;
