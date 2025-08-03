@@ -1,13 +1,21 @@
-{ config, lib, pkgs, ... }:
+{ /*config,*/ lib, pkgs, home-manager, ... }:
 
 {
+
+  home-manager.config = ./home.nix;
   # Simply install just the packages
   environment.packages = with pkgs; [
     # User-facing stuff that you really really want to have
     vim # or some other editor, e.g. nano or neovim
     neovim
+    zoxide
+    eza
+    starship
+    mpd
+    jre17_minimal
 
     # Some common stuff that people expect to have
+    wget
     procps
     killall
     diffutils

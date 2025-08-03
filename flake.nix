@@ -5,12 +5,24 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager-stable = {
+      url = "github:nix-community/home-manager/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs-droid";
+    };
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     stylix.url = "github:danth/stylix/master";
     nixpkgs-stable.url = "nixpkgs/nixos-24.11";
+    nixpkgs-droid.url = "nixpkgs/nixos-24.05";
+    /*
     nix-on-droid = {
       url = "github:nix-community/nix-on-droid";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    */
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs-droid";
+      inputs.home-manager.follows = "home-manager-stable";
     };
     zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
@@ -30,7 +42,7 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, catppuccin, /*spicetify-nix,*/ nix-flatpak, nix-on-droid, chaotic, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, nixpkgs-stable, nixpkgs-droid, catppuccin, /*spicetify-nix,*/ nix-flatpak, nix-on-droid, chaotic, ... } @ inputs:
     let
     system = "x86_64-linux";
   pkgs = nixpkgs.legacyPackages.${system};
@@ -170,8 +182,12 @@
         };
       };
     };
-    nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {                               pkgs = import nixpkgs { system = "aarch64-linux"; };
-      modules = [ ./systems/nixOnDroid/configuration.nix ];
+    nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
+      pkgs = import nixpkgs-droid { system = "aarch64-linux"; };
+      modules = [
+        ./systems/nixOnDroid/configuration.nix
+        <home-manager/nixos>
+      ];
     }; 
   };
 }
