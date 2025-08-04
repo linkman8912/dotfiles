@@ -100,6 +100,20 @@ systemd = {
         Unit = "updatedb.service";
       };
     };
+    "startup" = {
+      wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnBootSec = "0";
+        #OnUnitActiveSec = "2h";
+# Alternatively, if you prefer to specify an exact timestamp
+# like one does in cron, you can use the `OnCalendar` option
+# to specify a calendar event expression.
+# Run every Monday at 10:00 AM in the Asia/Kolkata timezone.
+#OnCalendar = "Mon *-*-* 10:00:00 Asia/Kolkata";
+        Unit = "startup.service";
+      };
+    };
+
   };
   services = {
     "updatedb" = {
@@ -113,11 +127,17 @@ systemd = {
     };
     "mpd" = {
       script = ''
-         XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.linkman.uid}" mpd /home/linkman/.config/mpd/mpd.conf
-      '';
+        XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.linkman.uid}" mpd /home/linkman/.config/mpd/mpd.conf
+        '';
       serviceConfig = {
         User = "linkman";
       };
+    };
+    "startup" = {
+      script = ''
+        /home/linkman/.dotfiles/scripts/startup.sh
+        '';
+      serviceConfig.User = "linkman";
     };
   };
 };
@@ -155,7 +175,7 @@ virtualisation = {
     host = {
       enable = true;
       enableExtensionPack = true;
-      #package = pkgs-stable.virtualbox;
+#package = pkgs-stable.virtualbox;
     };
   };
   vmware = {
@@ -230,16 +250,16 @@ services = {
     pkgs.gutenprintBin # — Additional, binary-only drivers for some printers.
 #pkgs.hplip # — Drivers for HP printers.
 #pkgs.hplipWithPlugin # — Drivers for HP printers, with the proprietary plugin. Use NIXPKGS_ALLOW_UNFREE=1 nix-shell -p hplipWithPlugin --run 'sudo -E hp-setup' to add the printer, regular CUPS UI doesn't seem to work.
-    pkgs.postscript-lexmark # — Postscript drivers for Lexmark
-    pkgs.samsung-unified-linux-driver # — Proprietary Samsung Drivers
-    pkgs.splix # — Drivers for printers supporting SPL (Samsung Printer Language).
-    pkgs.brlaser # — Drivers for some Brother printers
-    pkgs.brgenml1lpr #  — Generic drivers for more Brother printers [1]
-    pkgs.brgenml1cupswrapper  # — Generic drivers for more Brother printers [1]
-    pkgs.cnijfilter2 # — Drivers for some Canon Pixma devices (Proprietary driver)
-    pkgs.canon-cups-ufr2
-    pkgs.cups-bjnp
-  ];*/ 
+pkgs.postscript-lexmark # — Postscript drivers for Lexmark
+pkgs.samsung-unified-linux-driver # — Proprietary Samsung Drivers
+pkgs.splix # — Drivers for printers supporting SPL (Samsung Printer Language).
+pkgs.brlaser # — Drivers for some Brother printers
+pkgs.brgenml1lpr #  — Generic drivers for more Brother printers [1]
+pkgs.brgenml1cupswrapper  # — Generic drivers for more Brother printers [1]
+pkgs.cnijfilter2 # — Drivers for some Canon Pixma devices (Proprietary driver)
+pkgs.canon-cups-ufr2
+pkgs.cups-bjnp
+];*/ 
 
   avahi = {
     enable = true;
@@ -248,36 +268,36 @@ services = {
   };
   /*mopidy = let
     mopidyPackagesOverride = pkgs.mopidyPackages.overrideScope (prev: final: {
-        extraPkgs = pkgs: [ pkgs.yt-dlp ];
-        });
-  in {
+    extraPkgs = pkgs: [ pkgs.yt-dlp ];
+    });
+    in {
     extensionPackages = with mopidyPackagesOverride; [
-      mopidy-youtube
-        mopidy-mpd
-        mopidy-mopify
-        mopidy-iris
-        mopidy-local
+    mopidy-youtube
+    mopidy-mpd
+    mopidy-mopify
+    mopidy-iris
+    mopidy-local
     ];
     configuration = ''
-      [youtube]
-      youtube_dl_package = yt_dlp
-        '';
-  };*/
+    [youtube]
+    youtube_dl_package = yt_dlp
+    '';
+    };*/
   /*mpd = {
     enable = true;
     musicDirectory = "/home/linkman/Music/";
-    /*extraConfig = ''
-      audio_output {
-        type "pulse"
-        name "Music"
-        server "127.0.0.1" # add this line - MPD must connect to the local sound server
-      }
-    '';
+  /*extraConfig = ''
+  audio_output {
+  type "pulse"
+  name "Music"
+  server "127.0.0.1" # add this line - MPD must connect to the local sound server
+  }
+  '';
 
 # Optional:
 # network.listenAddress = "any"; # if you want to allow non-localhost connections
 # network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
-  }; */
+}; */
 };
 #programs.ssh.askPassword = "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
 programs.fish.enable = true;
@@ -293,7 +313,7 @@ services.printing.enable = true;
 services.pulseaudio = {
   enable = false;
   extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
-  #systemWide = true;
+#systemWide = true;
 };
 security.rtkit.enable = true;
 services.pipewire = {
@@ -320,14 +340,14 @@ nixpkgs = {
   };
   overlays = [
     /*(final: prev: {
-     jdk8 = final.openjdk8-bootstrap;
-    })*/
+      jdk8 = final.openjdk8-bootstrap;
+      })*/
     (final: prev: {
      jdk8 = prev.jdk8.overrideAttrs {
      separateDebugInfo = false;
      __structuredAttrs = false;
-    };
-    })
+     };
+     })
 #			(final: prev: {
 #    				gnome.gnome-backgrounds = final.gnome-backgrounds;
 #  			})
@@ -336,11 +356,11 @@ nixpkgs = {
 #	gnome._gdkPixbufCacheBuilder_DO_NOT_USE = final._gdkPixbufCacheBuilder_DO_NOT_USE;
 #})
 
-    (final: _prev: {
-     stable = import pkgs-stable {
-     inherit (final) system config;
-     };
-     })
+  (final: _prev: {
+   stable = import pkgs-stable {
+   inherit (final) system config;
+   };
+   })
   ];
 
 };

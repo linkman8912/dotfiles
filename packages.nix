@@ -4,6 +4,8 @@
   environment.systemPackages = with pkgs; [
     # shell scripts
     (import scripts/gifconvert.nix)
+    (import scripts/lyricdownload.nix)
+    (import scripts/startup.nix)
     # rmpc (a specific git version)
     #(import config/rmpc/default.nix)
     (pkgs.callPackage ./config/rmpc/package.nix { })
