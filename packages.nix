@@ -217,7 +217,7 @@
       itch
       ryujinx
       #amidst
-      pkgs-stable.gamescope
+      gamescope
       # gamescope_git
       pkgs-stable.prismlauncher
       #bastet

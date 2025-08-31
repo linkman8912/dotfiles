@@ -403,6 +403,7 @@ programs = {
       zlib zstd stdenv.cc.cc curl openssl attr libssh bzip2 libxml2 acl libsodium util-linux xz systemd
     ];
   };
+  command-not-found.enable = true;
 };
 
 catppuccin = {
@@ -413,6 +414,8 @@ catppuccin = {
 
 environment = {
   sessionVariables = {
+    NIX_AUTO_RUN_INTERACTIVE = "1";
+
     NIXOS_OZONE_WL = "1";
     ANDROID_USER_HOME="$XDG_DATA_HOME/android";
     HISTFILE="$XDG_STATE_HOME/bash/history";
