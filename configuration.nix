@@ -2,6 +2,8 @@
 { config, pkgs, inputs, pkgs-stable, home-manager, /*spicetify-nix,*/ lib, chaotic, ... }:
 
 {
+  qt.platformTheme = lib.mkForce "kde";
+
   imports = 
     [ 
     ./config/stylix.nix
@@ -342,12 +344,12 @@ nixpkgs = {
     /*(final: prev: {
       jdk8 = final.openjdk8-bootstrap;
       })*/
-    (final: prev: {
+    /*(final: prev: {
      jdk8 = prev.jdk8.overrideAttrs {
      separateDebugInfo = false;
      __structuredAttrs = false;
      };
-     })
+     })*/
 #			(final: prev: {
 #    				gnome.gnome-backgrounds = final.gnome-backgrounds;
 #  			})
