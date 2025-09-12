@@ -469,7 +469,10 @@ services = {
       "com.spotify.Client"
     ];
   };
-  tailscale.enable = true;
+  tailscale = {
+    #enable = true;
+    #package = pkgs-stable.tailscale;
+  };
 };
 
 chaotic = {

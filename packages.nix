@@ -264,6 +264,7 @@
       #dropbox-cli
       syncthing
       syncthingtray
+      nextcloud-client
 ### NAS ###
       nfs-utils
 ### OTHER ###
