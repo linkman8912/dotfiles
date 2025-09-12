@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 kanata -n & disown
 /home/linkman/.dotfiles/config/hypr/hyprpaper/wallpapers.sh & disown
