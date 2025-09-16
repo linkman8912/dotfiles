@@ -15,8 +15,8 @@ rustPlatform.buildRustPackage rec {
     owner = "mierak";
     repo = "rmpc";
     #rev = "v${version}";
-    rev = "f0c0a1e67ce19728e365a47dcc8bf2251b797f93";
-    hash = "sha256-OwGdRyE9uQZKM/0ZsieYA5hO2W0lmiAzlvOkmUR56qk=";
+    rev = "bf25e7a1ec45de48f0f830da20ce6bed10fe6168";
+    hash = "sha256-KTfrplyD0PuZcur54hxhFcwQNI63XwtSBEpPcqlu0aQ=";
   };
 
   #useFetchCargoVendor = true;

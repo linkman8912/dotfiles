@@ -19,7 +19,7 @@
       inputs.zen-browser.packages."${pkgs.system}".default
       brave
       #browsh
-      floorp
+      #floorp-bin
       #lynx
 ### EDITORS ###
       vim
@@ -202,7 +202,7 @@
       hyprpicker
       hyprshot
       kitty
-      rofi-wayland
+      #rofi
       hyprpaper
       waybar
       fastfetch
