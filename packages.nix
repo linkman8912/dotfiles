@@ -38,7 +38,7 @@
       superhtml
       hyprls
       csharp-ls
-      omnisharp-roslyn
+      #omnisharp-roslyn
       nil
       python312Packages.python-lsp-server
       pylyzer
@@ -47,7 +47,7 @@
       astyle
       rust-analyzer
       ccls
-      roslyn-ls
+      #roslyn-ls
 ### CAD ###
       openscad
       pkgs-stable.kicad
@@ -101,8 +101,8 @@
       #ventoy-full
       wget
       winetricks
-      jdk17
-      openjdk17
+      #jdk17
+      #openjdk17
       nodejs_latest
       kdePackages.polkit-kde-agent-1
       xwayland
@@ -215,9 +215,9 @@
       #everest-mons
       dolphin-emu
       itch
-      ryujinx
+      ryubing
       #amidst
-      pkgs-stable.gamescope
+      gamescope
       # gamescope_git
       pkgs-stable.prismlauncher
       #bastet
@@ -236,7 +236,8 @@
       celeste64
 # GAMEDEV #
       godot_4
-      pkgs-stable.unityhub
+      #pkgs-stable.unityhub
+      unityhub
 ### VMs ###
       vmware-workstation
 ### BORING (SCHOOL/PRODUCTIVITY) ###
@@ -263,6 +264,7 @@
       #dropbox-cli
       syncthing
       syncthingtray
+      nextcloud-client
 ### NAS ###
       nfs-utils
 ### OTHER ###

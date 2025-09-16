@@ -2,6 +2,8 @@
 { config, pkgs, inputs, pkgs-stable, home-manager, /*spicetify-nix,*/ lib, chaotic, ... }:
 
 {
+  qt.platformTheme = lib.mkForce "kde";
+
   imports = 
     [ 
     ./config/stylix.nix
@@ -342,12 +344,12 @@ nixpkgs = {
     /*(final: prev: {
       jdk8 = final.openjdk8-bootstrap;
       })*/
-    (final: prev: {
+    /*(final: prev: {
      jdk8 = prev.jdk8.overrideAttrs {
      separateDebugInfo = false;
      __structuredAttrs = false;
      };
-     })
+     })*/
 #			(final: prev: {
 #    				gnome.gnome-backgrounds = final.gnome-backgrounds;
 #  			})
@@ -403,6 +405,7 @@ programs = {
       zlib zstd stdenv.cc.cc curl openssl attr libssh bzip2 libxml2 acl libsodium util-linux xz systemd
     ];
   };
+  command-not-found.enable = true;
 };
 
 catppuccin = {
@@ -413,6 +416,8 @@ catppuccin = {
 
 environment = {
   sessionVariables = {
+    NIX_AUTO_RUN_INTERACTIVE = "1";
+
     NIXOS_OZONE_WL = "1";
     ANDROID_USER_HOME="$XDG_DATA_HOME/android";
     HISTFILE="$XDG_STATE_HOME/bash/history";
@@ -464,7 +469,10 @@ services = {
       "com.spotify.Client"
     ];
   };
-  tailscale.enable = true;
+  tailscale = {
+    #enable = true;
+    #package = pkgs-stable.tailscale;
+  };
 };
 
 chaotic = {
@@ -474,8 +482,8 @@ chaotic = {
 # Open ports in the firewall.
 # networking.firewall.allowedTCPPorts = [ ... ];
 networking.firewall = {
-  allowedUDPPorts = [ 57621 17500 /* for nfsv3 */ 111 2049 4000 4001 4002 20048 /* for mpd satellite setup */ 8000 6600 9999 /* for nextcloud */ 80];
-  allowedTCPPorts = [ 57621 17500 /* for nfsv3 */ 111 2049 4000 4001 4002 20048 /* for mpd satellite setup */ 8000 6600 9999 /* for nextcloud */ 80];
+  allowedUDPPorts = [ 57621 17500 /* for nfsv3 */ 111 2049 4000 4001 4002 20048 /* for mpd satellite setup */ 8000 6600 9999 /* ssh */ 22 ];
+  allowedTCPPorts = [ 57621 17500 /* for nfsv3 */ 111 2049 4000 4001 4002 20048 /* for mpd satellite setup */ 8000 6600 9999/* ssh */ 22 ];
 };
 # Or disable the firewall altogether.
 # networking.firewall.enable = false;

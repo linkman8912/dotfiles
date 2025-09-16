@@ -11,7 +11,7 @@
     };
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     stylix.url = "github:danth/stylix/master";
-    nixpkgs-stable.url = "nixpkgs/nixos-24.11";
+    nixpkgs-stable.url = "nixpkgs/nixos-25.05";
     nixpkgs-droid.url = "nixpkgs/nixos-24.05";
     /*
     nix-on-droid = {
