@@ -482,8 +482,8 @@ chaotic = {
 # Open ports in the firewall.
 # networking.firewall.allowedTCPPorts = [ ... ];
 networking.firewall = {
-  allowedUDPPorts = [ 57621 17500 /* for nfsv3 */ 111 2049 4000 4001 4002 20048 /* for mpd satellite setup */ 8000 6600 9999 /* ssh */ 22 /* for nextcloud */ 80 ];
-  allowedTCPPorts = [ 57621 17500 /* for nfsv3 */ 111 2049 4000 4001 4002 20048 /* for mpd satellite setup */ 8000 6600 9999 /* ssh */ 22 /* for nextcloud */ 80 ];
+  allowedUDPPorts = [ 57621 17500 /* for nfsv3 */ 111 2049 4000 4001 4002 20048 /* for mpd satellite setup */ 8000 6600 9999 /* ssh */ 22 /* for nextcloud */ 80 /* for ollama */ 11434 8080 ];
+  allowedTCPPorts = [ 57621 17500 /* for nfsv3 */ 111 2049 4000 4001 4002 20048 /* for mpd satellite setup */ 8000 6600 9999 /* ssh */ 22 /* for nextcloud */ 80 /* for ollama */ 11434 8080 ];
 };
 # Or disable the firewall altogether.
 # networking.firewall.enable = false;

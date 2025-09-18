@@ -66,8 +66,9 @@
     xserver.videoDrivers = [ "nvidia" ];
     ollama = {
       enable = true;
-      acceleration = "cuda";
+      acceleration = "rocm";
     };
+    open-webui.enable = true;
   };
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
