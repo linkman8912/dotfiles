@@ -176,7 +176,7 @@ virtualisation = {
   virtualbox = {
     host = {
       enable = true;
-      enableExtensionPack = true;
+      #enableExtensionPack = true;
 #package = pkgs-stable.virtualbox;
     };
   };
