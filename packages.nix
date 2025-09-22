@@ -50,7 +50,7 @@
       #roslyn-ls
 ### CAD ###
     openscad
-    pkgs-stable.kicad
+    #pkgs-stable.kicad
     blender
     #logisim
     prusa-slicer
