@@ -245,7 +245,7 @@
     libreoffice-qt6-still
     jrnl
 ### COMMUNICATION ###
-    vesktop
+    pkgs-stable.vesktop
     #hexchat
     fluffychat
 ### PHOTOGRAPHY/VIDEO EDITING ###
