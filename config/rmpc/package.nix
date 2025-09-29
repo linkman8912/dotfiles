@@ -15,13 +15,13 @@ rustPlatform.buildRustPackage rec {
     owner = "mierak";
     repo = "rmpc";
     #rev = "v${version}";
-    rev = "bf25e7a1ec45de48f0f830da20ce6bed10fe6168";
-    hash = "sha256-KTfrplyD0PuZcur54hxhFcwQNI63XwtSBEpPcqlu0aQ=";
+    rev = "4e33a58ebb44660053b2e6f393daefea33a856dc";
+    hash = "sha256-4G60bfFuMrWDXGqafGIqci/jSd0Wk7/7bjpwS71JTiU=";
   };
 
   #useFetchCargoVendor = true;
   #cargoHash = "sha256-m25lo7mufGS7m1QSnhYdXMaXfjdqtJ8hVLdbuRsxbKY=";
-  cargoHash = "sha256-ZHajqTkdw0wkNVws0fr9HFcC3JF1B6TuwP5CTGw/3nQ=";
+  cargoHash = "sha256-d2/4q2s/11HNE18D8d8Y2yWidhT+XsUS4J9ahnxToI0=";
 
   checkFlags = [
     # Test currently broken, needs to be removed. See https://github.com/mierak/rmpc/issues/254
