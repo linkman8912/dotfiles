@@ -46,7 +46,7 @@
       lua-language-server
       astyle
       rust-analyzer
-      ccls
+      #ccls
       #roslyn-ls
 ### CAD ###
     openscad
@@ -77,7 +77,7 @@
     python313Packages.syncedlyrics
 ### VIDEO ###
     vlc
-    handbrake
+    pkgs-stable.handbrake
     mpv
 ### SYSTEM ###
     wl-clipboard
@@ -131,7 +131,7 @@
     ffmpeg_7
     wev
     libnotify
-    xautoclick
+    #xautoclick
     #meteor
     gcc
     #dotnetCorePackages.sdk_8_0_3xx
@@ -167,7 +167,7 @@
     zoxide
     feh
     lutgen
-    pamixer
+    pkgs-stable.pamixer
     eza
 ### SECURITY ###
     tor
@@ -213,7 +213,7 @@
     ags
 ### GAMES ###
     #everest-mons
-    dolphin-emu
+    pkgs-stable.dolphin-emu
     itch
     ryubing
     #amidst
@@ -225,11 +225,11 @@
     #nsnake
     #bsdgames
     #moon-buggy
-    superTux
-    superTuxKart
+    #superTux
+    #superTuxKart
     gamemode
     #playonlinux
-    lutris
+    pkgs-stable.lutris
     #protonup-qt
     protontricks
     samrewritten

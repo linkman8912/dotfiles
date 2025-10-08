@@ -177,7 +177,7 @@ virtualisation = {
     host = {
       enable = true;
       #enableExtensionPack = true;
-#package = pkgs-stable.virtualbox;
+      package = pkgs-stable.virtualbox;
     };
   };
   vmware = {
@@ -302,7 +302,7 @@ pkgs.cups-bjnp
 }; */
 };
 #programs.ssh.askPassword = "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
-programs.fish.enable = true;
+#programs.fish.enable = true;
 
 # Configure console keymap
 console.keyMap = "dvorak";
