@@ -66,6 +66,7 @@
     xserver.videoDrivers = [ "nvidia" ];
     ollama = {
       enable = true;
+      package = pkgs-stable.ollama;
       acceleration = "rocm";
       environmentVariables = {
         OLLAMA_HOST = "0.0.0.0:11434";
@@ -74,6 +75,7 @@
     };
     open-webui = {
       enable = true;
+      package = pkgs-stable.open-webui;
       host = "0.0.0.0";
       environment = {
         ANONYMIZED_TELEMETRY = "False";

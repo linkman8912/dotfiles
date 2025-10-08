@@ -269,7 +269,7 @@
     nfs-utils
 ### OTHER ###
     moonlight-qt
-    ollama
+    #pkgs-stable.ollama
     waydroid
     #motrix
   ];
