@@ -28,7 +28,7 @@
   environment.etc."nextcloud-admin-pass".text = "nextcloudpwd";
   services.nextcloud = {
     enable = true;
-    package = pkgs.nextcloud31;
+    package = pkgs.nextcloud32;
     hostName = "localhost";
     config.adminpassFile = "/etc/nextcloud-admin-pass";
     config.dbtype = "sqlite";
