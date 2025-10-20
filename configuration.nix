@@ -467,8 +467,8 @@ services = {
     enable = true;
     packages = [
     { appId = "io.github.everestapi.Olympus"; origin = "flathub";  }
-    "app.zen_browser.zen"
-      "com.spotify.Client"
+      #"app.zen_browser.zen"
+      #"com.spotify.Client"
     ];
   };
   tailscale = {

@@ -64,7 +64,7 @@
 
   services = {
     xserver.videoDrivers = [ "nvidia" ];
-    ollama = {
+    /*ollama = {
       enable = true;
       package = pkgs-stable.ollama;
       acceleration = "rocm";
@@ -83,7 +83,14 @@
         SCARF_NO_ANALYTICS = "True";
         WEBUI_AUTH = "False";
       };
-    };
+    };*/
+    /*icecast = {
+      enable = true;
+      user = "linkman";
+      admin = {
+        password = "password";
+      };
+    };*/
   };
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
