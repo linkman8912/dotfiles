@@ -230,6 +230,8 @@
 # "km" = "~/.dotfiles/config/kToggle.sh";
           "yt-dlpa" = "yt-dlp -x --audio-format flac";
           "spot" = "spotdl --lyrics synced --generate-lrc";
+          "gv" = "nvim --listen /tmp/godothost"
+          "g" = "nvim --listen /tmp/godothost"
         };
       };
       fuzzel = {
