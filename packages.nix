@@ -126,7 +126,7 @@
     nwg-look
     libfaketime
     lutgen
-    rpi-imager
+    #rpi-imager
     cups
     ffmpeg_7
     wev
@@ -257,8 +257,8 @@
     obs-studio
     inkscape
 ### BACKUPS ###
-    maestral
-    maestral-gui
+    #maestral
+    #maestral-gui
     #celeste
     #dropbox
     #dropbox-cli
