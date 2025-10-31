@@ -336,8 +336,6 @@ nixpkgs = {
   config = {
     allowUnfree = true;
     permittedInsecurePackages = [
-      "fluffychat-linux-1.27.0"
-      "olm-3.2.16"
       "mbedtls-2.28.10"
     ];
   };

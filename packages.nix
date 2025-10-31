@@ -247,7 +247,7 @@
 ### COMMUNICATION ###
     pkgs-stable.vesktop
     #hexchat
-    fluffychat
+    #fluffychat
 ### PHOTOGRAPHY/VIDEO EDITING ###
     #darktable
     kdePackages.kolourpaint
