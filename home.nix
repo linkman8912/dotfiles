@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, pkgs-stable, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   config = {
@@ -94,7 +94,7 @@
 # nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
 #  "spotify"
 # ];
-    nixpkgs.config.allowUnfree = true;
+    #nixpkgs.config.allowUnfree = true;
 
     programs = {
       bash = {
@@ -129,19 +129,21 @@
 
       git = {
         enable = true;
-        userName  = "linkman";
-        userEmail = "linkman8912@proton.me";
-        extraConfig = {
+        settings = {
+          user = {
+            name  = "linkman";
+            email = "linkman8912@proton.me";
+          };
           init = {
             defaultBranch = "main";
           };
           merge = {
-            #tool = "unityyamlmerge";
+#tool = "unityyamlmerge";
           };
           /*mergetool."unityyamlmerge" = {
             trustExitCode = false;
             cmd = "~/Unity/Hub/Editor/2022.3.57f1/Editor/Data/Tools/UnityYAMLMerge merge -p '$BASE' '$REMOTE' '$LOCAL' '$MERGED'";
-          };*/
+            };*/
           checkout = {
             defaultRemote = "origin";
           };
@@ -171,33 +173,6 @@
           size = 12;
         };
       };
-
-      /*spicetify = 
-        let
-        spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-      in
-      {
-        enable = true;
-        enabledExtensions = with spicePkgs.extensions; [
-          adblock
-            shuffle # shuffle+ (special characters are sanitized out of extension names)
-            bookmark
-            fullAppDisplay
-            lastfm
-            keyboardShortcut
-            loopyLoop
-            popupLyrics
-            fullAlbumDate
-        ];
-        enabledCustomApps = with spicePkgs.apps; [
-          lyricsPlus
-            marketplace
-            localFiles
-        ];
-        theme = lib.mkForce spicePkgs.themes.catppuccin;
-        colorScheme = lib.mkForce "mocha";
-        spotifyPackage = pkgs-stable.spotify;
-      };*/
 
       fish = {
         enable = true;
@@ -263,11 +238,11 @@
     };
   };
 
-  imports = [
+  /*imports = [
 # ./config/hypr/hyprland.nix
-    ./config/stylix.nix
+./config/stylix.nix
 # ~/.envars.nix
-      #inputs.spicetify-nix.homeManagerModules.default
-      #inputs.ags.homeManagerModules.default
-  ];
+#inputs.spicetify-nix.homeManagerModules.default
+#inputs.ags.homeManagerModules.default
+];*/
 }

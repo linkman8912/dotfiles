@@ -21,6 +21,7 @@
     #browsh
     #floorp-bin
     #lynx
+    chromium
 ### EDITORS ###
     vim
     emacs
@@ -102,7 +103,7 @@
     wget
     winetricks
     #jdk17
-    #openjdk17
+    openjdk17
     nodejs_latest
     kdePackages.polkit-kde-agent-1
     xwayland
@@ -236,6 +237,7 @@
     celeste64
 # GAMEDEV #
     godot_4
+    android-studio
     #pkgs-stable.unityhub
     unityhub
 ### VMs ###

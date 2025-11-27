@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs-droid";
     };
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    stylix.url = "github:danth/stylix/master";
+    stylix.url = "github:nix-community/stylix/master";
     nixpkgs-stable.url = "nixpkgs/nixos-25.05";
     nixpkgs-droid.url = "nixpkgs/nixos-24.05";
     /*
@@ -58,18 +58,36 @@
           };
         };
         inherit system;
-        modules = [ 
+        modules = [
           ./configuration.nix
           /etc/nixos/hardware-configuration.nix
           inputs.stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [
             # inputs.hyprpanel.overlay
-            #inputs.neovim-nightly-overlay.overlays.default
+            inputs.neovim-nightly-overlay.overlays.default
           ];}
-        nix-flatpak.nixosModules.nix-flatpak
+          nix-flatpak.nixosModules.nix-flatpak
           ./systems/default.nix
           chaotic.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              users.linkman = {
+                imports = [
+                  ./home.nix
+                  ./config/stylix.nix
+                   catppuccin.homeModules.catppuccin
+                   stylix.homeModules.stylix 
+                ];
+              };
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+            };
+          }
         ];
       };
       smartandgay = nixpkgs.lib.nixosSystem {
@@ -93,6 +111,24 @@
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/gtx980.nix
           chaotic.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              users.linkman = {
+                imports = [
+                  ./home.nix
+                  ./config/stylix.nix
+                   catppuccin.homeModules.catppuccin
+                   stylix.homeModules.stylix 
+                ];
+              };
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+            };
+          }
         ];
       };
       gtx1080 = nixpkgs.lib.nixosSystem {
@@ -115,6 +151,25 @@
           ];}
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/gtx1080.nix
+          chaotic.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              users.linkman = {
+                imports = [
+                  ./home.nix
+                  ./config/stylix.nix
+                   catppuccin.homeModules.catppuccin
+                   stylix.homeModules.stylix 
+                ];
+              };
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+            };
+          }
 	    ];
       };
       dumbandgay = nixpkgs.lib.nixosSystem {
@@ -138,6 +193,24 @@
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/hplaptop.nix
           chaotic.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              users.linkman = {
+                imports = [
+                  ./home.nix
+                  ./config/stylix.nix
+                   catppuccin.homeModules.catppuccin
+                   stylix.homeModules.stylix 
+                ];
+              };
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+            };
+          }
         ];
       };
     homeserver = nixpkgs.lib.nixosSystem {
@@ -161,11 +234,74 @@
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/homeserver.nix
           chaotic.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              users.linkman = {
+                imports = [
+                  ./home.nix
+                  ./config/stylix.nix
+                   catppuccin.homeModules.catppuccin
+                   stylix.homeModules.stylix 
+                ];
+              };
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+            };
+          }
         ];
       };
+    /*liveIso = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+        inherit system;
+        modules = [ 
+          ({ pkgs, modulesPath, ... }: {
+            imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix") ];
+          })
+          ./configuration.nix
+          #/etc/nixos/hardware-configuration.nix
+          inputs.stylix.nixosModules.stylix
+          catppuccin.nixosModules.catppuccin
+          {nixpkgs.overlays = [
+            # inputs.hyprpanel.overlay
+            inputs.neovim-nightly-overlay.overlays.default
+          ];}
+        nix-flatpak.nixosModules.nix-flatpak
+          ./systems/default.nix
+          chaotic.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              users.linkman = {
+                imports = [
+                  ./home.nix
+                  ./config/stylix.nix
+                   catppuccin.homeModules.catppuccin
+                   stylix.homeModules.stylix 
+                ];
+              };
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+            };
+          }
+        ];
+      };*/
+
     };
 
-    homeConfigurations = {
+    /*homeConfigurations = {
       linkman = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ 
@@ -181,7 +317,7 @@
           };
         };
       };
-    };
+    };*/
     nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
       pkgs = import nixpkgs-droid { system = "aarch64-linux"; };
       modules = [
