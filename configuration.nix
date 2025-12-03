@@ -9,7 +9,7 @@
     #./config/stylix.nix
 # ./config/udev/udev.nix
       #inputs.spicetify-nix.nixosModules.default
-      ./packages.nix
+      #./packages.nix
     ];
 
 # Enable OpenGL

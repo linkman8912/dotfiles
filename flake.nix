@@ -60,6 +60,7 @@
         inherit system;
         modules = [
           ./configuration.nix
+          ./packages.nix
           /etc/nixos/hardware-configuration.nix
           inputs.stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
@@ -101,6 +102,7 @@
         inherit system;
         modules = [ 
           ./configuration.nix
+          ./packages.nix
           /etc/nixos/hardware-configuration.nix
           inputs.stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
@@ -142,6 +144,7 @@
 		inherit system;
 		modules = [ 
 		  ./configuration.nix
+          ./packages.nix
 		  /etc/nixos/hardware-configuration.nix
 		  inputs.stylix.nixosModules.stylix
 		  catppuccin.nixosModules.catppuccin
@@ -183,6 +186,7 @@
         inherit system;
         modules = [ 
           ./configuration.nix
+          ./packages.nix
           /etc/nixos/hardware-configuration.nix
           inputs.stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
@@ -224,6 +228,7 @@
         inherit system;
         modules = [ 
           ./configuration.nix
+          ./packages.nix
           /etc/nixos/hardware-configuration.nix
           inputs.stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
@@ -254,7 +259,7 @@
           }
         ];
       };
-    /*liveIso = nixpkgs.lib.nixosSystem {
+    liveIso = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
           pkgs-stable = import nixpkgs-stable {
@@ -297,7 +302,7 @@
             };
           }
         ];
-      };*/
+      };
 
     };
 
