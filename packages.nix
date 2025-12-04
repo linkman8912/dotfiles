@@ -275,4 +275,12 @@
     waydroid
     #motrix
   ];
+  # NONESSENTIAL (to the config) SYSTEM SERVICES
+  services = {
+    mullvad-vpn = {
+      enable = true;
+      package = pkgs.mullvad-vpn;
+    };
+
+  };
 }
