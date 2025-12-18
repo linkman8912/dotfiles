@@ -3,8 +3,8 @@
 {
   networking.hostName = "dumbandgay";
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/eec8ad31-509e-454d-8e6a-f1fd0095d4df";
-    fsType = "ext4";
+    device = "/dev/disk/by-uuid/efcd82c8-8126-4611-aa92-b3653b9695e2";
+    fsType = "btrfs";
     options = [ # If you don't have this options attribute, it'll default to "defaults" 
 # boot options for fstab. Search up fstab mount options you can use
       "nofail" # Prevent system from failing if this drive doesn't mount
@@ -12,6 +12,11 @@
     ];
   };
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/efcd82c8-8126-4611-aa92-b3653b9695e2";
+  };
 }
