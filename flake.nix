@@ -103,7 +103,6 @@
         modules = [ 
           ./configuration.nix
           ./packages.nix
-          /etc/nixos/hardware-configuration.nix
           inputs.stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [
@@ -112,6 +111,7 @@
           ];}
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/gtx980.nix
+          ./systems/hardware-configs/gtx980.nix
           chaotic.nixosModules.default
           home-manager.nixosModules.home-manager
           {
@@ -187,7 +187,6 @@
         modules = [ 
           ./configuration.nix
           ./packages.nix
-          /etc/nixos/hardware-configuration.nix
           inputs.stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [
@@ -196,6 +195,7 @@
           ];}
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/hplaptop.nix
+          ./systems/hardware-configs/hplaptop.nix
           chaotic.nixosModules.default
           home-manager.nixosModules.home-manager
           {
@@ -229,7 +229,6 @@
         modules = [ 
           ./configuration.nix
           ./packages.nix
-          /etc/nixos/hardware-configuration.nix
           inputs.stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
           {nixpkgs.overlays = [
@@ -238,6 +237,7 @@
           ];}
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/homeserver.nix
+          ./systems/hardware-configs/homeserver.nix
           chaotic.nixosModules.default
           home-manager.nixosModules.home-manager
           {
