@@ -37,6 +37,7 @@
       };
     };
     cage = {
+      enable = true;
       user = "kodi";
       program = "${pkgs.kodi-wayland}/bin/kodi-standalone";
     };
