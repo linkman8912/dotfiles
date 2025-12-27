@@ -9,31 +9,40 @@
     useOSProber = true;
   };
   networking.hostName = "homeserver";
-  services.displayManager.gdm.enable = lib.mkForce false;
+  services = {
+    displayManager.gdm.enable = lib.mkForce false;
 
-  services.nfs.server = {
-    enable = true;
-    exports = ''
-      /export *(rw,fsid=0,no_subtree_check,crossmnt)
-    '';
-      #/export *(rw,fsid=0,no_subtree_check) 192.168.1.*(rw,fsid=0,no_subtree_check) 192.168.1.3(rw,fsid=0,no_subtree_check)  100.100.0.0/24(rw,fsid=0,no_subtree_check) 100.100.100.0/24(rw,fsid=0,no_subtree_check) 100.115.92.0/23(rw,fsid=0,no_subtree_check) 
+    nfs.server = {
+      enable = true;
+      exports = ''
+        /export *(rw,fsid=0,no_subtree_check,crossmnt)
+        '';
+#/export *(rw,fsid=0,no_subtree_check) 192.168.1.*(rw,fsid=0,no_subtree_check) 192.168.1.3(rw,fsid=0,no_subtree_check)  100.100.0.0/24(rw,fsid=0,no_subtree_check) 100.100.100.0/24(rw,fsid=0,no_subtree_check) 100.115.92.0/23(rw,fsid=0,no_subtree_check) 
 
-    # fixed rpc.statd port; for firewall
-    lockdPort = 4001;
-    mountdPort = 4002;
-    statdPort = 4000;
-    extraNfsdConfig = '''';
-  };
+# fixed rpc.statd port; for firewall
+      lockdPort = 4001;
+      mountdPort = 4002;
+      statdPort = 4000;
+      extraNfsdConfig = '''';
+    };
 
-  environment.etc."nextcloud-admin-pass".text = "nextcloudpwd";
-  services.nextcloud = {
-    enable = true;
-    package = pkgs.nextcloud32;
-    hostName = "localhost";
-    config.adminpassFile = "/etc/nextcloud-admin-pass";
-    config.dbtype = "sqlite";
-    settings = {
-      trusted_domains = [ "*" ];
+    nextcloud = {
+      enable = true;
+      package = pkgs.nextcloud32;
+      hostName = "localhost";
+      config.adminpassFile = "/etc/nextcloud-admin-pass";
+      config.dbtype = "sqlite";
+      settings = {
+        trusted_domains = [ "*" ];
+      };
+    };
+    cage = {
+      user = "kodi";
+      services.cage.program = "${pkgs.kodi-wayland}/bin/kodi-standalone";
     };
   };
+  nixpkgs.config.kodi.enableAdvancedLauncher = true;
+  users.extraUsers.kodi.isNormalUser = true;
+
+  environment.etc."nextcloud-admin-pass".text = "nextcloudpwd";
 }
