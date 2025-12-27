@@ -269,11 +269,13 @@
     nextcloud-client
 ### NAS ###
     nfs-utils
+    google-cloud-sdk
 ### OTHER ###
     moonlight-qt
     #pkgs-stable.ollama
     waydroid
     #motrix
+    btrfs-progs
   ];
   # NONESSENTIAL (to the config) SYSTEM SERVICES
   services = {
