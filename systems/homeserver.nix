@@ -38,7 +38,7 @@
     };
     cage = {
       user = "kodi";
-      services.cage.program = "${pkgs.kodi-wayland}/bin/kodi-standalone";
+      program = "${pkgs.kodi-wayland}/bin/kodi-standalone";
     };
   };
   nixpkgs.config.kodi.enableAdvancedLauncher = true;
