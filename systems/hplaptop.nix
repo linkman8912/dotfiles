@@ -3,7 +3,8 @@
 {
   networking.hostName = "dumbandgay";
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/efcd82c8-8126-4611-aa92-b3653b9695e2";
+    #device = "/dev/disk/by-uuid/efcd82c8-8126-4611-aa92-b3653b9695e2";
+    device = "/dev/mapper/home";
     fsType = "btrfs";
     options = [ # If you don't have this options attribute, it'll default to "defaults" 
 # boot options for fstab. Search up fstab mount options you can use
@@ -17,6 +18,6 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/efcd82c8-8126-4611-aa92-b3653b9695e2";
+    initrd.luks.devices.home.device = "/dev/disk/by-uuid/efcd82c8-8126-4611-aa92-b3653b9695e2";
   };
 }
