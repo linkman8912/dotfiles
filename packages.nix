@@ -270,6 +270,7 @@
 ### NAS ###
     nfs-utils
     google-cloud-sdk
+    dvdbackup
 ### OTHER ###
     moonlight-qt
     #pkgs-stable.ollama
