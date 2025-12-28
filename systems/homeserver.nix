@@ -36,11 +36,19 @@
         trusted_domains = [ "*" ];
       };
     };
-    cage = {
+    /*cage = {
       enable = true;
       user = "kodi";
       program = "${pkgs.kodi-wayland}/bin/kodi-standalone";
+    };*/
+    xserver = {
+      enable = true;
+      desktopManager = {
+        kodi.enable = true;
+      };
+      displayManager.lightdm.greeter.enable = false;
     };
+    displayManager.autoLogin.user = "kodi";
   };
   nixpkgs.config.kodi.enableAdvancedLauncher = true;
   users.extraUsers.kodi.isNormalUser = true;
