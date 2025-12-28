@@ -10,8 +10,6 @@
   };
   networking.hostName = "homeserver";
   services = {
-    displayManager.gdm.enable = lib.mkForce false;
-
     nfs.server = {
       enable = true;
       exports = ''
@@ -48,7 +46,13 @@
       };
       displayManager.lightdm.greeter.enable = false;
     };
-    displayManager.autoLogin.user = "kodi";
+    displayManager = {
+      autoLogin.user = "kodi";
+      gdm.enable = lib.mkForce false;
+    };
+    desktopManager = {
+      plasma6.enable = lib.mkForce false;
+    };
   };
   nixpkgs.config.kodi.enableAdvancedLauncher = true;
   users.extraUsers.kodi.isNormalUser = true;

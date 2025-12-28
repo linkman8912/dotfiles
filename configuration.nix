@@ -220,7 +220,7 @@ users = {
 
 services = {
   displayManager = {
-    gdm.enable = true;
+    #gdm.enable = true;
   };
 
   xserver = {
