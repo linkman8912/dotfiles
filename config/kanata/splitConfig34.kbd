@@ -1,7 +1,7 @@
 ;; home keys are R and I, home row is Q, W, E, R, T, U, I, O, P, [
 (defcfg
   process-unmapped-keys yes
-  ;;block-unmapped-keys yes
+  block-unmapped-keys yes
 )
 
 (defsrc
@@ -57,19 +57,19 @@
   '    ,    .    p    y    f    g    c    r    l 
   @a   @o   @e   @u   i    d    @h   @t   @n   @s ;; home row
   ;    q    j    k    x    b    m    w    v    z     
-       @esc  lsft         bspc  @spc  ;; Thumb keys
+       @esc  lsft          @spc  bspc  ;; Thumb keys
 )
 
 (deflayer num ;; number and symbol layer
   1    2    3    4    5    6    7    8    9    0 
   @{   @}   @[   @]   S-8  /    @S9  @S0  @=    @- 
   S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  `  \     
-       tab  lsft         bspc  @spc  ;; Thumb keys
+       tab  lsft           @spc  bspc  ;; Thumb keys
 )
 
 (deflayer nav ;; navigation layer, maybe also with some built in keybinds (macros?)
   f1   f2    f3     f4    f5    f6   f7   bck   fwd   rght 
   @cut @copy @paste @undo C-S-z home @lft @pgup @pgdn @end ;; home row and more
   caps prtsc down   up    b     f8   f9   f10   f11   f12     
-       @esc  lsft         bspc  ret  ;; Thumb keys
+       @esc  lsft         @spc  ret  ;; Thumb keys
 )
