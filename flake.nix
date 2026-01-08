@@ -82,7 +82,7 @@
                    stylix.homeModules.stylix 
                 ];
               };
-              useGlobalPkgs = true;
+              #useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = {
                 inherit inputs;
@@ -124,7 +124,7 @@
                    stylix.homeModules.stylix 
                 ];
               };
-              useGlobalPkgs = true;
+              #useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = {
                 inherit inputs;
@@ -166,7 +166,7 @@
                    stylix.homeModules.stylix 
                 ];
               };
-              useGlobalPkgs = true;
+              #useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = {
                 inherit inputs;
@@ -208,7 +208,7 @@
                    stylix.homeModules.stylix 
                 ];
               };
-              useGlobalPkgs = true;
+              #useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = {
                 inherit inputs;
@@ -250,7 +250,7 @@
                    stylix.homeModules.stylix 
                 ];
               };
-              useGlobalPkgs = true;
+              #useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = {
                 inherit inputs;
@@ -294,7 +294,7 @@
                    stylix.homeModules.stylix 
                 ];
               };
-              useGlobalPkgs = true;
+              #useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = {
                 inherit inputs;
