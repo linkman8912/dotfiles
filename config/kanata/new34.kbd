@@ -1,0 +1,76 @@
+;; home keys are R and I, home row is Q, W, E, R, T, U, I, O, P, [
+(defcfg
+  process-unmapped-keys yes
+  block-unmapped-keys yes
+)
+
+(defsrc
+  1    2    3    4    5         7    8    9    0    - 
+  q    w    e    r    t         u    i    o    p    [   ;; home row and more
+  a    s    d    f    g         j    k    l    ;    '
+            c    v              m    ,   ;; Thumb keys
+)
+
+(defvar
+  tap-timeout 250
+  hold-timeout 500
+)
+
+(defalias
+  a     (tap-hold $hold-timeout $tap-timeout a lsft)
+  o     (tap-hold $hold-timeout $tap-timeout o lalt)
+  e     (tap-hold $hold-timeout $tap-timeout e lctl)
+  u     (tap-hold $hold-timeout $tap-timeout u lmet)
+
+  h     (tap-hold $hold-timeout $tap-timeout h rmet)
+  t     (tap-hold $hold-timeout $tap-timeout t rctl)
+  n     (tap-hold $hold-timeout $tap-timeout n lalt)
+  s     (tap-hold $hold-timeout $tap-timeout s rsft)
+  
+  esc   (tap-hold 0 $tap-timeout esc (layer-toggle nav))
+  spc   (tap-hold 0 $tap-timeout spc (layer-toggle num))
+  bspc   (tap-hold $hold-timeout $tap-timeout bspc (layer-toggle num))
+
+  ;; num layer homerow keys
+  {     (tap-hold $hold-timeout $tap-timeout [ lsft)
+  }     (tap-hold $hold-timeout $tap-timeout ] lalt)
+  [     (tap-hold $hold-timeout $tap-timeout S-[ lctl)
+  ]     (tap-hold $hold-timeout $tap-timeout S-] lmet)
+
+  S9    (tap-hold $hold-timeout $tap-timeout S-9 rmet)
+  S0    (tap-hold $hold-timeout $tap-timeout S-0 rctl)
+  -     (tap-hold $hold-timeout $tap-timeout - rsft)
+  =     (tap-hold $hold-timeout $tap-timeout = ralt)
+
+  ;; nav layer homerow mods
+  cut   (tap-hold $hold-timeout $tap-timeout C-x lsft)
+  copy  (tap-hold $hold-timeout $tap-timeout C-ins lalt)
+  paste (tap-hold $hold-timeout $tap-timeout S-ins lctl)
+  undo  (tap-hold $hold-timeout $tap-timeout C-z lmet)
+
+  lft   (tap-hold $hold-timeout $tap-timeout lft rmet)
+  pgup  (tap-hold $hold-timeout $tap-timeout pgup rctl)
+  pgdn  (tap-hold $hold-timeout $tap-timeout pgdn lalt)
+  end   (tap-hold $hold-timeout $tap-timeout end rsft)
+)
+
+(deflayer main ;; standard layer, default for typing
+  '    ,    .    p    y    f    g    c    r    l 
+  @a   @o   @e   @u   i    d    @h   @t   @n   @s ;; home row
+  ;    q    j    k    x    b    m    w    v    z     
+       @esc  lsft          spc  @bspc  ;; Thumb keys
+)
+
+(deflayer num ;; number and symbol layer
+  1    2    3    4    5    6    7    8    9    0 
+  @{   @}   @[   @]   S-8  /    @S9  @S0  @=    @- 
+  S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  `  \     
+       tab  lsft           spc  @bspc  ;; Thumb keys
+)
+
+(deflayer nav ;; navigation layer, maybe also with some built in keybinds (macros?)
+  f1   f2    f3     f4    f5    f6   f7   bck   fwd   rght 
+  @cut @copy @paste @undo C-S-z home @lft @pgup @pgdn @end ;; home row and more
+  caps prtsc down   up    b     f8   f9   f10   f11   f12     
+       @esc  lsft         spc  ret  ;; Thumb keys
+)
