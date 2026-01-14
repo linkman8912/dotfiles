@@ -202,6 +202,7 @@
     hyprnotify
     hyprpicker
     hyprshot
+    hyprlauncher
     kitty
     #rofi
     hyprpaper
@@ -284,6 +285,5 @@
       enable = true;
       package = pkgs.mullvad-vpn;
     };
-
   };
 }

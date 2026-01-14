@@ -224,6 +224,7 @@ services = {
   };
 
   xserver = {
+    displayManager.startx.enable = true;
     enable = true;
     desktopManager = {
 # gnome.enable = true;

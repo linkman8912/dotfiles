@@ -56,6 +56,7 @@
           "${config.xdg.configHome}/hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
           "${config.xdg.configHome}/hypr/mocha.conf".source = ./config/hypr/mocha.conf;
           "${config.xdg.configHome}/hypr/hyprlock.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/hypr/hyprlock.conf;
+          "${config.xdg.configHome}/hypr/hyprtoolkit.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/hypr/hyprtoolkit.conf;
           "${config.xdg.configHome}/background.png".source = ./config/hypr/hyprpaper/shaded.png;
 # ".face".source = ./config/hypr/hyprpaper/Biden.png;
           "${config.xdg.configHome}/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;

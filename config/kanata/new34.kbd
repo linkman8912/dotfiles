@@ -29,7 +29,7 @@
   
   esc   (tap-hold 0 $tap-timeout esc (layer-toggle nav))
   spc   (tap-hold 0 $tap-timeout spc (layer-toggle num))
-  bspc   (tap-hold $hold-timeout $tap-timeout bspc (layer-toggle num))
+  bspc  (tap-hold 200 $tap-timeout bspc (layer-toggle num))
 
   ;; num layer homerow keys
   {     (tap-hold $hold-timeout $tap-timeout [ lsft)
