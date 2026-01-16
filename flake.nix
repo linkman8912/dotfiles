@@ -1,4 +1,3 @@
-
 {
   description = "flake";
   inputs = {
@@ -217,6 +216,49 @@
           }
         ];
       };
+      sillyandgay = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+        inherit system;
+        modules = [ 
+          ./configuration.nix
+          ./packages.nix
+          inputs.stylix.nixosModules.stylix
+          catppuccin.nixosModules.catppuccin
+          {nixpkgs.overlays = [
+            #inputs.hyprpanel.overlay
+            inputs.neovim-nightly-overlay.overlays.default
+          ];}
+        nix-flatpak.nixosModules.nix-flatpak
+          ./systems/acerlaptop.nix
+          ./systems/hardware-configs/acerlaptop.nix
+          chaotic.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              users.linkman = {
+                imports = [
+                  ./home.nix
+                  ./config/stylix.nix
+                   catppuccin.homeModules.catppuccin
+                   stylix.homeModules.stylix 
+                ];
+              };
+              #useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+            };
+          }
+        ];
+      };
+
     homeserver = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;

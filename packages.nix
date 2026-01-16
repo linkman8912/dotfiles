@@ -96,7 +96,7 @@
     arp-scan
     networkmanager
     pciutils
-    litemdview
+    #litemdview
     killall
     btop
     #ventoy-full
@@ -204,7 +204,7 @@
     hyprshot
     hyprlauncher
     kitty
-    #rofi
+    rofi
     hyprpaper
     waybar
     fastfetch
@@ -243,6 +243,7 @@
     unityhub
 ### VMs ###
     vmware-workstation
+    qemu
 ### BORING (SCHOOL/PRODUCTIVITY) ###
     zoom-us
     libreoffice-qt6-still
