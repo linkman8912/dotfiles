@@ -6,6 +6,7 @@
     (import scripts/gifconvert.nix)
     (import scripts/lyricdownload.nix)
     (import scripts/startup.nix)
+    (import scripts/toggleopacity.nix)
     # rmpc (a specific git version)
     #(import config/rmpc/default.nix)
     (pkgs.callPackage ./config/rmpc/package.nix { })
