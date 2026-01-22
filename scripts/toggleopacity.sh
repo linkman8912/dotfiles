@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-set OPACITY_MONITOR /tmp/hypropacityoff;
-set ACTIVE_OPACITY /tmp/hypractiveopacity;
-set INACTIVE_OPACITY /tmp/hyprinactiveopacity;
+#set OPACITY_MONITOR /tmp/hypropacityoff;
+#set ACTIVE_OPACITY /tmp/hypractiveopacity;
+#set INACTIVE_OPACITY /tmp/hyprinactiveopacity;
 
 OPACITY_MONITOR=/tmp/hypropacityoff;
 ACTIVE_OPACITY=/tmp/hypractiveopacity;
