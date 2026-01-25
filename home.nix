@@ -62,7 +62,7 @@
           "${config.xdg.configHome}/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
           "${config.xdg.configHome}/btop/themes/catppuccin_mocha.theme".source = ./config/btop/themes/catppuccin_mocha.theme;
 # kanata config
-          "${config.xdg.configHome}/kanata/kanata.kbd".source = ./config/kanata/splitConfigDvorak.kbd;
+          "${config.xdg.configHome}/kanata/kanata.kbd".source = ./config/kanata/new34.kbd;
           "${config.xdg.configHome}/mpd/mpd.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/mpd/mpd.conf;
           "${config.xdg.dataHome}/spotdl/config.json".source = ./config/spotdl/config.json;
 
