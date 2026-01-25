@@ -208,6 +208,9 @@
           "spot" = "spotdl --lyrics synced --generate-lrc";
           "gv" = "nvim --listen /tmp/godothost";
           "g" = "nvim --listen /tmp/godothost";
+          "fanoff" = "nbfc set -s 0";
+          "fanon" = "nbfc set --auto";
+          "fanfull" = "nbfc set -s 100";
         };
       };
       fuzzel = {

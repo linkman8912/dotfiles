@@ -405,7 +405,8 @@ programs = {
       zlib zstd stdenv.cc.cc curl openssl attr libssh bzip2 libxml2 acl libsodium util-linux xz systemd
     ];
   };
-  command-not-found.enable = true;
+  #command-not-found.enable = true;
+  nix-index.enable = true;
 };
 
 catppuccin = {

@@ -93,11 +93,11 @@
 
   environment.systemPackages = with pkgs; [
     nbfc-linux
-    fancontrol-gui
+    #fancontrol-gui
     lm_sensors
   ];
-  hardware.fancontrol = {
+  /*hardware.fancontrol = {
     enable = true;
     config = '''';
-  };
+  };*/
 }
