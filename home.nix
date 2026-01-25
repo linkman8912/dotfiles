@@ -57,7 +57,7 @@
           "${config.xdg.configHome}/hypr/mocha.conf".source = ./config/hypr/mocha.conf;
           "${config.xdg.configHome}/hypr/hyprlock.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/hypr/hyprlock.conf;
           "${config.xdg.configHome}/hypr/hyprtoolkit.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/hypr/hyprtoolkit.conf;
-          "${config.xdg.configHome}/background.png".source = ./config/hypr/hyprpaper/shaded.png;
+          #"${config.xdg.configHome}/background.png".source = ./config/hypr/hyprpaper/shaded.png;
 # ".face".source = ./config/hypr/hyprpaper/Biden.png;
           "${config.xdg.configHome}/hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
           "${config.xdg.configHome}/btop/themes/catppuccin_mocha.theme".source = ./config/btop/themes/catppuccin_mocha.theme;
@@ -218,16 +218,16 @@
     services.hyprpaper = {
       enable = true;
       settings = {
-        preload = 
+        /*preload = 
           [
-          "~/.dotfiles/config/hypr/hyprpaper/purpleWallpaper.jpg"
-            "~/.dotfiles/config/hypr/hyprpaper/bnwWallpaper.jpg"
-            "~/.dotfiles/config/hypr/hyprpaper/pixel-car.png"
-            "~/.dotfiles/config/hypr/hyprpaper/aesthetic.jpg"
+            #"~/.dotfiles/config/hypr/hyprpaper/purpleWallpaper.jpg"
+            #"~/.dotfiles/config/hypr/hyprpaper/bnwWallpaper.jpg"
+            #"~/.dotfiles/config/hypr/hyprpaper/pixel-car.png"
             "~/.dotfiles/config/hypr/hyprpaper/shaded.png"
           ];
-        wallpaper = [ ", ~/.dotfiles/config/hypr/hyprpaper/shaded.png" ];
-        splash = true;
+        wallpaper = lib.mkForce ", ~/.dotfiles/config/hypr/hyprpaper/shaded.png";
+        */
+        #splash = true;
       };
     };
     catppuccin = {

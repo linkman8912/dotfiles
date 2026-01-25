@@ -178,6 +178,7 @@
     wireguard-ui
     wireguard-tools
     qbittorrent
+    signal-desktop
 ### PROGRAMMING ###
     hugo
 ### KEYBOARD ###

@@ -236,6 +236,7 @@
           ];}
         nix-flatpak.nixosModules.nix-flatpak
           ./systems/acerlaptop.nix
+          ./systems/acer/nbfc.nix
           ./systems/hardware-configs/acerlaptop.nix
           chaotic.nixosModules.default
           home-manager.nixosModules.home-manager
