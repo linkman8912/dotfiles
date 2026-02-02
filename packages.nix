@@ -179,6 +179,7 @@
     wireguard-tools
     qbittorrent
     signal-desktop
+    keybase-gui
 ### PROGRAMMING ###
     hugo
 ### KEYBOARD ###
@@ -259,7 +260,7 @@
     kdePackages.kolourpaint
     #pkgs-stable.gimp
     gimp3
-    kdePackages.kdenlive
+    #kdePackages.kdenlive
     obs-studio
     inkscape
 ### BACKUPS ###
@@ -288,5 +289,7 @@
       enable = true;
       package = pkgs.mullvad-vpn;
     };
+    keybase.enable = true;
+    kbfs.enable = true;
   };
 }

@@ -209,6 +209,7 @@
           "gv" = "nvim --listen /tmp/godothost";
           "g" = "nvim --listen /tmp/godothost";
           "fanoff" = "nbfc set -s 0";
+          "fanlow" = "nbfc set -s 15";
           "fanon" = "nbfc set --auto";
           "fanfull" = "nbfc set -s 100";
         };
