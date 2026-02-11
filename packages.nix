@@ -255,7 +255,7 @@
     pkgs-stable.vesktop
     #hexchat
     #fluffychat
-### PHOTOGRAPHY/VIDEO EDITING ###
+### PHOTOGRAPHY/VIDEO EDITING/DESIGN ###
     #darktable
     kdePackages.kolourpaint
     #pkgs-stable.gimp
@@ -263,6 +263,7 @@
     #kdePackages.kdenlive
     obs-studio
     inkscape
+    pureref
 ### BACKUPS ###
     #maestral
     #maestral-gui
