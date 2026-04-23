@@ -112,7 +112,6 @@
     usbutils
     poetry
     flatpak
-    node2nix
     gparted
     blueman
     wine
@@ -221,6 +220,7 @@
     pkgs-stable.dolphin-emu
     itch
     ryubing
+    eden
     #amidst
     gamescope
     # gamescope_git
@@ -263,7 +263,7 @@
     #kdePackages.kdenlive
     obs-studio
     inkscape
-    pureref
+    #pureref
 ### BACKUPS ###
     #maestral
     #maestral-gui
