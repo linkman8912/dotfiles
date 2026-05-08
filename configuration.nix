@@ -338,6 +338,7 @@ nixpkgs = {
     allowUnfree = true;
     permittedInsecurePackages = [
       "mbedtls-2.28.10"
+      "ventoy-1.1.10"
     ];
   };
   overlays = [

@@ -100,7 +100,7 @@
     #litemdview
     killall
     btop
-    #ventoy-full
+    ventoy-full
     wget
     winetricks
     #jdk17
@@ -260,7 +260,7 @@
     kdePackages.kolourpaint
     #pkgs-stable.gimp
     gimp3
-    #kdePackages.kdenlive
+    kdePackages.kdenlive
     obs-studio
     inkscape
     #pureref
